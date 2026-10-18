@@ -6,7 +6,7 @@
   <a href="https://github.com/pensiya5/VacNetPlusPlus/releases/latest"><img src="https://img.shields.io/badge/version-4.5.0-8fb8ff?style=flat-square" alt="Version 4.5.0"></a>
   <img src="https://img.shields.io/badge/Chromium-MV3-4285f4?style=flat-square&logo=googlechrome&logoColor=white" alt="Chrome and Chromium">
   <img src="https://img.shields.io/badge/Firefox-128%2B-ff7139?style=flat-square&logo=firefoxbrowser&logoColor=white" alt="Firefox 128+">
-  <a href="../../LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-64748b?style=flat-square" alt="GPL-3.0"></a>
+  <a href="../../.github/LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-64748b?style=flat-square" alt="GPL-3.0"></a>
 </p>
 <p align="center">
   <a href="https://github.com/pensiya5/VacNetPlusPlus/releases/latest"><b>Download</b></a> &nbsp;·&nbsp;
@@ -111,4 +111,4 @@ Found a bug or have an idea? Open an [issue](https://github.com/pensiya5/VacNetP
 
 VacNet++ helps people review replays; it does not detect cheats on its own. This project is not affiliated with Valve Corporation. Counter-Strike and VACNet are trademarks of Valve Corporation.
 
-<p align="center"><a href="../../LICENSE">GPL-3.0</a> &nbsp;·&nbsp; <b>VacNet++ 4.5.0</b></p>
+<p align="center"><a href="../../.github/LICENSE">GPL-3.0</a> &nbsp;·&nbsp; <b>VacNet++ 4.5.0</b></p>
