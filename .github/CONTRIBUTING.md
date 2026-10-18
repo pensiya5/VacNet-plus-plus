@@ -8,7 +8,7 @@ Thanks for helping improve VacNet++! Bug reports, suggestions, documentation fix
 
 ### Before you start
 
-- Check [existing issues](https://github.com/pensiya5/VacNetPlusPlus/issues) before reporting a bug or proposing a feature.
+- Check [existing issues](https://github.com/pensiya5/vacnet-plus-plus/issues) before reporting a bug or proposing a feature.
 - For larger changes, open an issue first to discuss the approach.
 - Follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 - **Security vulnerabilities must be reported privately** according to our [Security Policy](SECURITY.md), not in public issues.
@@ -18,8 +18,8 @@ Thanks for helping improve VacNet++! Bug reports, suggestions, documentation fix
 You need **Node.js 22.12+** and npm. The application lives in the `extension/` directory:
 
 ```bash
-git clone https://github.com/pensiya5/VacNetPlusPlus.git
-cd VacNetPlusPlus/extension
+git clone https://github.com/pensiya5/vacnet-plus-plus.git
+cd vacnet-plus-plus/extension
 npm ci
 npm run check
 ```
@@ -62,7 +62,7 @@ Keep commit messages short and meaningful, e.g. `fix: preserve playback state` o
 
 ### Перед началом
 
-- Проверьте [существующие Issues](https://github.com/pensiya5/VacNetPlusPlus/issues), чтобы избежать дубликатов.
+- Проверьте [существующие Issues](https://github.com/pensiya5/vacnet-plus-plus/issues), чтобы избежать дубликатов.
 - Крупные изменения лучше сначала обсудить в Issue.
 - Соблюдайте [правила сообщества](CODE_OF_CONDUCT.md).
 - **Об уязвимостях сообщайте приватно** по [политике безопасности](SECURITY.md), не раскрывая детали в открытых Issues.
@@ -72,8 +72,8 @@ Keep commit messages short and meaningful, e.g. `fix: preserve playback state` o
 Нужны **Node.js 22.12+** и npm. Исходники находятся в папке `extension/`:
 
 ```bash
-git clone https://github.com/pensiya5/VacNetPlusPlus.git
-cd VacNetPlusPlus/extension
+git clone https://github.com/pensiya5/vacnet-plus-plus.git
+cd vacnet-plus-plus/extension
 npm ci
 npm run check
 ```

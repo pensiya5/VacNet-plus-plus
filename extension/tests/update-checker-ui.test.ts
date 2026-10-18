@@ -8,7 +8,7 @@ import { createCatalog } from '../src/shared/services/i18n.service';
 
 let root: HTMLElement;
 const current: UpdateCheckResult = { currentVersion: '4.2.1', latestVersion: '4.2.1',
-  available: false, releaseUrl: 'https://github.com/pensiya5/VacNetPlusPlus/releases/tag/v4.2.1',
+  available: false, releaseUrl: 'https://github.com/pensiya5/vacnet-plus-plus/releases/tag/v4.2.1',
   error: false, checkedAt: 1_800_000_000_000 };
 const mount = async (onCheck: (force: boolean) => Promise<UpdateCheckResult>) => {
   await act(async () => render(h(TranslationProvider, {
@@ -30,11 +30,11 @@ it('checks on mount and provides an explicit manual check', async () => {
 
 it('marks available updates and links to the fork release without opening it automatically', async () => {
   await mount(async () => ({ ...current, available: true, latestVersion: '4.3.0',
-    releaseUrl: 'https://github.com/pensiya5/VacNetPlusPlus/releases/tag/v4.3.0' }));
+    releaseUrl: 'https://github.com/pensiya5/vacnet-plus-plus/releases/tag/v4.3.0' }));
   expect(root.textContent).toContain('Доступна версия 4.3.0');
   expect(root.querySelector('[data-update-available]')).not.toBeNull();
   const link = root.querySelector<HTMLAnchorElement>('a')!;
-  expect(link.href).toBe('https://github.com/pensiya5/VacNetPlusPlus/releases/tag/v4.3.0');
+  expect(link.href).toBe('https://github.com/pensiya5/vacnet-plus-plus/releases/tag/v4.3.0');
   expect(link.rel).toContain('noopener');
 });
 

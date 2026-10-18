@@ -31,7 +31,7 @@ $env:VACNET_E2E_LIVE_UPDATES = '1'
 npx playwright test --grep '\[live\]'
 ```
 
-This calls the public `pensiya5/VacNetPlusPlus` latest-release API without
+This calls the public `pensiya5/vacnet-plus-plus` latest-release API without
 credentials, using the installed background worker. A missing stable release,
 network outage or GitHub rate limit causes that opt-in test to fail. Other tests
 stay deterministic even when this environment variable is set.

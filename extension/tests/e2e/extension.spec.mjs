@@ -15,12 +15,12 @@ async function captureDashboard(page, dialog, testInfo, name) {
 test('built extension checks releases through native worker fetch and caches the result', async ({ extension }) => {
   const first = await extension.send('checkForUpdates', { force: true });
   expect(first).toMatchObject({ currentVersion: '4.5.0', latestVersion: '99.0.0', available: true, error: false,
-    releaseUrl: 'https://github.com/pensiya5/VacNetPlusPlus/releases/tag/v99.0.0' });
+    releaseUrl: 'https://github.com/pensiya5/vacnet-plus-plus/releases/tag/v99.0.0' });
   expect(first.checkedAt).toBeGreaterThan(0);
   const second = await extension.send('checkForUpdates', { force: true });
   expect(second).toEqual(first);
   expect(extension.requests.filter(url => url.includes('/releases/latest'))).toEqual([
-    'https://api.github.com/repos/pensiya5/VacNetPlusPlus/releases/latest',
+    'https://api.github.com/repos/pensiya5/vacnet-plus-plus/releases/latest',
   ]);
   const cache = await extension.worker.evaluate(async () => (await chrome.storage.local.get('update-check-cache'))['update-check-cache']);
   expect(cache).toMatchObject({ latestTag: 'v99.0.0', error: false });
@@ -29,7 +29,7 @@ test('built extension checks releases through native worker fetch and caches the
   await extension.page.getByRole('button', { name: 'Доступна версия 99.0.0', exact: true }).hover();
   await expect(extension.page.getByText('Доступна версия 99.0.0', { exact: true })).toBeVisible();
   await expect(extension.page.getByRole('link', { name: 'Открыть релиз' })).toHaveAttribute('href',
-    'https://github.com/pensiya5/VacNetPlusPlus/releases/tag/v99.0.0');
+    'https://github.com/pensiya5/vacnet-plus-plus/releases/tag/v99.0.0');
 });
 
 test('selected native verdict allows real video playback to resume with Space and the player button', async ({ extension }) => {
@@ -170,7 +170,7 @@ test.describe('Public network smoke', () => {
   expect(result.currentVersion).toBe('4.5.0');
   expect(result.latestVersion).toMatch(/^\d+(?:\.\d+){0,3}$/u);
   expect(result.checkedAt).toBeGreaterThan(0);
-  expect(result.releaseUrl).toMatch(/^https:\/\/github\.com\/pensiya5\/VacNetPlusPlus\/releases\/tag\//u);
+  expect(result.releaseUrl).toMatch(/^https:\/\/github\.com\/pensiya5\/vacnet-plus-plus\/releases\/tag\//u);
   expect(await extension.send('checkForUpdates', { force: false })).toEqual(result);
   });
 });

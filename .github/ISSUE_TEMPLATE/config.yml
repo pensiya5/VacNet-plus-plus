@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: "📖 Installation and usage (Русский)"
-    url: "https://github.com/pensiya5/VacNetPlusPlus#установка"
+    url: "https://github.com/pensiya5/vacnet-plus-plus#установка"
     about: "Read the Russian setup guide and FAQ-style notes before opening an issue."
   - name: "🌍 Installation and usage (English)"
-    url: "https://github.com/pensiya5/VacNetPlusPlus/blob/main/extension/docs/README.en.md"
+    url: "https://github.com/pensiya5/vacnet-plus-plus/blob/main/extension/docs/README.en.md"
     about: "Read the English installation and usage guide before opening an issue."

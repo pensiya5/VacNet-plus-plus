@@ -6,7 +6,7 @@ import { portalHtml } from './portal-fixture.mjs';
 
 const extensionPath = resolve('.output/chrome-mv3');
 export const portalUrl = 'https://www.counter-strike.net/vacnet/clips?synthetic=1';
-const latestApi = 'https://api.github.com/repos/pensiya5/VacNetPlusPlus/releases/latest';
+const latestApi = 'https://api.github.com/repos/pensiya5/vacnet-plus-plus/releases/latest';
 
 // Attach CDP to the real worker for consistent network interception across
 // Playwright versions, and replace only HTTP responses at the network layer;

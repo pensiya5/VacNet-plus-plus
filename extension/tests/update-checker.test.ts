@@ -43,8 +43,8 @@ it('checks only the fork and builds the release link from its validated tag', as
   const { checker, fetcher } = setup();
   const result = await checker.check();
   expect(result).toMatchObject({ currentVersion: '4.2.1', latestVersion: '4.3.0', available: true,
-    releaseUrl: 'https://github.com/pensiya5/VacNetPlusPlus/releases/tag/v4.3.0', error: false });
-  expect(fetcher.mock.calls[0]?.[0]).toBe('https://api.github.com/repos/pensiya5/VacNetPlusPlus/releases/latest');
+    releaseUrl: 'https://github.com/pensiya5/vacnet-plus-plus/releases/tag/v4.3.0', error: false });
+  expect(fetcher.mock.calls[0]?.[0]).toBe('https://api.github.com/repos/pensiya5/vacnet-plus-plus/releases/latest');
   expect(fetcher.mock.calls[0]?.[1]).toMatchObject({ credentials: 'omit', referrerPolicy: 'no-referrer' });
 });
 

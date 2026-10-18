@@ -6,13 +6,13 @@
 
 ### Supported versions
 
-Security fixes are considered for the **latest stable release** of VacNet++ (currently **4.5.0**). Older releases are not actively maintained. Please update to the [latest release](https://github.com/pensiya5/VacNetPlusPlus/releases/latest) before reporting an issue. Security maintenance is best-effort; there is no guaranteed response or fix timeline.
+Security fixes are considered for the **latest stable release** of VacNet++ (currently **4.5.0**). Older releases are not actively maintained. Please update to the [latest release](https://github.com/pensiya5/vacnet-plus-plus/releases/latest) before reporting an issue. Security maintenance is best-effort; there is no guaranteed response or fix timeline.
 
 ### Reporting a vulnerability
 
 **Do not disclose security vulnerabilities in public GitHub Issues, Discussions, pull requests, or comments.**
 
-1. Open the repository's [Security Advisories](https://github.com/pensiya5/VacNetPlusPlus/security/advisories).
+1. Open the repository's [Security Advisories](https://github.com/pensiya5/vacnet-plus-plus/security/advisories).
 2. Select **Report a vulnerability**, if available, to submit a **private** report to the maintainers.
 3. Include the affected VacNet++ version, browser and version, a clear impact description, reproduction steps, and a minimal proof of concept that does not expose private user data.
 
@@ -33,7 +33,7 @@ Examples of relevant security issues in **VacNet++** include:
 
 Test only with systems and accounts you own or are explicitly authorized to use. Do not probe or attack the live VACNet service, Valve infrastructure, or other people's accounts. Issues in third-party services are outside the scope of this project's security policy and should be reported to the relevant vendor.
 
-For ordinary bugs and feature requests, use [GitHub Issues](https://github.com/pensiya5/VacNetPlusPlus/issues/new/choose).
+For ordinary bugs and feature requests, use [GitHub Issues](https://github.com/pensiya5/vacnet-plus-plus/issues/new/choose).
 
 ---
 
@@ -41,13 +41,13 @@ For ordinary bugs and feature requests, use [GitHub Issues](https://github.com/p
 
 ### Поддерживаемые версии
 
-Исправления безопасности рассматриваются для **последнего стабильного релиза** VacNet++ (сейчас **4.5.0**). Старые версии активно не поддерживаются. Перед отправкой отчёта обновитесь до [последнего релиза](https://github.com/pensiya5/VacNetPlusPlus/releases/latest). Поддержка осуществляется по возможности, без гарантированных сроков ответа или исправления.
+Исправления безопасности рассматриваются для **последнего стабильного релиза** VacNet++ (сейчас **4.5.0**). Старые версии активно не поддерживаются. Перед отправкой отчёта обновитесь до [последнего релиза](https://github.com/pensiya5/vacnet-plus-plus/releases/latest). Поддержка осуществляется по возможности, без гарантированных сроков ответа или исправления.
 
 ### Как сообщить об уязвимости
 
 **Не публикуйте информацию об уязвимостях в открытых Issues, Discussions, Pull Requests и комментариях.**
 
-1. Перейдите в [Security Advisories](https://github.com/pensiya5/VacNetPlusPlus/security/advisories) репозитория.
+1. Перейдите в [Security Advisories](https://github.com/pensiya5/vacnet-plus-plus/security/advisories) репозитория.
 2. Если доступна кнопка **Report a vulnerability**, отправьте через неё **приватный** отчёт.
 3. Укажите версию VacNet++, браузер и его версию, последствия проблемы, шаги воспроизведения и безопасный минимальный пример без конфиденциальных данных.
 
@@ -68,4 +68,4 @@ For ordinary bugs and feature requests, use [GitHub Issues](https://github.com/p
 
 Проверяйте проблемы только на своих системах и аккаунтах либо при наличии явного разрешения. Не тестируйте атаки на рабочий портал VACNet, инфраструктуру Valve или чужие аккаунты. Уязвимости сторонних сервисов следует сообщать их владельцам.
 
-Для обычных ошибок и предложений используйте [GitHub Issues](https://github.com/pensiya5/VacNetPlusPlus/issues/new/choose).
+Для обычных ошибок и предложений используйте [GitHub Issues](https://github.com/pensiya5/vacnet-plus-plus/issues/new/choose).
