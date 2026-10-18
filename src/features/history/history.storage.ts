@@ -1,7 +1,6 @@
 import { getMessage } from '../../shared/services/i18n.service';
 import { storage } from 'wxt/utils/storage';
 import {
-  emptyHistory,
   HISTORY_STATE_VERSION,
   HistoryStateSchema,
   type HistoryState,
@@ -16,18 +15,17 @@ const legacyEntries = storage.defineItem<unknown>('local:vacnetHistory', { fallb
 const legacyStats = storage.defineItem<unknown>('local:vacnetHistoryStats', { fallback: null });
 
 
-const storedHistory = storage.defineItem<HistoryState>('local:history', {
-  fallback: emptyHistory(),
+const storedHistory = storage.defineItem<HistoryState | null>('local:history', {
+  fallback: null,
   version: HISTORY_STORAGE_VERSION,
-  migrations: {
-    2: (value: unknown) => migrateHistory(value, { entries: legacyEntries, stats: legacyStats }),
-    3: (value: unknown) => migrateHistory(value, { entries: legacyEntries, stats: legacyStats }),
-    4: (value: unknown) => migrateHistory(value, { entries: legacyEntries, stats: legacyStats }),
-  },
 });
 
 const getValue = async (): Promise<HistoryState> => {
-  return HistoryStateSchema.parse(await storedHistory.getValue());
+  const value = await storedHistory.getValue();
+  const current = HistoryStateSchema.safeParse(value);
+  // Readers can preview old data; only the background mutation queue writes it.
+  return current.success ? current.data
+    : migrateHistory(value, { entries: legacyEntries, stats: legacyStats });
 };
 
 const cleanupLegacy = async (): Promise<void> => {
@@ -39,6 +37,7 @@ const cleanupLegacy = async (): Promise<void> => {
 
 const setValue = async (history: HistoryState): Promise<void> => {
   await storedHistory.setValue(HistoryStateSchema.parse(history));
+  await storedHistory.setMeta({ v: HISTORY_STORAGE_VERSION });
 };
 
 const watch = (
@@ -74,6 +73,17 @@ const hydrateAndWatch = async (
 };
 
 const mutate = async (mutation: HistoryMutation): Promise<HistoryState> => {
+  if (mutation.type === 'initialize') {
+    // Avoid WXT's eager per-context migrations: a stale UI migration could
+    // overwrite a newer verdict. Persist upgrades only in the background queue.
+    const stored = await storedHistory.getValue();
+    const parsed = HistoryStateSchema.safeParse(stored);
+    const current = parsed.success ? parsed.data
+      : await migrateHistory(stored, { entries: legacyEntries, stats: legacyStats });
+    if (!parsed.success) await setValue(current);
+    await cleanupLegacy();
+    return current;
+  }
   const current = await getValue();
   let next: HistoryState;
   switch (mutation.type) {
@@ -87,4 +97,4 @@ const mutate = async (mutation: HistoryMutation): Promise<HistoryState> => {
   return next;
 };
 
-export const historyStorage = { getValue, hydrateAndWatch, mutate, cleanupLegacy };
+export const historyStorage = { getValue, hydrateAndWatch, mutate };

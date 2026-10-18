@@ -4,11 +4,11 @@ export default defineConfig({
   manifestVersion: 3,
   imports: false,
   manifest: ({ browser }) => ({
-    name: 'VACNET Toolkit',
+    name: 'VacNet++',
     description: 'Player controls, verdict presets and local clip history for the VACNet portal.',
     default_locale: 'en',
     permissions: ['storage'],
-    host_permissions: ['https://replay-video.valve.net/*'],
+    host_permissions: ['https://replay-video.valve.net/*', 'https://api.github.com/*'],
     icons: { 128: 'icon.png' },
     ...(browser === 'firefox' ? {
       browser_specific_settings: {

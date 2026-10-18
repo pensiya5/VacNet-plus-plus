@@ -1,4 +1,28 @@
 {
+  "updatesTitle": {
+    "message": "Updates"
+  },
+  "updateInstalled": {
+    "message": "Installed version {version}"
+  },
+  "updateAvailable": {
+    "message": "Version {version} is available"
+  },
+  "updateChecking": {
+    "message": "Checking for updates…"
+  },
+  "updateCurrent": {
+    "message": "The latest version is installed"
+  },
+  "updateCheckFailed": {
+    "message": "Could not check for updates. Try again later."
+  },
+  "updateCheckNow": {
+    "message": "Check now"
+  },
+  "updateOpenRelease": {
+    "message": "Open release"
+  },
   "app": {
     "message": "App"
   },
@@ -52,9 +76,6 @@
   },
   "btnYes": {
     "message": "Yes"
-  },
-  "byAuthor": {
-    "message": "| by MartinDawgor"
   },
   "cancel": {
     "message": "Cancel"
@@ -502,7 +523,7 @@
     "message": "Powerful extension for the VacNet site, featuring a user-friendly interface, unlocked functions, and handy tweaks."
   },
   "extensionName": {
-    "message": "VacNet Toolkit Extension"
+    "message": "VacNet++"
   },
   "frameDuration": {
     "message": "Frame duration"
@@ -909,11 +930,74 @@
   "xrayActive": {
     "message": "X-Ray is active."
   },
+  "metricsReviewType": {
+    "message": "Review type"
+  },
+  "metricsReviewTypeNative": {
+    "message": "Single verdict"
+  },
+  "metricsReviewTypeLegacy": {
+    "message": "Four categories"
+  },
+  "metricsClipFormat": {
+    "message": "Clip format"
+  },
+  "metricsFullMatch": {
+    "message": "Full match"
+  },
+  "metricsMarkedMoment": {
+    "message": "Marked moment"
+  },
+  "metricsReviewTitle": {
+    "message": "Review state"
+  },
+  "metricsReviewPhase": {
+    "message": "Phase"
+  },
+  "metricsAwaitingChoice": {
+    "message": "Choosing an answer"
+  },
+  "metricsAwaitingConfirmation": {
+    "message": "Waiting for confirmation"
+  },
+  "metricsReadyToConfirm": {
+    "message": "Ready to confirm"
+  },
+  "metricsSelectedVerdict": {
+    "message": "Selected answer"
+  },
+  "metricsNoVerdict": {
+    "message": "Not selected"
+  },
+  "metricsPositiveAvailable": {
+    "message": "Cheating answer"
+  },
+  "metricsSkipAvailable": {
+    "message": "Uncertain answer"
+  },
+  "metricsNegativeAvailable": {
+    "message": "Not cheating answer"
+  },
+  "metricsConfirmAvailable": {
+    "message": "Confirm button"
+  },
+  "metricsAvailable": {
+    "message": "Available"
+  },
+  "metricsUnavailable": {
+    "message": "Unavailable"
+  },
+  "metricsSubmitting": {
+    "message": "Verdict submission"
+  },
+  "metricsNotSubmitting": {
+    "message": "Not in progress"
+  },
   "nativeReviewInstructions": {
     "message": "Watch from the start. Select Cheating as soon as you are sure: the decision moment is recorded. Uncertain and Not cheating are available after watching. Confirm or cancel your decision."
   },
   "nativeReviewNotice": {
-    "message": "VACNET Toolkit: use the site verdict buttons. History records the selected verdict and decision tick when the next task opens."
+    "message": "VacNet++: use the site verdict buttons. History records the selected verdict and decision tick when the next task opens."
   },
   "nativeHotkeyHelp": {
     "message": "Space / K — play or pause · ← / → — frame step · J / L — seek in the watched portion · R — restart · Z — zoom · [ / ] — speed · 1–9 — presets · Enter — confirm when enabled · Backspace — Uncertain when available · M — mute"
@@ -980,5 +1064,110 @@
   },
   "verdictHeading": {
     "message": "Your verdict"
+  },
+  "historySearchLabel": {
+    "message": "Search task or video ID"
+  },
+  "historySearchPlaceholder": {
+    "message": "Task or video ID"
+  },
+  "historyVerdictFilter": {
+    "message": "Verdict"
+  },
+  "historyAllVerdicts": {
+    "message": "All verdicts"
+  },
+  "historyPositiveVerdict": {
+    "message": "Violation found"
+  },
+  "historyNegativeVerdict": {
+    "message": "No violation"
+  },
+  "historySkipVerdict": {
+    "message": "Uncertain"
+  },
+  "historyBadClipVerdict": {
+    "message": "Bad clip"
+  },
+  "historyRepeatFilter": {
+    "message": "Repeats"
+  },
+  "historyAllRepeats": {
+    "message": "All clips"
+  },
+  "historyExactRepeats": {
+    "message": "Exact clip repeats only"
+  },
+  "historyDateFrom": {
+    "message": "From date"
+  },
+  "historyDateTo": {
+    "message": "To date"
+  },
+  "historyResetFilters": {
+    "message": "Reset filters"
+  },
+  "historyFilterResultCount": {
+    "message": "Clips found: {count} of {total}"
+  },
+  "historyNoFilterResults": {
+    "message": "No clips match these filters."
+  },
+  "historyInvalidDateRange": {
+    "message": "Enter a valid date range: the start date must be on or before the end date."
+  },
+  "statisticsTitle": {
+    "message": "Statistics"
+  },
+  "statisticsSession": {
+    "message": "Current session"
+  },
+  "statisticsWatchedTime": {
+    "message": "Viewing time"
+  },
+  "statisticsSessionNote": {
+    "message": "Since this page opened. Counts playback only; pauses, seeking and buffering are excluded."
+  },
+  "statisticsToday": {
+    "message": "Today · local history"
+  },
+  "statisticsSavedToday": {
+    "message": "Saved today"
+  },
+  "statisticsNativeCount": {
+    "message": "Cheating reviews"
+  },
+  "statisticsLegacyCount": {
+    "message": "Category reviews"
+  },
+  "statisticsBadClips": {
+    "message": "Bad clips"
+  },
+  "statisticsRepeats": {
+    "message": "Exact repeats"
+  },
+  "statisticsHistoryNote": {
+    "message": "By local save date, up to {limit} entries. Native review results appear with the next task."
+  },
+  "statisticsNativeAnswers": {
+    "message": "Cheating answers today"
+  },
+  "statisticsLegacyAnswers": {
+    "message": "Category answers today"
+  },
+  "statisticsAnswersNote": {
+    "message": "Bad clips are excluded from answer distributions."
+  },
+  "statisticsHours": {
+    "message": "{value} h"
+  },
+  "statisticsMinutes": {
+    "message": "{value} min"
+  },
+  "statisticsSeconds": {
+    "message": "{value} s"
+  },
+  "statisticsCategory": {
+    "message": "Category"
   }
 }

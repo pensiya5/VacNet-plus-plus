@@ -22,7 +22,9 @@ const updateHistoryAtomically = (mutation: HistoryMutation): Promise<HistoryStat
 export const initializeHistoryStore = async (
   onError: (error: unknown) => void,
 ): Promise<() => void> => {
-  await historyStorage.cleanupLegacy();
+  await sendMessage('mutateHistory', {
+    version: STORAGE_COORDINATION_VERSION, mutation: { type: 'initialize' },
+  });
   return historyStorage.hydrateAndWatch((history) => {
     historySignal.value = history;
   }, (error) => onError(error));

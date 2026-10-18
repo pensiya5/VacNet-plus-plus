@@ -8,6 +8,7 @@ import {
   ClipHistoryEntrySchema,
   emptyHistory,
   HISTORY_LIMIT,
+  HISTORY_STATE_VERSION,
   HistoryStateSchema,
   historyKey,
   type ClipHistoryEntry,
@@ -31,15 +32,18 @@ const LegacyEntrySchema = VerdictSelectionSchema.extend({
   clipCount: z.string().nullable().optional(),
   app: z.string().trim().optional(),
   range: LegacyRangeSchema,
-  eventTime: z.number().finite().nonnegative().optional(),
+  eventTime: z.union([z.number().finite().nonnegative(), z.literal(-1)]).optional(),
+  reviewType: z.enum(['legacy', 'cheating']).optional(),
+  verdictTick: z.number().finite().nonnegative().nullable().optional(),
   deduplication: z.enum(['new-match', 'new-clip', 'same-match-different-clip', 'exact-duplicate', 'shifted-duplicate']).optional(),
   timestamp: z.number().finite().nonnegative(),
   badClip: z.boolean().optional(),
   matchTimestamp: z.number().finite().nonnegative().optional().nullable(),
   webmDuration: z.number().finite().nonnegative().optional().nullable(),
-});
+}).strip();
 
 const LegacyStateSchema = z.object({
+  version: z.number().int().min(1).max(HISTORY_STATE_VERSION).optional(),
   entries: z.record(z.string(), z.unknown()).optional(),
   stats: z.object({ repeats: z.number().finite().nonnegative().optional() }).optional(),
 });
@@ -51,12 +55,10 @@ export interface LegacyHistorySources {
   stats: { getValue: () => Promise<unknown> };
 }
 
-const migrateEntry = (value: unknown): ClipHistoryEntry | null => {
+const migrateEntry = (value: unknown): ClipHistoryEntry => {
   const current = ClipHistoryEntrySchema.safeParse(value);
   if (current.success) return current.data;
-  const result = LegacyEntrySchema.safeParse(value);
-  if (!result.success) return null;
-  const source = result.data;
+  const source = LegacyEntrySchema.parse(value);
   const videoId = source.videoId || extractVideoId(source.sourceWebmUrl);
   const range = ClipRangeSchema.parse(source.range);
   return ClipHistoryEntrySchema.parse({
@@ -67,8 +69,10 @@ const migrateEntry = (value: unknown): ClipHistoryEntry | null => {
     app: source.app || '730',
     range,
     eventTime: source.eventTime ?? range.start,
-    ...createClipIdentity({ taskId: source.taskId, videoId, range }),
-    deduplication: source.deduplication === 'same-match-different-clip' ? 'shifted-duplicate' : source.deduplication ?? 'new-match',
+    clipKey: createClipIdentity({ taskId: source.taskId, videoId, range }).clipKey,
+    reviewType: source.reviewType ?? (source.cheating ? 'cheating' : 'legacy'),
+    deduplication: source.deduplication === 'same-match-different-clip' || source.deduplication === 'shifted-duplicate'
+      ? 'new-clip' : source.deduplication ?? 'new-match',
     badClip: source.badClip ?? false,
     matchTimestamp: source.matchTimestamp ?? null,
     webmDuration: source.webmDuration ?? null,
@@ -79,14 +83,12 @@ export const migrateHistory = async (stateValue: unknown, sources: LegacyHistory
   const current = HistoryStateSchema.safeParse(stateValue);
   if (current.success) return current.data;
   const [entriesValue, statsValue] = await Promise.all([sources.entries.getValue(), sources.stats.getValue()]);
-  const state = LegacyStateSchema.safeParse(stateValue);
-  const legacyState = state.success ? state.data : {};
-  const storedEntries = z.record(z.string(), z.unknown()).safeParse(entriesValue);
-  const entries = legacyState.entries ?? (storedEntries.success ? storedEntries.data : {});
+  const legacyState = stateValue == null ? {} : LegacyStateSchema.parse(stateValue);
+  const entries = legacyState.entries ?? (entriesValue == null ? {} : z.record(z.string(), z.unknown()).parse(entriesValue));
   const history = emptyHistory();
   for (const value of Object.values(entries)) {
     const entry = migrateEntry(value);
-    if (entry) history.entries[historyKey(entry)] = entry;
+    history.entries[historyKey(entry)] = entry;
   }
   const storedStats = LegacyStatsSchema.safeParse(statsValue);
   history.stats.repeats = Math.floor(legacyState.stats?.repeats ?? (storedStats.success ? storedStats.data.repeats ?? 0 : 0));

@@ -7,6 +7,7 @@ export type { HistoryState } from '../../entities/history.entity';
 export const STORAGE_COORDINATION_VERSION = 1 as const;
 
 export type HistoryMutation =
+  | { type: 'initialize' }
   | { type: 'save-entry'; entry: ClipHistoryEntry }
   | { type: 'record-repeat' }
   | { type: 'clear' }
@@ -16,6 +17,7 @@ export type VersionedHistoryMutation = { version: typeof STORAGE_COORDINATION_VE
 export type VersionedPreferencesMutation = { version: typeof STORAGE_COORDINATION_VERSION; patch: PreferencesPatch };
 
 export const HistoryMutationSchema = z.discriminatedUnion('type', [
+  z.strictObject({ type: z.literal('initialize') }),
   z.strictObject({ type: z.literal('save-entry'), entry: ClipHistoryEntrySchema }),
   z.strictObject({ type: z.literal('record-repeat') }),
   z.strictObject({ type: z.literal('clear') }),

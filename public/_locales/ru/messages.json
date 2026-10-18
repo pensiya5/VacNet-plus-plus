@@ -1,4 +1,28 @@
 {
+  "updatesTitle": {
+    "message": "Обновления"
+  },
+  "updateInstalled": {
+    "message": "Установлена версия {version}"
+  },
+  "updateAvailable": {
+    "message": "Доступна версия {version}"
+  },
+  "updateChecking": {
+    "message": "Проверяем обновления…"
+  },
+  "updateCurrent": {
+    "message": "Установлена последняя версия"
+  },
+  "updateCheckFailed": {
+    "message": "Не удалось проверить обновления. Попробуйте позже."
+  },
+  "updateCheckNow": {
+    "message": "Проверить сейчас"
+  },
+  "updateOpenRelease": {
+    "message": "Открыть релиз"
+  },
   "app": {
     "message": "Приложение"
   },
@@ -52,9 +76,6 @@
   },
   "btnYes": {
     "message": "Да"
-  },
-  "byAuthor": {
-    "message": "| by MartinDawgor"
   },
   "cancel": {
     "message": "Отмена"
@@ -502,7 +523,7 @@
     "message": "Мощное расширение для VacNet сайта, с удобным интерфейсом, разблокированными функциями, и удобными твиками."
   },
   "extensionName": {
-    "message": "VacNet Toolkit Extension"
+    "message": "VacNet++"
   },
   "frameDuration": {
     "message": "Длительность кадра"
@@ -909,11 +930,74 @@
   "xrayActive": {
     "message": "X-Ray включён, игроки видны сквозь препятствия для удобства анализа поведения."
   },
+  "metricsReviewType": {
+    "message": "Тип проверки"
+  },
+  "metricsReviewTypeNative": {
+    "message": "Один вердикт"
+  },
+  "metricsReviewTypeLegacy": {
+    "message": "Четыре категории"
+  },
+  "metricsClipFormat": {
+    "message": "Формат клипа"
+  },
+  "metricsFullMatch": {
+    "message": "Полный матч"
+  },
+  "metricsMarkedMoment": {
+    "message": "Отдельный момент"
+  },
+  "metricsReviewTitle": {
+    "message": "Состояние проверки"
+  },
+  "metricsReviewPhase": {
+    "message": "Этап"
+  },
+  "metricsAwaitingChoice": {
+    "message": "Выбор ответа"
+  },
+  "metricsAwaitingConfirmation": {
+    "message": "Ожидание подтверждения"
+  },
+  "metricsReadyToConfirm": {
+    "message": "Можно подтвердить"
+  },
+  "metricsSelectedVerdict": {
+    "message": "Выбранный ответ"
+  },
+  "metricsNoVerdict": {
+    "message": "Не выбран"
+  },
+  "metricsPositiveAvailable": {
+    "message": "Ответ «Читер»"
+  },
+  "metricsSkipAvailable": {
+    "message": "Ответ «Неясно»"
+  },
+  "metricsNegativeAvailable": {
+    "message": "Ответ «Не читер»"
+  },
+  "metricsConfirmAvailable": {
+    "message": "Кнопка «Подтвердить»"
+  },
+  "metricsAvailable": {
+    "message": "Доступен"
+  },
+  "metricsUnavailable": {
+    "message": "Недоступен"
+  },
+  "metricsSubmitting": {
+    "message": "Отправка вердикта"
+  },
+  "metricsNotSubmitting": {
+    "message": "Не выполняется"
+  },
   "nativeReviewInstructions": {
     "message": "Смотрите видео с начала. Выберите «Читер», как только уверены: момент выбора записывается. «Неясно» и «Не читер» доступны после просмотра. Подтвердите или отмените решение."
   },
   "nativeReviewNotice": {
-    "message": "VACNET Toolkit: выбирайте вердикт кнопками сайта. История сохранит ответ и момент решения при открытии следующего задания."
+    "message": "VacNet++: выбирайте вердикт кнопками сайта. История сохранит ответ и момент решения при открытии следующего задания."
   },
   "nativeHotkeyHelp": {
     "message": "Пробел / K — воспроизведение или пауза · ← / → — покадрово · J / L — перемотка в просмотренном · R — сначала · Z — увеличение · [ / ] — скорость · 1–9 — пресеты · Enter — подтвердить, когда доступно · Backspace — «Неясно», когда доступно · M — отключить звук"
@@ -980,5 +1064,110 @@
   },
   "verdictHeading": {
     "message": "Ваш вердикт"
+  },
+  "historySearchLabel": {
+    "message": "Поиск по ID задания или видео"
+  },
+  "historySearchPlaceholder": {
+    "message": "ID задания или видео"
+  },
+  "historyVerdictFilter": {
+    "message": "Вердикт"
+  },
+  "historyAllVerdicts": {
+    "message": "Все вердикты"
+  },
+  "historyPositiveVerdict": {
+    "message": "Есть нарушение"
+  },
+  "historyNegativeVerdict": {
+    "message": "Нет нарушения"
+  },
+  "historySkipVerdict": {
+    "message": "Неясно"
+  },
+  "historyBadClipVerdict": {
+    "message": "Плохой клип"
+  },
+  "historyRepeatFilter": {
+    "message": "Повторы"
+  },
+  "historyAllRepeats": {
+    "message": "Все клипы"
+  },
+  "historyExactRepeats": {
+    "message": "Только повторы клипа"
+  },
+  "historyDateFrom": {
+    "message": "Дата от"
+  },
+  "historyDateTo": {
+    "message": "Дата до"
+  },
+  "historyResetFilters": {
+    "message": "Сбросить фильтры"
+  },
+  "historyFilterResultCount": {
+    "message": "Найдено клипов: {count} из {total}"
+  },
+  "historyNoFilterResults": {
+    "message": "Клипов с такими фильтрами нет."
+  },
+  "historyInvalidDateRange": {
+    "message": "Укажите корректный диапазон дат: дата начала не должна быть позже даты конца."
+  },
+  "statisticsTitle": {
+    "message": "Статистика"
+  },
+  "statisticsSession": {
+    "message": "Текущая сессия"
+  },
+  "statisticsWatchedTime": {
+    "message": "Время просмотра"
+  },
+  "statisticsSessionNote": {
+    "message": "С момента открытия страницы. Учитывается только воспроизведение; паузы, перемотка и ожидание загрузки исключены."
+  },
+  "statisticsToday": {
+    "message": "Сегодня · локальная история"
+  },
+  "statisticsSavedToday": {
+    "message": "Сохранено сегодня"
+  },
+  "statisticsNativeCount": {
+    "message": "Проверки «Читерство»"
+  },
+  "statisticsLegacyCount": {
+    "message": "Проверки по категориям"
+  },
+  "statisticsBadClips": {
+    "message": "Плохие клипы"
+  },
+  "statisticsRepeats": {
+    "message": "Точные повторы"
+  },
+  "statisticsHistoryNote": {
+    "message": "По дате сохранения на этом устройстве, не более {limit} записей. Результат штатной проверки появляется при следующем задании."
+  },
+  "statisticsNativeAnswers": {
+    "message": "Ответы «Читерство» сегодня"
+  },
+  "statisticsLegacyAnswers": {
+    "message": "Ответы по категориям сегодня"
+  },
+  "statisticsAnswersNote": {
+    "message": "Плохие клипы исключены из распределения ответов."
+  },
+  "statisticsHours": {
+    "message": "{value} ч"
+  },
+  "statisticsMinutes": {
+    "message": "{value} мин"
+  },
+  "statisticsSeconds": {
+    "message": "{value} с"
+  },
+  "statisticsCategory": {
+    "message": "Категория"
   }
 }

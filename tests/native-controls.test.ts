@@ -69,6 +69,21 @@ it('cancels using native logic and clears the decision tick', () => {
   expect(controller.verdicts().cheating).toBeUndefined();
 });
 
+it('keeps the decision time fixed while reviewing more video and records a new time when replacing the answer', () => {
+  const video = document.querySelector<HTMLVideoElement>('#video_html5_api')!;
+  for (const choice of ['positive', 'negative', 'skip']) radio(choice).disabled = false;
+  video.currentTime = 30;
+  controller.handle({ type: 'set-verdict', name: 'cheating', value: 'positive' });
+  expect(controller.snapshot().decisionTime).toBe(30);
+  video.currentTime = 90;
+  video.dispatchEvent(new Event('timeupdate'));
+  expect(controller.snapshot()).toMatchObject({ decisionTime: 30, decisionTick: 22531.75 });
+  controller.handle({ type: 'set-verdict', name: 'cheating', value: 'negative' });
+  expect(controller.snapshot().decisionTime).toBe(90);
+  controller.handle({ type: 'cancel-verdict' });
+  expect(controller.snapshot().decisionTime).toBeNull();
+});
+
 it('auto-submits a native preset only after the server page enables confirmation', async () => {
   radio('positive').disabled = false;
   controller.handle({ type: 'submit', verdicts: { ...emptyVerdicts(), cheating: 'positive' }, badClip: false });

@@ -3,6 +3,8 @@ node_modules/
 .output/
 .firecrawl/
 coverage/
+test-results/
+playwright-report/
 *.tsbuildinfo
 *.log
 .env

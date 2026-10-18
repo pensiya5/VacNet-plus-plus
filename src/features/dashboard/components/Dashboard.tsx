@@ -4,6 +4,7 @@ import { useTranslation } from '../../../shared/components/TranslationProvider';
 import { Icon } from '../../../shared/components/Icon';
 import { ABORT_ERROR_MESSAGE } from '../../../shared/utils/message-bus-wire.utils';
 import styles from './Dashboard.module.css';
+import type { DashboardMode } from '../dashboard.store';
 
 const MAX_HISTORY_FILE_BYTES = 10 * 1024 * 1024;
 
@@ -18,19 +19,21 @@ interface DashboardProps {
   onCopyMetrics: () => void;
   history: ComponentChildren;
   metrics: ComponentChildren;
-  mode: 'metrics' | 'history' | null;
+  statistics?: ComponentChildren;
+  mode: DashboardMode | null;
   onImportHistory: (data: unknown) => void;
   onExportHistory: () => void;
   onImportError: (error: unknown) => void;
 }
 
-export const Dashboard = ({ history, metrics, mode, onClearHistory, onClose, onCopyMetrics, onImportHistory, onExportHistory, onImportError }: DashboardProps) => {
+export const Dashboard = ({ history, metrics, statistics, mode, onClearHistory, onClose, onCopyMetrics, onImportHistory, onExportHistory, onImportError }: DashboardProps) => {
   const t = useTranslation();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const dialogRef = useRef<HTMLElement>(null);
   const previouslyFocusedRef = useRef<HTMLElement | null>(null);
   const [isConfirming, setIsConfirming] = useState(false);
   useEffect(() => {
+    setIsConfirming(false);
     if (!mode) return;
     previouslyFocusedRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     dialogRef.current?.focus();
@@ -52,8 +55,8 @@ export const Dashboard = ({ history, metrics, mode, onClearHistory, onClose, onC
       if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
       else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
     };
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    document.addEventListener('keydown', handleKeyDown, true);
+    return () => document.removeEventListener('keydown', handleKeyDown, true);
   }, [isConfirming]);
   if (!mode) return null;
   const isHistory = mode === 'history';
@@ -102,7 +105,7 @@ export const Dashboard = ({ history, metrics, mode, onClearHistory, onClose, onC
       }}
     >
       <header>
-        <h2 id="vacnet-dashboard-title">{isHistory ? t('historyLogTitle') : t('devMetricsTitle')}<small>{t('byAuthor')}</small></h2>
+        <h2 id="vacnet-dashboard-title">{isHistory ? t('historyLogTitle') : mode === 'statistics' ? t('statisticsTitle') : t('devMetricsTitle')}</h2>
         <div class={styles.actions}>
           {isHistory && (
             <>
@@ -133,7 +136,7 @@ export const Dashboard = ({ history, metrics, mode, onClearHistory, onClose, onC
             </button>
             </>
           )}
-          <button
+          {mode !== 'statistics' && <button
             type="button"
             class={styles.action}
             aria-label={isHistory ? t('clearVideoHistory') : t('copyMetrics')}
@@ -141,12 +144,12 @@ export const Dashboard = ({ history, metrics, mode, onClearHistory, onClose, onC
              onClick={isHistory ? () => setIsConfirming(true) : onCopyMetrics}
            >
              <Icon name={isHistory ? 'trash' : 'copy'} />
-           </button>
+           </button>}
            <button type="button" class={styles.close} aria-label={t('closeDashboard')} onClick={onClose}><Icon name="close" /></button>
         </div>
       </header>
       <div class={styles.content}>
-         {isHistory ? history : metrics}
+         {isHistory ? history : mode === 'statistics' ? statistics : metrics}
        </div>
        {isConfirming && (
          <div class={styles.confirmOverlay} role="presentation">

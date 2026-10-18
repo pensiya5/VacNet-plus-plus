@@ -1,10 +1,13 @@
 import { createPortal } from 'preact/compat';
+import type { ReadonlySignal } from '@preact/signals';
 import type { Preferences } from '../../entities/preferences.entity';
 import type { Theme } from '../../entities/theme.entity';
 
 import { Dashboard } from '../../features/dashboard/components/Dashboard';
 import { DashboardMetrics } from '../../features/dashboard/components/DashboardMetrics';
-import { dashboardStore } from '../../features/dashboard/dashboard.store';
+import { dashboardStore, type DashboardMode } from '../../features/dashboard/dashboard.store';
+import { DashboardStatistics } from '../../features/statistics/components/DashboardStatistics';
+import type { SessionStatistics } from '../../features/statistics/session-playback-tracker';
 import { DashboardHistory } from '../../features/history/components/DashboardHistory';
 import { updatePreferences, preferencesSignal } from '../../features/preferences/preferences.store';
 import { snapshotSignal } from '../../features/video-player/player/player.store';
@@ -14,9 +17,13 @@ import { PresetPanel } from '../../features/presets/components/PresetPanel';
 import type { ReviewCommand } from '../../shared/ports/protocol.port';
 import { useTranslation } from '../../shared/components/TranslationProvider';
 import { Icon } from '../../shared/components/Icon';
+import { UpdateCheckButton } from '../../features/updates/components/UpdateCheckButton';
+import type { UpdateCheckResult } from '../../features/updates/update-checker.service';
 import styles from './App.module.css';
 
 interface AppProps {
+  sessionStatistics?: ReadonlySignal<SessionStatistics>;
+  onCheckUpdates?: (force: boolean) => Promise<UpdateCheckResult>;
   nativeReview?: boolean;
   footerTarget: HTMLElement | null;
   onReviewCommand: (command: ReviewCommand) => void;
@@ -30,15 +37,17 @@ interface AppProps {
 interface DashboardLinksProps {
   metricsLabel: string;
   historyLabel: string;
-  onSelect: (mode: 'metrics' | 'history') => void;
+  statisticsLabel: string;
+  onSelect: (mode: DashboardMode) => void;
 }
 
-const DashboardLinks = ({ metricsLabel, historyLabel, onSelect }: DashboardLinksProps) => {
+const DashboardLinks = ({ metricsLabel, historyLabel, statisticsLabel, onSelect }: DashboardLinksProps) => {
   const selectedMode = dashboardStore.value;
   return (
     <>
       <a href="#" aria-current={selectedMode === 'metrics' ? 'page' : undefined} onClick={(event) => { event.preventDefault(); onSelect('metrics'); }}>{metricsLabel}</a>
       <a href="#" aria-current={selectedMode === 'history' ? 'page' : undefined} onClick={(event) => { event.preventDefault(); onSelect('history'); }}>{historyLabel}</a>
+      <a href="#" aria-current={selectedMode === 'statistics' ? 'page' : undefined} onClick={(event) => { event.preventDefault(); onSelect('statistics'); }}>{statisticsLabel}</a>
     </>
   );
 };
@@ -139,7 +148,9 @@ const DashboardContainer = ({
   onError,
   onClearHistory,
   onCopyMetrics,
+  sessionStatistics,
 }: {
+  sessionStatistics?: ReadonlySignal<SessionStatistics>;
   onImportHistory: (data: unknown) => void;
   onExportHistory: () => void;
   onError: (error: unknown) => void;
@@ -155,6 +166,7 @@ const DashboardContainer = ({
     <Dashboard
       history={<DashboardHistory history={historySignal.value} totalClipsViewed={snapshot.value.clip?.clipCount ?? 0} />}
       metrics={<DashboardMetrics snapshot={snapshot.value} />}
+      statistics={<DashboardStatistics history={historySignal.value} session={sessionStatistics?.value ?? { startedAt: Date.now(), watchedSeconds: 0 }} />}
       mode={dashboardStore.value}
       onImportHistory={onImportHistory}
       onExportHistory={onExportHistory}
@@ -167,6 +179,8 @@ const DashboardContainer = ({
 };
 
 export const App = ({
+  sessionStatistics,
+  onCheckUpdates,
   nativeReview = false,
   footerTarget,
   onClearHistory,
@@ -178,7 +192,7 @@ export const App = ({
 }: AppProps) => {
   const t = useTranslation();
 
-  const toggleDashboard = (mode: 'metrics' | 'history'): void => {
+  const toggleDashboard = (mode: DashboardMode): void => {
     const nextMode = dashboardStore.value === mode ? null : mode;
     if (nextMode === null) dashboardStore.close();
     else dashboardStore.open(nextMode);
@@ -213,10 +227,12 @@ export const App = ({
         </div>
         <ToolbarButtons onError={onError} />
       </nav>
+      {onCheckUpdates && <UpdateCheckButton onCheck={onCheckUpdates} />}
       {footerTarget ? createPortal(
         <DashboardLinks
           metricsLabel={t('devMetricsTitle')}
           historyLabel={t('historyLogTitle')}
+          statisticsLabel={t('statisticsTitle')}
           onSelect={toggleDashboard}
         />,
         footerTarget
@@ -225,6 +241,7 @@ export const App = ({
           <DashboardLinks
             metricsLabel={t('devMetricsTitle')}
             historyLabel={t('historyLogTitle')}
+            statisticsLabel={t('statisticsTitle')}
             onSelect={toggleDashboard}
           />
         </nav>
@@ -240,6 +257,7 @@ export const App = ({
         <VerdictPanelContainer nativeReview={nativeReview} onReviewCommand={onReviewCommand} />
       </div>
       <DashboardContainer
+        sessionStatistics={sessionStatistics}
         onImportHistory={onImportHistory}
         onExportHistory={onExportHistory}
         onError={onError}

@@ -1,0 +1,73 @@
+.panel {
+  min-width: 0;
+}
+
+.panel > section:not(:first-child) {
+  margin-top: 24px;
+}
+
+.note {
+  margin: 10px 0 0;
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.distribution {
+  width: 100%;
+  margin-top: 24px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.distribution caption {
+  padding-bottom: 12px;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.distribution th,
+.distribution td {
+  padding: 9px 4px;
+  border-bottom: 1px solid var(--border-subtle);
+  overflow-wrap: anywhere;
+  vertical-align: top;
+}
+
+.distribution th {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.distribution td,
+.distribution thead th:not(:first-child) {
+  text-align: center;
+}
+
+.distribution th:first-child {
+  width: 43%;
+  padding-left: 0;
+  text-align: left;
+}
+
+.distribution td {
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 360px) {
+  .distribution {
+    font-size: 11px;
+  }
+
+  .distribution th,
+  .distribution td {
+    padding-right: 2px;
+    padding-left: 2px;
+  }
+}

@@ -1,12 +1,13 @@
 import type { JSX } from 'preact';
 
-export type IconName = 'info' | 'keyboard' | 'tune' | 'eyeOff' | 'autoVerdict' | 'lock' | 'stretch' | 'upload' | 'download' | 'trash' | 'copy' | 'close' | 'sun' | 'moon';
+export type IconName = 'info' | 'keyboard' | 'tune' | 'eyeOff' | 'autoVerdict' | 'lock' | 'stretch' | 'upload' | 'download' | 'trash' | 'copy' | 'close' | 'sun' | 'moon' | 'refresh';
 
 interface IconProps extends JSX.SVGAttributes<SVGSVGElement> {
   name: IconName;
 }
 
 const paths: Record<IconName, JSX.Element> = {
+  refresh: <><path d="M20 7v5h-5M4 17v-5h5" /><path d="M6.1 6.1a8 8 0 0 1 13.2 3.4L20 12M4 12l.7 2.5a8 8 0 0 0 13.2 3.4" /></>,
   info: <><circle cx="12" cy="12" r="9" />
     <path d="M12 10v6" /><path d="M12 7h.01" />
   </>,

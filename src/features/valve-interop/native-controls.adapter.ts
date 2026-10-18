@@ -12,6 +12,7 @@ export class NativeReviewController {
   private lastState = '';
   private disposed = false;
   private isSubmitting = false;
+  private decisionTime: number | null = null;
   private editableChoices: Record<VerdictValue, boolean> = { positive: false, skip: false, negative: false };
 
   constructor(private readonly root: Document, private readonly onChange: () => void) {
@@ -34,14 +35,11 @@ export class NativeReviewController {
     const button = this.root.querySelector<HTMLButtonElement>('#submitVerdictButton');
     const rawTick = this.root.querySelector<HTMLInputElement>('#form_verdict_tick')?.value.trim();
     const tick = rawTick ? Number(rawTick) : null;
-    const video = this.root.querySelector<HTMLVideoElement>('#video_html5_api, #video video');
-    const decisionTime = confirming && video && Number.isFinite(video.currentTime) && video.currentTime >= 0
-      ? video.currentTime : null;
     return {
       positiveAvailable: available('positive'), skipAvailable: available('skip'), negativeAvailable: available('negative'),
       confirming, confirmAvailable: confirming && !!button && !button.disabled && !this.isSubmitting,
       decisionTick: tick !== null && Number.isFinite(tick) && tick >= 0 ? tick : null,
-      decisionTime,
+      decisionTime: confirming ? this.decisionTime : null,
     };
   }
 
@@ -131,6 +129,7 @@ export class NativeReviewController {
     this.autoSubmit = false;
     this.repeatVerdict = null;
     if (this.snapshot().confirming) window.CancelVerdict?.();
+    if (!this.confirming()) this.decisionTime = null;
   }
   private report(): void {
     this.autoSubmit = false;
@@ -143,6 +142,11 @@ export class NativeReviewController {
 
   private readonly refresh = (): void => {
     if (this.disposed) return;
+    if (!this.confirming()) this.decisionTime = null;
+    else if (this.decisionTime === null) {
+      const time = this.video?.currentTime;
+      if (time !== undefined && Number.isFinite(time) && time >= 0) this.decisionTime = time;
+    }
     if (!this.confirming()) this.rememberAvailability();
     if (this.repeatVerdict && !this.verdicts().cheating && this.available(this.repeatVerdict)) {
       const value = this.repeatVerdict;

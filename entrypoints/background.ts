@@ -1,4 +1,7 @@
 import { defineBackground } from 'wxt/utils/define-background';
+import { browser } from 'wxt/browser';
+import { storage } from 'wxt/utils/storage';
+import { UpdateChecker, UpdateCheckRequestSchema } from '../src/features/updates/update-checker.service';
 import { extractWebmMetadata } from '../src/features/video-player/webm.parser';
 import { onMessage } from '../src/shared/ports/extension-messaging.port';
 import { historyStorage } from '../src/features/history/history.storage';
@@ -16,6 +19,14 @@ const requireSchema = <T>(result: { success: boolean; data?: T; error?: unknown 
 };
 
 export default defineBackground(() => {
+  const updateChecker = new UpdateChecker({
+    currentVersion: browser.runtime.getManifest().version,
+    storage: storage.defineItem<unknown>('local:update-check-cache', { fallback: null }),
+  });
+  onMessage('checkForUpdates', (message) => {
+    const request = requireSchema(UpdateCheckRequestSchema.safeParse(message.data), 'update check request');
+    return updateChecker.check(request.force);
+  });
   const storageMutations = new StorageMutationCoordinator();
   onMessage('readWebmMetadata', async (message) => {
     const url = getAllowedWebmUrl(message.data);

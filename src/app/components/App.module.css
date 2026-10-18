@@ -69,6 +69,87 @@
   position: relative;
 }
 
+.updateDropdown {
+  position: fixed;
+  z-index: 1000;
+  left: max(16px, env(safe-area-inset-left));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  padding: 4px;
+  pointer-events: auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+}
+
+.updateDropdown::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  width: 100%;
+  height: 10px;
+}
+
+.updateDropdown > button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.hoverDropdown > button.updateAvailable {
+  position: relative;
+  color: var(--accent-primary);
+  background: var(--accent-surface);
+}
+
+.updateDot {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  box-shadow: 0 0 7px var(--accent-primary);
+}
+
+.updateContent {
+  width: 280px;
+}
+
+.updateVersion {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.updateActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.updateActions button, .updateActions a {
+  padding: 7px 10px;
+  color: var(--accent-primary);
+  background: var(--accent-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 5px;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.updateActions button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.updateActions a:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
 .hoverDropdown:hover > .dropdownContent, .hoverDropdown:focus-within > .dropdownContent {
   opacity: 1;
   visibility: visible;
@@ -162,6 +243,7 @@
     gap: 2px;
     max-width: calc(100vw - 24px);
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .videoToolbar > button, .hoverDropdown > button {
@@ -191,4 +273,13 @@
     bottom: 72px;
     transform: none;
   }
+}
+
+.updateDropdown > .dropdownContent.updateContent {
+  top: auto;
+  bottom: calc(100% + 10px);
+  left: 0;
+  right: auto;
+  max-width: calc(100vw - 32px);
+  transform: none;
 }

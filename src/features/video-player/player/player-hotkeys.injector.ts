@@ -44,6 +44,11 @@ export const installPlayerHotkeys = ({ context, isDashboardOpen, isModalOpen, cl
     if (event.defaultPrevented || event.isComposing || event.repeat) return;
     if (event.ctrlKey || event.altKey || event.metaKey || event.shiftKey) return;
 
+    const path = event.composedPath();
+    const target = path[0] as EventTarget | null;
+    const dialogs = path.filter((node): node is Element => node instanceof Element && node.matches('[aria-modal="true"]'));
+    const nestedDialog = dialogs.some((node) => node.getAttribute('aria-labelledby') !== 'vacnet-dashboard-title');
+    if (event.code === PLAYER_HOTKEYS.closeDashboard && (nestedDialog || isModalOpen())) return;
     if (event.code === PLAYER_HOTKEYS.closeDashboard && isDashboardOpen()) {
       event.preventDefault();
       closeDashboard();
@@ -51,9 +56,17 @@ export const installPlayerHotkeys = ({ context, isDashboardOpen, isModalOpen, cl
     }
     const snapshot = getSnapshot();
     const nativeReview = isNativeReviewPage(document);
-    const target = event.composedPath()[0] as EventTarget | null;
-    if (isInteractiveTarget(target) || isModalOpen() || snapshot.submitting) return;
     const handledCodes = new Set<string>(Object.values(PLAYER_HOTKEYS));
+    if (isDashboardOpen() || isModalOpen() || dialogs.length > 0) {
+      // Preserve ordinary form/button keys while keeping review shortcuts from
+      // reaching either the extension or the portal beneath an open dialog.
+      if (!isInteractiveTarget(target) && (handledCodes.has(event.code) || presetIndexFromCode(event.code) !== null)) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      }
+      return;
+    }
+    if (isInteractiveTarget(target) || snapshot.submitting) return;
     if (nativeReview && (handledCodes.has(event.code) || presetIndexFromCode(event.code) !== null)) event.stopImmediatePropagation();
 
     const presetIndex = presetIndexFromCode(event.code);

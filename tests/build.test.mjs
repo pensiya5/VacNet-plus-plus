@@ -16,10 +16,11 @@ for (const browser of ['chrome', 'firefox']) {
     const pkg = readJson(join(root, 'package.json'));
 
     assert.equal(manifest.manifest_version, 3);
+    assert.equal(manifest.name, 'VacNet++');
     assert.equal(manifest.version, pkg.version);
     assert.equal(manifest.default_locale, 'en');
     assert.deepEqual(manifest.permissions, ['storage']);
-    assert.deepEqual(manifest.host_permissions, ['https://replay-video.valve.net/*']);
+    assert.deepEqual(manifest.host_permissions, ['https://replay-video.valve.net/*', 'https://api.github.com/*']);
     assert.equal(manifest.content_scripts.length, 3);
     const reviewScripts = manifest.content_scripts.filter((script) =>
       script.matches.includes('https://www.counter-strike.net/vacnet/clips*'));
