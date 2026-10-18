@@ -1,0 +1,61 @@
+name: "✨ Feature request / Предложить улучшение"
+description: "Suggest an idea for VacNet++ / Предложить новую функцию."
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement to **VacNet++**!
+        English and Russian are both welcome.
+
+        Please do not include private VACNet links, invitations, or account information.
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Before submitting / Перед отправкой"
+      options:
+        - label: "I searched for an existing request / Я проверил, что такого предложения ещё нет."
+          required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: "Feature area / Раздел"
+      options:
+        - "Video player / Playback"
+        - "Verdicts and presets"
+        - "Clip history"
+        - "Statistics / Developer metrics"
+        - "Interface / Dark theme"
+        - "Installation or updates"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: "What problem would this solve? / Какую проблему это решит?"
+      placeholder: "Describe the use case or limitation."
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: "Proposed solution / Предлагаемое решение"
+      placeholder: "Explain what you would like VacNet++ to do."
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives considered / Другие варианты"
+      description: "Optional. Have you tried another approach?"
+    validations:
+      required: false
+  - type: textarea
+    id: extra
+    attributes:
+      label: "Mockups or additional details / Примеры и детали"
+      description: "Optional. Add screenshots or sketches without private data."
+    validations:
+      required: false
