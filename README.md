@@ -12,7 +12,7 @@
   <a href="https://github.com/pensiya5/VacNetPlusPlus/releases/latest"><b>Скачать расширение</b></a> &nbsp;·&nbsp;
   <a href="#возможности"><b>Возможности</b></a> &nbsp;·&nbsp;
   <a href="#установка"><b>Установка</b></a> &nbsp;·&nbsp;
-  <a href="README.en.md"><b>English</b></a>
+  <a href="docs/README.en.md"><b>English</b></a>
 </p>
 
 ![Плеер Plyr и панель вердиктов в тёмной теме Graphite & Ice](docs/images/review-panel-4.2.0.jpg)

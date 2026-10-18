@@ -17,10 +17,10 @@
     "zip": "wxt zip --mv3",
     "zip:firefox": "wxt zip -b firefox --mv3",
     "typecheck": "wxt prepare && tsc --noEmit",
-    "test": "vitest run && node --test tests/*.test.mjs",
+    "test": "vitest run --config tests/vitest.config.ts && node --test tests/*.test.mjs",
     "check": "npm run typecheck && npm run build:all && npm test",
     "postinstall": "wxt prepare",
-    "test:browser": "playwright test",
+    "test:browser": "playwright test --config tests/playwright.config.mjs",
     "check:all": "npm run check && npm run test:browser"
   },
   "dependencies": {
