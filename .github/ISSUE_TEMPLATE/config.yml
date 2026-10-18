@@ -4,5 +4,5 @@ contact_links:
     url: "https://github.com/pensiya5/VacNetPlusPlus#установка"
     about: "Read the Russian setup guide and FAQ-style notes before opening an issue."
   - name: "🌍 Installation and usage (English)"
-    url: "https://github.com/pensiya5/VacNetPlusPlus/blob/main/docs/README.en.md"
+    url: "https://github.com/pensiya5/VacNetPlusPlus/blob/main/extension/docs/README.en.md"
     about: "Read the English installation and usage guide before opening an issue."

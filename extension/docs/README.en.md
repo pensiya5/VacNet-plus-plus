@@ -6,13 +6,13 @@
   <a href="https://github.com/pensiya5/VacNetPlusPlus/releases/latest"><img src="https://img.shields.io/badge/version-4.5.0-8fb8ff?style=flat-square" alt="Version 4.5.0"></a>
   <img src="https://img.shields.io/badge/Chromium-MV3-4285f4?style=flat-square&logo=googlechrome&logoColor=white" alt="Chrome and Chromium">
   <img src="https://img.shields.io/badge/Firefox-128%2B-ff7139?style=flat-square&logo=firefoxbrowser&logoColor=white" alt="Firefox 128+">
-  <a href="../LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-64748b?style=flat-square" alt="GPL-3.0"></a>
+  <a href="../../LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-64748b?style=flat-square" alt="GPL-3.0"></a>
 </p>
 <p align="center">
   <a href="https://github.com/pensiya5/VacNetPlusPlus/releases/latest"><b>Download</b></a> &nbsp;·&nbsp;
   <a href="#features"><b>Features</b></a> &nbsp;·&nbsp;
   <a href="#installation"><b>Installation</b></a> &nbsp;·&nbsp;
-  <a href="../README.md"><b>Русский</b></a>
+  <a href="../../README.md"><b>Русский</b></a>
 </p>
 
 ![Plyr and the verdict panel in the Graphite & Ice dark theme](images/review-panel-4.2.0.jpg)
@@ -105,10 +105,10 @@ Shortcuts do not control the video while typing or using dialogs. Presets with i
 
 ## Development and feedback
 
-Build with Node.js 22.12+ and npm: `npm ci`, then `npm run check`. For browser checks, run `npx playwright install chromium` and `npm run check:all`. Detailed build and Windows instructions are in the [development guide (Russian)](DEVELOPMENT.md).
+From the cloned repository root, run `cd extension` first. Then use Node.js 22.12+ and npm: `npm ci`, followed by `npm run check`. For browser checks, run `npx playwright install chromium` and `npm run check:all`. Detailed build and Windows instructions are in the [development guide (Russian)](DEVELOPMENT.md).
 
 Found a bug or have an idea? Open an [issue](https://github.com/pensiya5/VacNetPlusPlus/issues). Browse all [releases](https://github.com/pensiya5/VacNetPlusPlus/releases).
 
 VacNet++ helps people review replays; it does not detect cheats on its own. This project is not affiliated with Valve Corporation. Counter-Strike and VACNet are trademarks of Valve Corporation.
 
-<p align="center"><a href="../LICENSE">GPL-3.0</a> &nbsp;·&nbsp; <b>VacNet++ 4.5.0</b></p>
+<p align="center"><a href="../../LICENSE">GPL-3.0</a> &nbsp;·&nbsp; <b>VacNet++ 4.5.0</b></p>

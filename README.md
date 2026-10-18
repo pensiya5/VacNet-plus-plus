@@ -1,4 +1,4 @@
-<p align="center"><img src="public/icon.png" alt="VacNet++" width="88"></p>
+<p align="center"><img src="extension/public/icon.png" alt="VacNet++" width="88"></p>
 <h1 align="center">VacNet++</h1>
 <p align="center"><b>Удобнее смотреть. Быстрее находить. Проще проверять.</b></p>
 <p align="center">Расширение для портала VACNet в Counter-Strike 2.<br>Тёмная тема, плеер Plyr, пресеты вердиктов, журнал клипов и статистика — в одном интерфейсе.</p>
@@ -12,10 +12,10 @@
   <a href="https://github.com/pensiya5/VacNetPlusPlus/releases/latest"><b>Скачать расширение</b></a> &nbsp;·&nbsp;
   <a href="#возможности"><b>Возможности</b></a> &nbsp;·&nbsp;
   <a href="#установка"><b>Установка</b></a> &nbsp;·&nbsp;
-  <a href="docs/README.en.md"><b>English</b></a>
+  <a href="extension/docs/README.en.md"><b>English</b></a>
 </p>
 
-![Плеер Plyr и панель вердиктов в тёмной теме Graphite & Ice](docs/images/review-panel-4.2.0.jpg)
+![Плеер Plyr и панель вердиктов в тёмной теме Graphite & Ice](extension/docs/images/review-panel-4.2.0.jpg)
 
 <p align="center"><sub>Graphite & Ice: графитовые поверхности, холодный синий акцент и мягкое свечение. На снимке — интерфейс проверки версии 4.2.0.</sub></p>
 
@@ -44,8 +44,8 @@
     <td width="50%" align="center"><b>Результаты за день и сессию</b></td>
   </tr>
   <tr>
-    <td valign="top"><img src="docs/images/history-panel-4.5.0.png" alt="Журнал клипов VacNet++ 4.5.0: поиск, фильтры вердикта, повторов и дат" width="100%"></td>
-    <td valign="top"><img src="docs/images/statistics-panel-4.5.0.png" alt="Статистика VacNet++ 4.5.0: время просмотра и распределение ответов" width="100%"></td>
+    <td valign="top"><img src="extension/docs/images/history-panel-4.5.0.png" alt="Журнал клипов VacNet++ 4.5.0: поиск, фильтры вердикта, повторов и дат" width="100%"></td>
+    <td valign="top"><img src="extension/docs/images/statistics-panel-4.5.0.png" alt="Статистика VacNet++ 4.5.0: время просмотра и распределение ответов" width="100%"></td>
   </tr>
 </table>
 
@@ -55,8 +55,8 @@
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/images/welcome-page-4.2.0.jpg" alt="Страница приветствия VACNet в теме Graphite & Ice" width="100%"></td>
-    <td width="50%"><img src="docs/images/invite-page-4.2.0.jpg" alt="Страница создания приглашения VACNet в тёмной теме" width="100%"></td>
+    <td width="50%"><img src="extension/docs/images/welcome-page-4.2.0.jpg" alt="Страница приветствия VACNet в теме Graphite & Ice" width="100%"></td>
+    <td width="50%"><img src="extension/docs/images/invite-page-4.2.0.jpg" alt="Страница создания приглашения VACNet в тёмной теме" width="100%"></td>
   </tr>
 </table>
 
@@ -110,7 +110,7 @@
 
 ## Разработка и обратная связь
 
-Инструкции по сборке и проверкам — в [руководстве разработчика](docs/DEVELOPMENT.md). Ошибки и идеи — в [Issues](https://github.com/pensiya5/VacNetPlusPlus/issues). Все выпуски — в [Releases](https://github.com/pensiya5/VacNetPlusPlus/releases).
+Инструкции по сборке и проверкам — в [руководстве разработчика](extension/docs/DEVELOPMENT.md). Ошибки и идеи — в [Issues](https://github.com/pensiya5/VacNetPlusPlus/issues). Все выпуски — в [Releases](https://github.com/pensiya5/VacNetPlusPlus/releases).
 
 VacNet++ помогает разбирать записи; решение принимает человек. Проект не связан с Valve Corporation. Counter-Strike и VACNet — товарные знаки Valve Corporation.
 

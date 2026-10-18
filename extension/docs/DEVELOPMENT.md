@@ -3,6 +3,7 @@
 Для сборки из исходников нужны Node.js 22.12 или новее и npm.
 
 ```sh
+cd extension
 npm ci
 npm run check
 ```
