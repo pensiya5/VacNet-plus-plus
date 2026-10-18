@@ -3,7 +3,7 @@
 <p align="center"><b>Удобнее смотреть. Быстрее находить. Проще проверять.</b></p>
 <p align="center">Расширение для портала VACNet в Counter-Strike 2.<br>Тёмная тема, плеер Plyr, пресеты вердиктов, журнал клипов и статистика — в одном интерфейсе.</p>
 <p align="center">
-  <a href="https://github.com/pensiya5/vacnet-plus-plus/releases/latest"><img src="https://img.shields.io/badge/version-4.5.0-8fb8ff?style=flat-square" alt="Версия 4.5.0"></a>
+  <a href="https://github.com/pensiya5/vacnet-plus-plus/releases/latest"><img src="https://img.shields.io/badge/version-4.5.1-8fb8ff?style=flat-square" alt="Версия 4.5.1"></a>
   <img src="https://img.shields.io/badge/Chromium-MV3-4285f4?style=flat-square&logo=googlechrome&logoColor=white" alt="Chrome и Chromium">
   <img src="https://img.shields.io/badge/Firefox-128%2B-ff7139?style=flat-square&logo=firefoxbrowser&logoColor=white" alt="Firefox 128+">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-64748b?style=flat-square" alt="GPL-3.0"></a>
@@ -114,7 +114,7 @@
 
 VacNet++ помогает разбирать записи; решение принимает человек. Проект не связан с Valve Corporation. Counter-Strike и VACNet — товарные знаки Valve Corporation.
 
-<p align="center"><a href="LICENSE">GPL-3.0</a> &nbsp;·&nbsp; <b>VacNet++ 4.5.0</b></p>
+<p align="center"><a href="LICENSE">GPL-3.0</a> &nbsp;·&nbsp; <b>VacNet++ 4.5.1</b></p>
 
 ## Происхождение и авторство
 

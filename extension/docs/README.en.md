@@ -3,7 +3,7 @@
 <p align="center"><b>Watch closely. Find faster. Review comfortably.</b></p>
 <p align="center">A browser extension for the Counter-Strike 2 VACNet portal.<br>A dark theme, Plyr player, verdict presets, searchable history, and viewing statistics.</p>
 <p align="center">
-  <a href="https://github.com/pensiya5/vacnet-plus-plus/releases/latest"><img src="https://img.shields.io/badge/version-4.5.0-8fb8ff?style=flat-square" alt="Version 4.5.0"></a>
+  <a href="https://github.com/pensiya5/vacnet-plus-plus/releases/latest"><img src="https://img.shields.io/badge/version-4.5.1-8fb8ff?style=flat-square" alt="Version 4.5.1"></a>
   <img src="https://img.shields.io/badge/Chromium-MV3-4285f4?style=flat-square&logo=googlechrome&logoColor=white" alt="Chrome and Chromium">
   <img src="https://img.shields.io/badge/Firefox-128%2B-ff7139?style=flat-square&logo=firefoxbrowser&logoColor=white" alt="Firefox 128+">
   <a href="../../LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-64748b?style=flat-square" alt="GPL-3.0"></a>
@@ -111,7 +111,7 @@ Found a bug or have an idea? Open an [issue](https://github.com/pensiya5/vacnet-
 
 VacNet++ helps people review replays; it does not detect cheats on its own. This project is not affiliated with Valve Corporation. Counter-Strike and VACNet are trademarks of Valve Corporation.
 
-<p align="center"><a href="../../LICENSE">GPL-3.0</a> &nbsp;·&nbsp; <b>VacNet++ 4.5.0</b></p>
+<p align="center"><a href="../../LICENSE">GPL-3.0</a> &nbsp;·&nbsp; <b>VacNet++ 4.5.1</b></p>
 
 ## Origin and attribution
 
