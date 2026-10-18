@@ -112,3 +112,11 @@ Found a bug or have an idea? Open an [issue](https://github.com/pensiya5/vacnet-
 VacNet++ helps people review replays; it does not detect cheats on its own. This project is not affiliated with Valve Corporation. Counter-Strike and VACNet are trademarks of Valve Corporation.
 
 <p align="center"><a href="../../LICENSE">GPL-3.0</a> &nbsp;·&nbsp; <b>VacNet++ 4.5.0</b></p>
+
+## Acknowledgements
+
+VacNet++ is based on the open-source [VACNET Toolkit Extension](https://github.com/MartinDawgor/VacNet-Toolkit-Extension), created by [MartinDawgor](https://github.com/MartinDawgor).
+
+Thanks to the original author for developing and publishing the source code.
+
+VacNet++ is a modified version of the project and is distributed under the [GNU GPL v3.0](../../LICENSE).

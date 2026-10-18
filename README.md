@@ -115,3 +115,11 @@
 VacNet++ помогает разбирать записи; решение принимает человек. Проект не связан с Valve Corporation. Counter-Strike и VACNet — товарные знаки Valve Corporation.
 
 <p align="center"><a href="LICENSE">GPL-3.0</a> &nbsp;·&nbsp; <b>VacNet++ 4.5.0</b></p>
+
+## Благодарности
+
+VacNet++ основан на открытом проекте [VACNET Toolkit Extension](https://github.com/MartinDawgor/VacNet-Toolkit-Extension), созданном [MartinDawgor](https://github.com/MartinDawgor).
+
+Спасибо оригинальному автору за разработку и публикацию исходного кода.
+
+VacNet++ представляет собой модифицированную версию проекта и распространяется под лицензией [GNU GPL v3.0](LICENSE).
