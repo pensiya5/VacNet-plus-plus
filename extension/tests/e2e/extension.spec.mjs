@@ -14,7 +14,8 @@ async function captureDashboard(page, dialog, testInfo, name) {
 
 test('built extension checks releases through native worker fetch and caches the result', async ({ extension }) => {
   const first = await extension.send('checkForUpdates', { force: true });
-  expect(first).toMatchObject({ currentVersion: '4.5.0', latestVersion: '99.0.0', available: true, error: false,
+  const installedVersion = await extension.worker.evaluate(() => chrome.runtime.getManifest().version);
+  expect(first).toMatchObject({ currentVersion: installedVersion, latestVersion: '99.0.0', available: true, error: false,
     releaseUrl: 'https://github.com/pensiya5/vacnet-plus-plus/releases/tag/v99.0.0' });
   expect(first.checkedAt).toBeGreaterThan(0);
   const second = await extension.send('checkForUpdates', { force: true });
