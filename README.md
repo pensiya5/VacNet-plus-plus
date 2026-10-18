@@ -116,10 +116,10 @@ VacNet++ помогает разбирать записи; решение при
 
 <p align="center"><a href="LICENSE">GPL-3.0</a> &nbsp;·&nbsp; <b>VacNet++ 4.5.0</b></p>
 
-## Благодарности
+## Происхождение и авторство
 
-VacNet++ основан на открытом проекте [VACNET Toolkit Extension](https://github.com/MartinDawgor/VacNet-Toolkit-Extension), созданном [MartinDawgor](https://github.com/MartinDawgor).
+VacNet++ — **неофициальная модификация** открытого проекта [VACNET Toolkit Extension](https://github.com/MartinDawgor/VacNet-Toolkit-Extension), созданного [MartinDawgor](https://github.com/MartinDawgor). Спасибо оригинальному автору за разработку и публикацию исходного кода. Автор оригинального проекта не участвует в поддержке VacNet++ и не несёт ответственности за эту модификацию.
 
-Спасибо оригинальному автору за разработку и публикацию исходного кода.
+**Изменения:** сентябрь–октябрь 2026 года. Модификацию развивает [pensiya5](https://github.com/pensiya5). Изменения затрагивают оформление интерфейса, управление воспроизведением и вердиктами, историю клипов, статистику и проверку обновлений. Подробности — в [истории коммитов](https://github.com/pensiya5/vacnet-plus-plus/commits/main/).
 
-VacNet++ представляет собой модифицированную версию проекта и распространяется под лицензией [GNU GPL v3.0](LICENSE).
+**Лицензия:** VacNet++ распространяется по [GNU GPL v3.0](LICENSE), с сохранением условий лицензирования исходного проекта и уведомлений об авторских правах. Проект не является официальным продолжением VACNET Toolkit Extension.

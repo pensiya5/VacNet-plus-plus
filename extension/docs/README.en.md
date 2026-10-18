@@ -113,10 +113,10 @@ VacNet++ helps people review replays; it does not detect cheats on its own. This
 
 <p align="center"><a href="../../LICENSE">GPL-3.0</a> &nbsp;·&nbsp; <b>VacNet++ 4.5.0</b></p>
 
-## Acknowledgements
+## Origin and attribution
 
-VacNet++ is based on the open-source [VACNET Toolkit Extension](https://github.com/MartinDawgor/VacNet-Toolkit-Extension), created by [MartinDawgor](https://github.com/MartinDawgor).
+VacNet++ is an **unofficial modified version** of the open-source [VACNET Toolkit Extension](https://github.com/MartinDawgor/VacNet-Toolkit-Extension), created by [MartinDawgor](https://github.com/MartinDawgor). Thanks to the original author for developing and sharing the source code. The original author does not maintain VacNet++ and is not responsible for this modified version.
 
-Thanks to the original author for developing and publishing the source code.
+**Modifications:** September–October 2026. The modified project is maintained by [pensiya5](https://github.com/pensiya5). Changes cover interface styling, playback and verdict controls, clip history, statistics, and update checking. Details are available in the [commit history](https://github.com/pensiya5/vacnet-plus-plus/commits/main/).
 
-VacNet++ is a modified version of the project and is distributed under the [GNU GPL v3.0](../../LICENSE).
+**License:** VacNet++ is distributed under the [GNU GPL v3.0](../../LICENSE), preserving the original project's license conditions and copyright notices. It is not an official continuation of VACNET Toolkit Extension.
