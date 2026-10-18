@@ -1,0 +1,88 @@
+name: "🐛 Bug report / Сообщить об ошибке"
+description: "Report a bug in VacNet++ / Сообщить о проблеме в расширении."
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve **VacNet++**! You can write in English or Russian.
+
+        **Privacy:** Do not share VACNet invitation or guest links, access tokens,
+        session data, private clip links, or personal information.
+        Remove sensitive data from screenshots and logs.
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Before submitting / Перед отправкой"
+      options:
+        - label: "I checked existing issues for duplicates / Я проверил похожие обращения."
+          required: true
+        - label: "I removed private links, tokens, and personal data / Я удалил конфиденциальные данные."
+          required: true
+  - type: input
+    id: version
+    attributes:
+      label: "VacNet++ version / Версия расширения"
+      placeholder: "e.g. 4.5.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: "Browser / Браузер"
+      options:
+        - "Google Chrome"
+        - "Microsoft Edge"
+        - "Brave"
+        - "Firefox 128+"
+        - "Other Chromium browser"
+        - "Other"
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: "Affected feature / Где возникает проблема"
+      options:
+        - "Installation or updates"
+        - "Video player / Playback"
+        - "Verdicts and presets"
+        - "Clip history / Import or export"
+        - "Statistics / Developer metrics"
+        - "Interface / Dark theme"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: "What happened? / Что произошло?"
+      description: "Describe the incorrect behavior or any error message."
+      placeholder: "What is broken?"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected behavior / Как должно работать?"
+      placeholder: "What did you expect to happen?"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to reproduce / Как повторить ошибку"
+      placeholder: |
+        1. Open the VACNet review page...
+        2. Click...
+        3. Observe...
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: "Screenshots or additional details / Скриншоты и детали"
+      description: "Optional. Drag screenshots here only after removing sensitive information."
+    validations:
+      required: false
