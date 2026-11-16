@@ -9,6 +9,8 @@ import { dashboardStore, type DashboardMode } from '../../features/dashboard/das
 import { DashboardStatistics } from '../../features/statistics/components/DashboardStatistics';
 import type { SessionStatistics } from '../../features/statistics/session-playback-tracker';
 import { DashboardHistory } from '../../features/history/components/DashboardHistory';
+import { PluginCards } from '../../features/plugins/components/PluginCards';
+import { PluginManager } from '../../features/plugins/components/PluginManager';
 import { updatePreferences, preferencesSignal } from '../../features/preferences/preferences.store';
 import { snapshotSignal } from '../../features/video-player/player/player.store';
 import { historySignal } from '../../features/history/history.store';
@@ -38,16 +40,18 @@ interface DashboardLinksProps {
   metricsLabel: string;
   historyLabel: string;
   statisticsLabel: string;
+  pluginsLabel: string;
   onSelect: (mode: DashboardMode) => void;
 }
 
-const DashboardLinks = ({ metricsLabel, historyLabel, statisticsLabel, onSelect }: DashboardLinksProps) => {
+const DashboardLinks = ({ metricsLabel, historyLabel, statisticsLabel, pluginsLabel, onSelect }: DashboardLinksProps) => {
   const selectedMode = dashboardStore.value;
   return (
     <>
       <a href="#" aria-current={selectedMode === 'metrics' ? 'page' : undefined} onClick={(event) => { event.preventDefault(); onSelect('metrics'); }}>{metricsLabel}</a>
       <a href="#" aria-current={selectedMode === 'history' ? 'page' : undefined} onClick={(event) => { event.preventDefault(); onSelect('history'); }}>{historyLabel}</a>
       <a href="#" aria-current={selectedMode === 'statistics' ? 'page' : undefined} onClick={(event) => { event.preventDefault(); onSelect('statistics'); }}>{statisticsLabel}</a>
+      <a href="#" aria-current={selectedMode === 'plugins' ? 'page' : undefined} onClick={(event) => { event.preventDefault(); onSelect('plugins'); }}>{pluginsLabel}</a>
     </>
   );
 };
@@ -167,6 +171,7 @@ const DashboardContainer = ({
       history={<DashboardHistory history={historySignal.value} totalClipsViewed={snapshot.value.clip?.clipCount ?? 0} />}
       metrics={<DashboardMetrics snapshot={snapshot.value} />}
       statistics={<DashboardStatistics history={historySignal.value} session={sessionStatistics?.value ?? { startedAt: Date.now(), watchedSeconds: 0 }} />}
+      plugins={<PluginManager onError={onError} />}
       mode={dashboardStore.value}
       onImportHistory={onImportHistory}
       onExportHistory={onExportHistory}
@@ -233,6 +238,7 @@ export const App = ({
           metricsLabel={t('devMetricsTitle')}
           historyLabel={t('historyLogTitle')}
           statisticsLabel={t('statisticsTitle')}
+          pluginsLabel={t('pluginsTitle')}
           onSelect={toggleDashboard}
         />,
         footerTarget
@@ -242,6 +248,7 @@ export const App = ({
             metricsLabel={t('devMetricsTitle')}
             historyLabel={t('historyLogTitle')}
             statisticsLabel={t('statisticsTitle')}
+            pluginsLabel={t('pluginsTitle')}
             onSelect={toggleDashboard}
           />
         </nav>
@@ -255,6 +262,7 @@ export const App = ({
           onSave={(presets) => persistPreferences(nativeReview ? { cheatingPresets: presets } : { customPresets: presets }, onError)}
         />
         <VerdictPanelContainer nativeReview={nativeReview} onReviewCommand={onReviewCommand} />
+        <PluginCards slot="review" />
       </div>
       <DashboardContainer
         sessionStatistics={sessionStatistics}

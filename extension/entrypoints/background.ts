@@ -6,10 +6,12 @@ import { extractWebmMetadata } from '../src/features/video-player/webm.parser';
 import { onMessage } from '../src/shared/ports/extension-messaging.port';
 import { historyStorage } from '../src/features/history/history.storage';
 import { preferencesStorage } from '../src/features/preferences/preferences.storage';
+import { mutatePluginData, pluginsStorage, readPluginData } from '../src/features/plugins/plugins.storage';
 import { HistoryStateSchema } from '../src/entities/history.entity';
 import { PreferencesSchema } from '../src/entities/preferences.entity';
+import { PluginDataSchema, PluginsStateSchema } from '../src/entities/plugin.entity';
 import { WebmMetadataSchema } from '../src/shared/ports/protocol.port';
-import { VersionedHistoryMutationSchema, VersionedPreferencesMutationSchema } from '../src/shared/ports/storage-protocol.port';
+import { VersionedHistoryMutationSchema, VersionedPluginDataMutationSchema, VersionedPluginMutationSchema, VersionedPreferencesMutationSchema } from '../src/shared/ports/storage-protocol.port';
 import { getAllowedWebmUrl } from '../src/shared/utils/url.utils';
 import { StorageMutationCoordinator } from '../src/shared/services/storage-mutation.service';
 
@@ -41,4 +43,14 @@ export default defineBackground(() => {
     const request = requireSchema(VersionedPreferencesMutationSchema.safeParse(message.data), 'versioned preferences mutation');
     return requireSchema(PreferencesSchema.safeParse(await preferencesStorage.mutate(request.patch)), 'preferences response');
   }));
+  onMessage('mutatePlugins', (message) => storageMutations.enqueue(async () => {
+    const request = requireSchema(VersionedPluginMutationSchema.safeParse(message.data), 'versioned plugins mutation');
+    return requireSchema(PluginsStateSchema.safeParse(await pluginsStorage.mutate(request.mutation)), 'plugins response');
+  }));
+  onMessage('mutatePluginData', (message) => storageMutations.enqueue(async () => {
+    const request = requireSchema(VersionedPluginDataMutationSchema.safeParse(message.data), 'versioned plugin data mutation');
+    return requireSchema(PluginDataSchema.safeParse(await mutatePluginData(request.mutation)), 'plugin data response');
+  }));
+  onMessage('readPluginData', (message) => storageMutations.enqueue(async () =>
+    requireSchema(PluginDataSchema.safeParse(await readPluginData(message.data)), 'plugin data response')));
 });

@@ -16,6 +16,21 @@ vi.mock('../src/features/history/history.store', async () => {
   const { emptyHistory } = await import('../src/entities/history.entity');
   return { historySignal: signal(emptyHistory()) };
 });
+vi.mock('../src/features/plugins/plugins.store', async () => {
+  const { signal } = await import('@preact/signals');
+  return {
+    pluginsSignal: signal({ version: 1, plugins: {} }),
+    pluginCardsSignal: signal({}),
+    pluginStatusSignal: signal({}),
+    sandboxStateSignal: signal('ready'),
+    resetPluginRuntimeState: () => undefined,
+    initializePluginsStore: vi.fn().mockResolvedValue(() => undefined),
+    savePlugin: vi.fn().mockResolvedValue(undefined),
+    removePlugin: vi.fn().mockResolvedValue(undefined),
+    setPluginEnabled: vi.fn().mockResolvedValue(undefined),
+    getPluginData: vi.fn().mockResolvedValue({}),
+  };
+});
 let root: HTMLElement | null = null;
 afterEach(() => { if (root) render(null, root); root = null; dashboardStore.close(); document.body.innerHTML = ''; });
 
@@ -30,7 +45,7 @@ it('opens statistics from the same footer as history and metrics, without destru
   }) }), root!));
   const statistics = [...footer.querySelectorAll('a')].find((link) => link.textContent === 'Статистика');
   expect(statistics).toBeDefined();
-  expect(footer.querySelectorAll('a')).toHaveLength(3);
+  expect(footer.querySelectorAll('a')).toHaveLength(4);
   await act(async () => statistics!.click());
   expect(root.querySelector('#vacnet-dashboard-title')?.textContent).toBe('Статистика');
   expect(root.textContent).toContain('Текущая сессия');

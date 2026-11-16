@@ -1169,5 +1169,86 @@
   },
   "statisticsCategory": {
     "message": "Категория"
+  },
+  "pluginsTitle": {
+    "message": "Плагины"
+  },
+  "pluginsHint": {
+    "message": "Плагины — небольшой JavaScript, который вы вставляете сами: он запускается в изолированной песочнице и реагирует на события проверки. API описан в docs/PLUGINS.md репозитория."
+  },
+  "pluginsEmpty": {
+    "message": "Плагинов пока нет. Создайте свой или вставьте пример."
+  },
+  "pluginsSandboxUnavailable": {
+    "message": "Песочница плагинов недоступна в этом браузере. Плагины работают в Chrome, Edge и других Chromium-браузерах."
+  },
+  "pluginNew": {
+    "message": "Новый плагин"
+  },
+  "pluginExample": {
+    "message": "Вставить пример"
+  },
+  "pluginIdLabel": {
+    "message": "Идентификатор (латиница, цифры, дефис)"
+  },
+  "pluginNameLabel": {
+    "message": "Название"
+  },
+  "pluginVersionLabel": {
+    "message": "Версия"
+  },
+  "pluginCodeLabel": {
+    "message": "Код плагина (JavaScript)"
+  },
+  "pluginSave": {
+    "message": "Сохранить и применить"
+  },
+  "pluginCancel": {
+    "message": "Отмена"
+  },
+  "pluginEdit": {
+    "message": "Изменить"
+  },
+  "pluginDelete": {
+    "message": "Удалить"
+  },
+  "pluginDeleteConfirm": {
+    "message": "Точно удалить?"
+  },
+  "pluginToggleLabel": {
+    "message": "Включить или выключить плагин {name}"
+  },
+  "pluginStatusRunning": {
+    "message": "Работает"
+  },
+  "pluginStatusError": {
+    "message": "Ошибка"
+  },
+  "pluginCardLabel": {
+    "message": "Вывод плагина"
+  },
+  "pluginLimitReached": {
+    "message": "Достигнут лимит плагинов ({limit}). Удалите ненужный плагин."
+  },
+  "pluginSaveFailed": {
+    "message": "Не удалось сохранить плагин: {error}"
+  },
+  "pluginSettingsTitle": {
+    "message": "Настройки плагина"
+  },
+  "pluginImportLabel": {
+    "message": "Импорт файла"
+  },
+  "pluginImportHint": {
+    "message": "Выбери .js файл — код откроется в редакторе, ID возьмётся из имени файла"
+  },
+  "pluginImportTooLarge": {
+    "message": "Файл слишком большой (максимум 256 КБ)"
+  },
+  "pluginImportReadFailed": {
+    "message": "Не удалось прочитать файл"
+  },
+  "pluginImportEmpty": {
+    "message": "Файл пустой или без кода"
   }
 }

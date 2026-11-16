@@ -1,6 +1,6 @@
 import { signal } from '@preact/signals';
 
-export type DashboardMode = 'metrics' | 'history' | 'statistics';
+export type DashboardMode = 'metrics' | 'history' | 'statistics' | 'plugins';
 
 interface DashboardStore {
   readonly value: DashboardMode | null;

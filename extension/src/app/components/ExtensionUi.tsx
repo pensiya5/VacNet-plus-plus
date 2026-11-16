@@ -8,6 +8,8 @@ import { NicknameHider } from '../../features/site-translator/nickname-hider.inj
 import { dashboardStore } from '../../features/dashboard/dashboard.store';
 import { createMetricsReport } from '../../features/dashboard/metrics-report.service';
 import { clearHistory, findHistory, historySignal, importHistory, initializeHistoryStore, recordRepeat, saveHistoryEntry } from '../../features/history/history.store';
+import { initializePluginsStore } from '../../features/plugins/plugins.store';
+import { createPluginBridge, type PluginBridge } from '../../features/plugins/plugin-bridge.service';
 import { initializePreferencesStore, preferencesSignal, updatePreferences } from '../../features/preferences/preferences.store';
 import { resetSnapshot, snapshotSignal } from '../../features/video-player/player/player.store';
 import { installPlayerHotkeys } from '../../features/video-player/player/player-hotkeys.injector';
@@ -78,6 +80,8 @@ export const initializeExtensionUi = async (ctx: ContentScriptContext): Promise<
   let stopHistoryFind: (() => void) | null = null;
   let stopHistorySave: (() => void) | null = null;
   let stopWebmMetadataRead: (() => void) | null = null;
+  let stopPluginsWatch: (() => void) | null = null;
+  let pluginBridge: PluginBridge | null = null;
   let unwatchPreferences: (() => void) | null = null;
   let unwatchHistory: (() => void) | null = null;
   let disposePreferencesBridge: (() => void) | null = null;
@@ -105,6 +109,10 @@ export const initializeExtensionUi = async (ctx: ContentScriptContext): Promise<
     stopHistoryFind?.();
     stopHistorySave?.();
     stopWebmMetadataRead?.();
+    pluginBridge?.stop();
+    pluginBridge = null;
+    stopPluginsWatch?.();
+    stopPluginsWatch = null;
     unwatchPreferences?.();
     unwatchHistory?.();
     bus.dispose();
@@ -157,6 +165,8 @@ export const initializeExtensionUi = async (ctx: ContentScriptContext): Promise<
     if (!isActive()) return;
     unwatchHistory = await initializeHistoryStore(reportError);
     if (!isActive()) return;
+    stopPluginsWatch = await initializePluginsStore(reportError);
+    if (!isActive()) return;
 
     if (preferencesSignal.value.dashboardOpen) dashboardStore.open('metrics');
     else dashboardStore.close();
@@ -175,6 +185,8 @@ export const initializeExtensionUi = async (ctx: ContentScriptContext): Promise<
       getClip: () => snapshotSignal.value.clip,
       onUpdate: (stats) => { sessionStatistics.value = stats; },
     });
+    pluginBridge = createPluginBridge({ bus });
+    pluginBridge.start();
 
     const ui = await createShadowRootUi<HTMLDivElement>(ctx, {
        name: 'vacnet-extension-ui',

@@ -53,10 +53,20 @@ for (const browser of ['chrome', 'firefox']) {
     if (browser === 'chrome') {
       assert.ok(manifest.background.service_worker);
       assets.add(manifest.background.service_worker);
+      // Plugin sandbox: eval-capable isolated page, exposed only to the portal.
+      assert.ok(existsSync(join(output, 'sandbox.html')), 'Missing plugin sandbox page');
+      assert.deepEqual(manifest.sandbox.pages, ['sandbox.html']);
+      assert.match(manifest.content_security_policy.sandbox, /unsafe-eval/);
+      const sandboxWar = manifest.web_accessible_resources?.find((entry) =>
+        entry.resources.includes('sandbox.html'));
+      assert.ok(sandboxWar, 'sandbox.html must be web accessible for the portal');
+      assert.ok(sandboxWar.matches.every((match) => match.startsWith('https://www.counter-strike.net/')));
+      assets.add('sandbox.html');
     } else {
       assert.ok(manifest.background.scripts.length > 0);
       for (const asset of manifest.background.scripts) assets.add(asset);
       assert.equal(manifest.browser_specific_settings.gecko.strict_min_version, '128.0');
+      assert.equal(manifest.sandbox, undefined, 'Firefox does not support sandbox pages');
     }
     for (const asset of assets) {
       assert.ok(existsSync(join(output, asset)), `Missing packaged asset: ${asset}`);

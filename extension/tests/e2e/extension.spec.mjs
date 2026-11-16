@@ -163,6 +163,154 @@ test('footer history search and statistics share stored data and close cleanly',
   await expect(page.getByRole('dialog')).toHaveCount(0);
 });
 
+test('plugins tab installs the demo snippet, renders its card and removes it cleanly', async ({ extension }, testInfo) => {
+  await openPortal(extension);
+  const { page, worker } = extension;
+  const footer = page.locator('.footer-buttons');
+  await footer.getByRole('link', { name: 'Плагины', exact: true }).click();
+  const plugins = page.getByRole('dialog', { name: 'Плагины', exact: true });
+  await expect(plugins).toBeVisible();
+  await captureDashboard(page, plugins, testInfo, 'plugins');
+  // The sandbox must come up in Chromium; otherwise the UI shows a warning.
+  await expect(plugins.getByText('Песочница плагинов недоступна')).toHaveCount(0);
+  await plugins.getByRole('button', { name: 'Вставить пример', exact: true }).click();
+  const code = plugins.locator('textarea');
+  await expect(code).toHaveValue(/vacnet\.on\('clip-loaded'/u);
+  await plugins.getByRole('button', { name: 'Сохранить и применить', exact: true }).click();
+  await expect(plugins.getByText('Таймер проверки')).toBeVisible();
+  await expect(plugins.getByText('Работает', { exact: true })).toBeVisible();
+  const stored = await worker.evaluate(async () =>
+    (await chrome.storage.local.get('plugins')).plugins.plugins['review-timer']);
+  expect(stored).toMatchObject({ id: 'review-timer', enabled: true });
+  // clip-loaded fires on the next clip transition; reload the portal so the
+  // freshly installed plugin observes the first clip of a new session.
+  await openPortal(extension);
+  page.on('console', (message) => console.log('DBG >>>', message.text().slice(0, 160)));
+  await footer.getByRole('link', { name: 'Плагины', exact: true }).click();
+  await expect(plugins.getByText('Работает', { exact: true })).toBeVisible({ timeout: 10_000 });
+  await plugins.getByRole('button', { name: 'Закрыть панель', exact: true }).click();
+  await footer.getByRole('link', { name: 'Метрики разработчика', exact: true }).click();
+  const metrics = page.getByRole('dialog', { name: 'Метрики разработчика', exact: true });
+  await expect(metrics.getByText('Таймер проверки', { exact: true })).toBeVisible();
+  await expect(metrics.getByText(/Текущий: \d\d:\d\d/)).toBeVisible();
+  await metrics.getByRole('button', { name: 'Закрыть панель', exact: true }).click();
+  // Disabling the plugin removes its card; deleting clears storage.
+  await footer.getByRole('link', { name: 'Плагины', exact: true }).click();
+  await page.getByRole('checkbox', { name: 'Включить или выключить плагин Таймер проверки' }).click();
+  await expect(page.getByText('Таймер проверки', { exact: true })).toHaveCount(0);
+  await plugins.getByRole('button', { name: 'Удалить', exact: true }).click();
+  const confirmDelete = plugins.getByRole('button', { name: 'Точно удалить?', exact: true });
+  await expect(confirmDelete).toBeVisible();
+  await confirmDelete.click();
+  await expect(plugins.getByText('Плагинов пока нет')).toBeVisible();
+  expect(await worker.evaluate(async () =>
+    (await chrome.storage.local.get('plugins')).plugins.plugins)).toEqual({});
+});
+
+test('plugin settings render in the manager and settings-changed updates the review card', async ({ extension }) => {
+  await openPortal(extension);
+  const { page } = extension;
+  page.on('crash', () => console.log('DBG-CRASH >>> renderer crashed'));
+  page.on('pageerror', (error) => console.log('DBG-PAGEERROR >>>', error.message.slice(0, 300)));
+  page.on('console', (message) => console.log('DBG-CONSOLE >>>', message.type(), message.text().slice(0, 200)));
+  const footer = page.locator('.footer-buttons');
+  await footer.getByRole('link', { name: 'Плагины', exact: true }).click();
+  const plugins = page.getByRole('dialog', { name: 'Плагины', exact: true });
+  await expect(plugins).toBeVisible();
+  await plugins.getByRole('button', { name: 'Новый плагин', exact: true }).click();
+  await plugins.getByLabel('Идентификатор (латиница, цифры, дефис)').fill('e2e-settings');
+  await plugins.getByLabel('Название').fill('Настройки E2E');
+  const settingsPluginCode = [
+    "vacnet.settings.define([",
+    "  { key: 'auto', type: 'toggle', label: 'Авто-анализ', default: false },",
+    "  { key: 'place', type: 'choice', label: 'Место вывода', default: 'review', options: ['review', 'metrics'] },",
+    "]);",
+    "vacnet.ui.setCard({",
+    "  title: 'ИИ-рекомендация',",
+    "  text: 'старт',",
+    "  slot: 'review',",
+    "  bars: [{ label: 'wallhack', value: 0.73 }],",
+    "  actions: [{ key: 'ping', label: 'Проверить' }],",
+    "});",
+    "vacnet.on('settings-changed', (event) => {",
+    "  if (event.pluginId !== vacnet.plugin.id) return;",
+    "  vacnet.ui.setCard({ title: 'ИИ-рекомендация', text: 'авто: ' + (event.values.auto ? 'вкл' : 'выкл'), slot: 'review' });",
+    "});",
+    "vacnet.on('card-action', (event) => {",
+    "  if (event.pluginId !== vacnet.plugin.id || event.key !== 'ping') return;",
+    "  vacnet.ui.setCard({ title: 'ИИ-рекомендация', text: 'пинг получен', slot: 'review', bars: [{ label: 'wallhack', value: 1 }] });",
+    "});",
+  ].join('\n');
+  await plugins.getByLabel('Код плагина (JavaScript)').fill(settingsPluginCode);
+  await plugins.getByRole('button', { name: 'Сохранить и применить', exact: true }).click();
+  await expect(plugins.getByText('Работает', { exact: true })).toBeVisible();
+  // The declared settings render under the plugin card.
+  const autoToggle = plugins.getByLabel('Авто-анализ');
+  await expect(autoToggle).toBeVisible();
+  await expect(autoToggle).not.toBeChecked();
+  await expect(plugins.getByLabel('Место вывода')).toHaveValue('review');
+  // The review-slot card shows on the review page itself, under the panel,
+  // with the probability bar and the action button.
+  await expect(page.getByText('ИИ-рекомендация', { exact: true })).toBeVisible();
+  await expect(page.getByText('старт', { exact: true })).toBeVisible();
+  await expect(page.getByText('wallhack', { exact: true })).toBeVisible();
+  // Close the dialog: the review card lives on the page behind it.
+  await plugins.getByRole('button', { name: 'Закрыть панель', exact: true }).click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  // Card buttons dispatch 'card-action' back to the plugin.
+  const actionButton = page.getByRole('button', { name: 'Проверить', exact: true });
+  await expect(actionButton).toBeVisible();
+  await actionButton.click();
+  await expect(page.getByText('пинг получен', { exact: true })).toBeVisible();
+  // Toggling a setting persists it and reaches the plugin as an event.
+  await footer.getByRole('link', { name: 'Плагины', exact: true }).click();
+  await expect(plugins).toBeVisible();
+  await autoToggle.click();
+  await expect(autoToggle).toBeChecked();
+  await expect(page.getByText('авто: вкл', { exact: true })).toBeVisible();
+  await plugins.getByRole('button', { name: 'Закрыть панель', exact: true }).click();
+  await expect(page.getByText('ИИ-рекомендация', { exact: true })).toBeVisible();
+  const stored = await extension.worker.evaluate(async () =>
+    (await chrome.storage.local.get('plugin-data'))['plugin-data']['e2e-settings']['__settings__']);
+  expect(stored).toMatchObject({ auto: true, place: 'review' });
+  await footer.getByRole('link', { name: 'Плагины', exact: true }).click();
+  await expect(plugins).toBeVisible();
+  await plugins.getByRole('button', { name: 'Удалить', exact: true }).click();
+  const confirmDelete = plugins.getByRole('button', { name: 'Точно удалить?', exact: true });
+  await expect(confirmDelete).toBeVisible();
+  await confirmDelete.click();
+  await expect(page.getByText('ИИ-рекомендация', { exact: true })).toHaveCount(0);
+});
+
+test('plugin import fills the editor from a picked .js file and installs it', async ({ extension }) => {
+  await openPortal(extension);
+  const { page } = extension;
+  const footer = page.locator('.footer-buttons');
+  await footer.getByRole('link', { name: 'Плагины', exact: true }).click();
+  const plugins = page.getByRole('dialog', { name: 'Плагины', exact: true });
+  await expect(plugins).toBeVisible();
+  const code = [
+    "vacnet.settings.define([{ key: 'loud', type: 'toggle', label: 'Громко', default: true }]);",
+    "vacnet.ui.setCard({ title: 'Импортированный', text: 'из файла', slot: 'review' });",
+  ].join('\n');
+  await plugins.locator('input[type=file]').setInputFiles({
+    name: 'my-imported-plugin.js',
+    mimeType: 'text/javascript',
+    buffer: Buffer.from(code, 'utf8'),
+  });
+  // The editor opens pre-filled from the filename.
+  await expect(plugins.getByLabel('Идентификатор (латиница, цифры, дефис)')).toHaveValue('my-imported-plugin');
+  await expect(plugins.getByLabel('Название')).toHaveValue('my imported plugin');
+  await expect(plugins.locator('textarea')).toHaveValue(/Импортированный/);
+  await plugins.getByRole('button', { name: 'Сохранить и применить', exact: true }).click();
+  await expect(plugins.getByText('Работает', { exact: true })).toBeVisible();
+  // The imported plugin is immediately live: card on the review page, settings in the list.
+  await expect(page.getByText('из файла', { exact: true })).toBeVisible();
+  const settingToggle = plugins.getByLabel('Громко');
+  await expect(settingToggle).toBeVisible();
+  await expect(settingToggle).toBeChecked();
+});
+
 test.describe('Public network smoke', () => {
   test.skip(process.env.VACNET_E2E_LIVE_UPDATES !== '1', 'Opt in with VACNET_E2E_LIVE_UPDATES=1; depends on public GitHub availability.');
   test('[live] public GitHub release check uses the installed worker and native fetch', async ({ extension }) => {

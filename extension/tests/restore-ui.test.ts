@@ -25,6 +25,21 @@ vi.mock('../src/shared/services/i18n.service', async (importOriginal) => ({
   ...await importOriginal<object>(), getMessage: (key: string) => key,
 }));
 
+vi.mock('../src/features/plugins/plugins.store', async () => {
+  const { signal } = await import('@preact/signals');
+  return {
+    pluginsSignal: signal({ version: 1, plugins: {} }),
+    pluginCardsSignal: signal({}),
+    pluginStatusSignal: signal({}),
+    sandboxStateSignal: signal('ready'),
+    resetPluginRuntimeState: () => undefined,
+    initializePluginsStore: vi.fn().mockResolvedValue(() => undefined),
+    savePlugin: vi.fn().mockResolvedValue(undefined),
+    removePlugin: vi.fn().mockResolvedValue(undefined),
+    setPluginEnabled: vi.fn().mockResolvedValue(undefined),
+    getPluginData: vi.fn().mockResolvedValue({}),
+  };
+});
 let root: HTMLElement;
 const catalog = { ...Object.fromEntries(messageKeys.map((key) => [key, key])), videoJsLocale: 'en',
   cheatingYes: 'cheatingYes', cheatingNo: 'cheatingNo', nativeWatchHint: 'nativeWatchHint',

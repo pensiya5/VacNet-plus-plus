@@ -20,13 +20,14 @@ interface DashboardProps {
   history: ComponentChildren;
   metrics: ComponentChildren;
   statistics?: ComponentChildren;
+  plugins?: ComponentChildren;
   mode: DashboardMode | null;
   onImportHistory: (data: unknown) => void;
   onExportHistory: () => void;
   onImportError: (error: unknown) => void;
 }
 
-export const Dashboard = ({ history, metrics, statistics, mode, onClearHistory, onClose, onCopyMetrics, onImportHistory, onExportHistory, onImportError }: DashboardProps) => {
+export const Dashboard = ({ history, metrics, statistics, plugins, mode, onClearHistory, onClose, onCopyMetrics, onImportHistory, onExportHistory, onImportError }: DashboardProps) => {
   const t = useTranslation();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const dialogRef = useRef<HTMLElement>(null);
@@ -60,6 +61,7 @@ export const Dashboard = ({ history, metrics, statistics, mode, onClearHistory, 
   }, [isConfirming]);
   if (!mode) return null;
   const isHistory = mode === 'history';
+  const isPlugins = mode === 'plugins';
   const className = isHistory ? `${styles.dashboard} ${styles.history}` : styles.dashboard;
   const handleUpload = (event: Event): void => {
     const target = event.currentTarget;
@@ -105,7 +107,7 @@ export const Dashboard = ({ history, metrics, statistics, mode, onClearHistory, 
       }}
     >
       <header>
-        <h2 id="vacnet-dashboard-title">{isHistory ? t('historyLogTitle') : mode === 'statistics' ? t('statisticsTitle') : t('devMetricsTitle')}</h2>
+        <h2 id="vacnet-dashboard-title">{isHistory ? t('historyLogTitle') : mode === 'statistics' ? t('statisticsTitle') : isPlugins ? t('pluginsTitle') : t('devMetricsTitle')}</h2>
         <div class={styles.actions}>
           {isHistory && (
             <>
@@ -136,7 +138,7 @@ export const Dashboard = ({ history, metrics, statistics, mode, onClearHistory, 
             </button>
             </>
           )}
-          {mode !== 'statistics' && <button
+          {mode !== 'statistics' && !isPlugins && <button
             type="button"
             class={styles.action}
             aria-label={isHistory ? t('clearVideoHistory') : t('copyMetrics')}
@@ -149,7 +151,7 @@ export const Dashboard = ({ history, metrics, statistics, mode, onClearHistory, 
         </div>
       </header>
       <div class={styles.content}>
-         {isHistory ? history : mode === 'statistics' ? statistics : metrics}
+         {isHistory ? history : mode === 'statistics' ? statistics : isPlugins ? plugins : metrics}
        </div>
        {isConfirming && (
          <div class={styles.confirmOverlay} role="presentation">

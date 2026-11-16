@@ -1,11 +1,26 @@
 import { h, render } from 'preact';
-import { afterEach, beforeEach, expect, it } from 'vitest';
+import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import type { PageSnapshot } from '../src/entities/clip.entity';
 import { emptyVerdicts } from '../src/entities/verdict.entity';
 import { DashboardMetrics } from '../src/features/dashboard/components/DashboardMetrics';
 import { TranslationProvider } from '../src/shared/components/TranslationProvider';
 import { createCatalog } from '../src/shared/services/i18n.service';
 
+vi.mock('../src/features/plugins/plugins.store', async () => {
+  const { signal } = await import('@preact/signals');
+  return {
+    pluginsSignal: signal({ version: 1, plugins: {} }),
+    pluginCardsSignal: signal({}),
+    pluginStatusSignal: signal({}),
+    sandboxStateSignal: signal('ready'),
+    resetPluginRuntimeState: () => undefined,
+    initializePluginsStore: vi.fn().mockResolvedValue(() => undefined),
+    savePlugin: vi.fn().mockResolvedValue(undefined),
+    removePlugin: vi.fn().mockResolvedValue(undefined),
+    setPluginEnabled: vi.fn().mockResolvedValue(undefined),
+    getPluginData: vi.fn().mockResolvedValue({}),
+  };
+});
 let root: HTMLElement;
 const snapshot = (): PageSnapshot => ({
   clip: { taskId: 'test-task', sourceWebmUrl: 'https://replay-video.valve.net/test.webm',

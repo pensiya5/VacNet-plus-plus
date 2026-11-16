@@ -1169,5 +1169,86 @@
   },
   "statisticsCategory": {
     "message": "Category"
+  },
+  "pluginsTitle": {
+    "message": "Plugins"
+  },
+  "pluginsHint": {
+    "message": "Plugins are small JavaScript snippets you paste in yourself. They run in an isolated sandbox and react to review events. The API is documented in the repository's docs/PLUGINS.md."
+  },
+  "pluginsEmpty": {
+    "message": "No plugins yet. Create your own or insert the example."
+  },
+  "pluginsSandboxUnavailable": {
+    "message": "The plugin sandbox is unavailable in this browser. Plugins work in Chrome, Edge and other Chromium browsers."
+  },
+  "pluginNew": {
+    "message": "New plugin"
+  },
+  "pluginExample": {
+    "message": "Insert example"
+  },
+  "pluginIdLabel": {
+    "message": "Identifier (letters, digits, hyphens)"
+  },
+  "pluginNameLabel": {
+    "message": "Name"
+  },
+  "pluginVersionLabel": {
+    "message": "Version"
+  },
+  "pluginCodeLabel": {
+    "message": "Plugin code (JavaScript)"
+  },
+  "pluginSave": {
+    "message": "Save and apply"
+  },
+  "pluginCancel": {
+    "message": "Cancel"
+  },
+  "pluginEdit": {
+    "message": "Edit"
+  },
+  "pluginDelete": {
+    "message": "Delete"
+  },
+  "pluginDeleteConfirm": {
+    "message": "Delete for sure?"
+  },
+  "pluginToggleLabel": {
+    "message": "Enable or disable plugin {name}"
+  },
+  "pluginStatusRunning": {
+    "message": "Running"
+  },
+  "pluginStatusError": {
+    "message": "Error"
+  },
+  "pluginCardLabel": {
+    "message": "Plugin output"
+  },
+  "pluginLimitReached": {
+    "message": "Plugin limit reached ({limit}). Remove a plugin you no longer need."
+  },
+  "pluginSaveFailed": {
+    "message": "Could not save the plugin: {error}"
+  },
+  "pluginSettingsTitle": {
+    "message": "Plugin settings"
+  },
+  "pluginImportLabel": {
+    "message": "Import file"
+  },
+  "pluginImportHint": {
+    "message": "Pick a .js file — the code opens in the editor, the id comes from the filename"
+  },
+  "pluginImportTooLarge": {
+    "message": "File is too large (256 KB max)"
+  },
+  "pluginImportReadFailed": {
+    "message": "Could not read the file"
+  },
+  "pluginImportEmpty": {
+    "message": "The file is empty or has no code"
   }
 }

@@ -1,0 +1,334 @@
+.manager {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.manager p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.toolbar button {
+  min-height: 36px;
+  padding: 8px 14px;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border-medium);
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+
+.toolbar button:hover {
+  background: var(--bg-hover);
+}
+
+.toolbar .primary {
+  background: var(--ui-accent);
+  border-color: var(--ui-accent);
+  color: var(--ui-on-accent);
+  font-weight: 600;
+}
+
+.toolbar .primary:hover {
+  background: var(--ui-accent-hover);
+}
+
+.warning {
+  margin: 0;
+  padding: 10px 12px;
+  color: var(--danger-text);
+  background: var(--danger-surface);
+  border: 1px solid var(--danger-surface-strong);
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+}
+
+.cardInfo {
+  flex: 1 1 180px;
+  min-width: 0;
+}
+
+.cardName {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.cardName small {
+  margin-left: 6px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.cardId {
+  margin: 2px 0 0;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  word-break: break-all;
+}
+
+.cardStatus {
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.cardStatus.error {
+  color: var(--danger-text);
+}
+
+.cardActions {
+  display: flex;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+.cardActions button {
+  min-height: 32px;
+  padding: 6px 10px;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border-medium);
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+
+.cardActions button:hover {
+  background: var(--bg-hover);
+}
+
+.cardActions .danger {
+  color: var(--danger-text);
+  border-color: var(--danger-surface-strong);
+}
+
+.cardActions .danger.armed {
+  background: var(--danger-surface);
+  color: var(--danger-on-surface);
+}
+
+.switch {
+  appearance: none;
+  width: 34px;
+  height: 20px;
+  margin: 0;
+  background: var(--border-strong);
+  border: 0;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex: 0 0 auto;
+}
+
+.switch::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  background: var(--text-primary);
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.switch:checked {
+  background: var(--ui-accent);
+}
+
+.switch:checked::after {
+  transform: translateX(14px);
+  background: var(--ui-on-accent);
+}
+
+.switch:focus-visible, .toolbar button:focus-visible, .cardActions button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.editor {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+}
+
+.editor label {
+  display: grid;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.editor input, .editor textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: 6px;
+  font: inherit;
+  font-size: 13px;
+}
+
+.editor .fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr 90px;
+  gap: 8px;
+}
+
+.editor textarea {
+  min-height: 180px;
+  resize: vertical;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.editor .editorActions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.editor .editorActions button {
+  min-height: 36px;
+  padding: 8px 14px;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border-medium);
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+
+.editor .editorActions .primary {
+  background: var(--ui-accent);
+  border-color: var(--ui-accent);
+  color: var(--ui-on-accent);
+  font-weight: 600;
+}
+
+.editor .editorActions .primary:hover {
+  background: var(--ui-accent-hover);
+}
+
+.editorError {
+  margin: 0;
+  color: var(--danger-text);
+  font-size: 12px;
+}
+
+.settings {
+  flex: 1 1 100%;
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.settingsTitle {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.settingRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.settingRow select,
+.settingRow input[type='number'],
+.settingRow input[type='text'] {
+  min-height: 32px;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: 6px;
+  font: inherit;
+  font-size: 13px;
+}
+
+.settingRow input[type='number'] {
+  width: 110px;
+}
+
+.settingRow input[type='text'] {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.settingRow span {
+  min-width: 0;
+}
+
+@media (max-width: 480px) {
+  .editor .fields {
+    grid-template-columns: 1fr;
+  }
+}

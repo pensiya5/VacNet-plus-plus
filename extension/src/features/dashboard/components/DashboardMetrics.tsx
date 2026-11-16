@@ -3,6 +3,7 @@ import type { PageSnapshot } from '../../../entities/clip.entity';
 import { MetricSection } from '../../../shared/components/MetricSection';
 import { formatClipRange, formatMatchDate, formatVideoTime } from '../../../shared/utils/formatters.utils';
 import { useTranslation } from '../../../shared/components/TranslationProvider';
+import { PluginCards } from '../../plugins/components/PluginCards';
 
 const describeDeduplication = (
   status: PageSnapshot['deduplication'],
@@ -31,6 +32,7 @@ export const DashboardMetrics = ({ snapshot }: { snapshot: PageSnapshot }) => {
     : t('metricsAwaitingChoice');
   return (
     <>
+      <PluginCards slot="metrics" />
       <MetricSection title={t('clipDataTitle')} entries={[
          { key: 'task-id', label: t('taskId'), value: snapshot.clip?.taskId ?? t('statusLoadingNextClip') },
          { key: 'webm-url', label: t('webmUrl'), value: snapshot.clip?.sourceWebmUrl ?? t('statusLoadingNextClip'), href: snapshot.clip?.sourceWebmUrl ?? null },

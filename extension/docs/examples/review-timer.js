@@ -1,0 +1,61 @@
+// Таймер проверки (см. docs/PLUGINS.md).
+// Время на текущем клипе и среднее время по всем сохранённым вердиктам.
+let clipStartedAt = null;
+let sessionCount = 0;
+let sessionTotal = 0;
+let savedTotal = 0;
+let savedCount = 0;
+
+function fmt(seconds) {
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+}
+
+function draw(currentSeconds) {
+  const total = savedTotal + sessionTotal;
+  const count = savedCount + sessionCount;
+  const avg = count > 0 ? total / count : 0;
+  vacnet.ui.setCard({
+    title: 'Таймер проверки',
+    text: 'Текущий: ' + fmt(currentSeconds) + ' · Среднее: ' + fmt(avg) + ' (' + count + ')',
+  });
+}
+
+// Среднее считается по истории: загружаем сохранённые итоги при старте.
+vacnet.storage.get().then(function (data) {
+  savedTotal = typeof data.totalSeconds === 'number' ? data.totalSeconds : 0;
+  savedCount = typeof data.count === 'number' ? data.count : 0;
+  if (clipStartedAt !== null) draw((Date.now() - clipStartedAt) / 1000);
+});
+
+const timer = setInterval(function () {
+  if (clipStartedAt !== null) draw((Date.now() - clipStartedAt) / 1000);
+}, 500);
+
+vacnet.on('clip-loaded', function () {
+  clipStartedAt = Date.now();
+  draw(0);
+});
+
+vacnet.on('verdict-submitted', function () {
+  if (clipStartedAt !== null) {
+    sessionCount += 1;
+    sessionTotal += (Date.now() - clipStartedAt) / 1000;
+    clipStartedAt = null;
+  }
+  savedTotal += sessionTotal;
+  savedCount += sessionCount;
+  sessionTotal = 0;
+  sessionCount = 0;
+  Promise.all([
+    vacnet.storage.set('totalSeconds', savedTotal),
+    vacnet.storage.set('count', savedCount),
+  ]).catch(function (error) { vacnet.log('storage failed', error); });
+});
+
+// Возвращённая функция вызывается при выключении или замене плагина.
+return function () {
+  clearInterval(timer);
+  vacnet.ui.clearCard();
+};
