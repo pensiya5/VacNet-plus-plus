@@ -1,9 +1,9 @@
 // Плагин «ИИ-рекомендации» для VacNet++.
-// Отправляет клип в локальную службу AI-VACNet (serve_api.py), показывает
+// Отправляет клип в локальную службу анализа (запускается отдельно), показывает
 // этапы (скачивание → кадры → нейросеть), вероятности полосами и вывод —
 // в карточке под панелью вердикта. Настройки — во вкладке «Плагины».
 //
-// Перед использованием запусти службу (в папке ai-vacnet):
+// Перед использованием запусти локальную службу анализа:
 //   .venv/Scripts/python serve_api.py
 // Решение всегда принимает человек — это подсказка, а не вердикт.
 
@@ -115,7 +115,7 @@ async function analyze(clip) {
     const message = String((error && error.message) || error);
     if (message.indexOf('Failed to fetch') !== -1 || message.indexOf('NetworkError') !== -1 || message.indexOf('ERR_CONNECTION') !== -1) {
       show({
-        text: 'Служба ИИ не отвечает. Запусти её в папке ai-vacnet:\n.venv/Scripts/python serve_api.py',
+        text: 'Служба ИИ не отвечает. Запусти службу анализа и попробуй снова',
         actions: [{ key: 'analyze', label: 'Повторить' }],
         progress: null,
       });
@@ -147,7 +147,7 @@ vacnet.settings.define([
       'mvit_v1',
     ],
   },
-  { key: 'port', type: 'number', label: 'Порт локальной службы AI-VACNet', default: 8770, min: 1024, max: 65535 },
+  { key: 'port', type: 'number', label: 'Порт локальной службы', default: 8770, min: 1024, max: 65535 },
   { key: 'windows', type: 'number', label: 'Окон для усреднения (1 — одно окно)', default: 3, min: 1, max: 6 },
 ]);
 

@@ -64,8 +64,9 @@ jobs:
           set -euo pipefail
           tag="v4.6.0"
           if gh release view "$tag" >/dev/null 2>&1; then
-            echo "Release $tag already exists; refusing to overwrite it." >&2
-            exit 1
+            echo "Release $tag exists; refreshing the notes from the repository."
+            gh release edit "$tag" --notes-file extension/docs/releases/4.6.0.md
+            exit 0
           fi
           gh release create "$tag" \
             dist/vacnet-plus-plus-4.6.0-chrome.zip \
