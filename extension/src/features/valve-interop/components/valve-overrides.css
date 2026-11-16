@@ -30,6 +30,36 @@ body.vacnet-extension-root .page-container {
   box-sizing: border-box;
 }
 
+/* Large screens: scale the native header and footer together with the review
+   layout, so 2K+ monitors do not get a tiny chrome around a big player.
+   FullHD (1920 CSS px) stays unscaled on purpose. */
+@media (min-width: 2048px) {
+
+  body.vacnet-extension-root .PageHeader,
+  body.vacnet-extension-root footer,
+  body.vacnet-extension-root .footer-container {
+    zoom: 1.15;
+  }
+}
+
+@media (min-width: 2304px) {
+
+  body.vacnet-extension-root .PageHeader,
+  body.vacnet-extension-root footer,
+  body.vacnet-extension-root .footer-container {
+    zoom: 1.25;
+  }
+}
+
+@media (min-width: 2560px) {
+
+  body.vacnet-extension-root .PageHeader,
+  body.vacnet-extension-root footer,
+  body.vacnet-extension-root .footer-container {
+    zoom: 1.35;
+  }
+}
+
 body.vacnet-extension-root .PageHeader {
   min-height: 59px;
   box-sizing: border-box;

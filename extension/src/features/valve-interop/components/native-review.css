@@ -12,7 +12,10 @@ body.vacnet-native-review .page-container {
 
 body.vacnet-native-review .review-layout {
   width: 100%;
-  max-width: 1920px;
+  /* Mirror the legacy layout's height-aware cap: grow the 16:9 video with the
+     viewport, keep the verdict panel fixed, and stay centered when either
+     dimension runs out. */
+  max-width: min(2560px, calc((100vh - 160px) * 16 / 9 + 520px));
   margin: auto;
   padding: 24px;
   gap: 20px;
@@ -26,6 +29,8 @@ body.vacnet-native-review .videocontainer {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
+  /* Keep the Plyr controls inside the fold even on unusual window shapes. */
+  max-height: calc(100vh - 140px);
 }
 
 body.vacnet-native-review .verdict-column {

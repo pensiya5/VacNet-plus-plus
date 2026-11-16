@@ -283,3 +283,29 @@
   max-width: calc(100vw - 32px);
   transform: none;
 }
+
+/* Large screens: keep the floating toolbar and fallback footer proportional
+   to the scaled page chrome (mirrors valve-overrides.css zoom steps). */
+@media (min-width: 2048px) {
+
+  .videoToolbar,
+  .footerTools {
+    zoom: 1.15;
+  }
+}
+
+@media (min-width: 2304px) {
+
+  .videoToolbar,
+  .footerTools {
+    zoom: 1.25;
+  }
+}
+
+@media (min-width: 2560px) {
+
+  .videoToolbar,
+  .footerTools {
+    zoom: 1.35;
+  }
+}
