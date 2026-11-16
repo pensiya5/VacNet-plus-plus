@@ -155,14 +155,6 @@ body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-p:fi
   font-size: 15px;
 }
 
-body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-p:first-child::first-line {
-  color: var(--welcome-text);
-  font-size: 26px;
-  font-weight: 600;
-  letter-spacing: -0.025em;
-  line-height: 1.35;
-}
-
 body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-p b {
   color: var(--welcome-text);
   font-weight: 600;
@@ -174,7 +166,9 @@ body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-p:nt
   border-left: 2px solid var(--welcome-accent);
 }
 
-body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-p:last-child {
+/* Divider for the closing note, but only when the greeting is split into
+   several paragraphs — a lone paragraph would otherwise get a stray line. */
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-p:not(:first-child):last-child {
   padding-top: 20px;
   border-top: 1px solid var(--welcome-border);
   font-size: 13px;
@@ -270,10 +264,6 @@ body:has(.PageContents > .vaclive-logo + .intro-text-container) a:focus-visible 
   body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-container {
     padding: 20px;
     gap: 20px;
-  }
-
-  body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-p:first-child::first-line {
-    font-size: 23px;
   }
 
   body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-page-button .SecondaryButton {
