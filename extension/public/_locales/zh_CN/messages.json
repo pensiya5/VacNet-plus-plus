@@ -1,0 +1,1281 @@
+{
+  "updatesTitle": {
+    "message": "更新"
+  },
+  "updateInstalled": {
+    "message": "已安装版本 {version}"
+  },
+  "updateAvailable": {
+    "message": "版本 {version} 已发布"
+  },
+  "updateChecking": {
+    "message": "正在检查更新…"
+  },
+  "updateCurrent": {
+    "message": "已安装最新版本"
+  },
+  "updateCheckFailed": {
+    "message": "无法检查更新。请稍后重试。"
+  },
+  "updateCheckNow": {
+    "message": "立即检查"
+  },
+  "updateOpenRelease": {
+    "message": "查看发布页面"
+  },
+  "app": {
+    "message": "应用"
+  },
+  "themeToggleTitle": {
+    "message": "切换主题"
+  },
+  "themeToggleHint": {
+    "message": "在浅色和深色主题之间切换"
+  },
+  "autoApplyRepeatVerdicts": {
+    "message": "自动应用判定"
+  },
+  "autoApplyRepeatVerdictsHint": {
+    "message": "再次遇到相同视频时，自动应用上一次的判定"
+  },
+  "autoSubmitPreset": {
+    "message": "立即提交"
+  },
+  "badClip": {
+    "message": "异常片段"
+  },
+  "btnBack": {
+    "message": "返回"
+  },
+  "btnConfirm": {
+    "message": "确认"
+  },
+  "btnNo": {
+    "message": "否"
+  },
+  "btnProceed": {
+    "message": "继续"
+  },
+  "btnReportBadClip": {
+    "message": "报告异常片段"
+  },
+  "btnResetConfirm": {
+    "message": "重置并删除"
+  },
+  "btnSendFeedback": {
+    "message": "发送反馈"
+  },
+  "btnSkip": {
+    "message": "跳过片段"
+  },
+  "btnSubmit": {
+    "message": "提交判定"
+  },
+  "btnUncertain": {
+    "message": "不确定"
+  },
+  "btnYes": {
+    "message": "是"
+  },
+  "cancel": {
+    "message": "取消"
+  },
+  "clearVideoHistory": {
+    "message": "清除历史记录"
+  },
+  "clearVideoHistoryHint": {
+    "message": "永久删除全部片段记录"
+  },
+  "clipCountAtSubmission": {
+    "message": "提交时的片段计数"
+  },
+  "clipDataTitle": {
+    "message": "片段数据"
+  },
+  "clipDetails": {
+    "message": "片段详情"
+  },
+  "clipIdentityStatus": {
+    "message": "片段匹配状态"
+  },
+  "clipKey": {
+    "message": "片段复合键"
+  },
+  "clipLinkCopied": {
+    "message": "已复制！"
+  },
+  "clipLogSummary": {
+    "message": "记录摘要"
+  },
+  "clipNumber": {
+    "message": "片段"
+  },
+  "clipRange": {
+    "message": "片段范围"
+  },
+  "clipRepeats": {
+    "message": "重复次数"
+  },
+  "clipSelectionNotice": {
+    "message": "选取的片段无法代表玩家在对局中的整体表现。"
+  },
+  "clipsLabeled": {
+    "message": "已标注片段："
+  },
+  "clipStatusExactDuplicate": {
+    "message": "与已审查片段完全相同"
+  },
+  "clipStatusNewClip": {
+    "message": "同一对局的新片段"
+  },
+  "clipStatusNewMatch": {
+    "message": "新对局"
+  },
+  "clipStatusNewVideo": {
+    "message": "新录像中的新片段"
+  },
+  "clipStatusSameVideoDifferentClip": {
+    "message": "同一录像的不同片段"
+  },
+  "clipStatusShiftedDuplicate": {
+    "message": "发现时间偏移的重复片段"
+  },
+  "clipSummaryChecking": {
+    "message": "正在检查"
+  },
+  "clipSummaryMoment": {
+    "message": "片段"
+  },
+  "clipSummaryNew": {
+    "message": "新增"
+  },
+  "clipSummaryRange": {
+    "message": "范围"
+  },
+  "clipSummaryRepeat": {
+    "message": "重复"
+  },
+  "clipSummaryVideo": {
+    "message": "视频"
+  },
+  "closeClipDetails": {
+    "message": "关闭片段详情"
+  },
+  "closeDashboard": {
+    "message": "关闭面板"
+  },
+  "closePresetPanel": {
+    "message": "关闭判定预设"
+  },
+  "confirmClearHistory": {
+    "message": "确定要永久删除全部片段记录吗？此操作无法撤销。"
+  },
+  "confirmResetPresetsMessage": {
+    "message": "确定要重置所有判定并删除已保存的预设吗？此操作无法撤销。"
+  },
+  "confirmResetPresetsTitle": {
+    "message": "重置判定和预设？"
+  },
+  "copyMetrics": {
+    "message": "复制诊断数据"
+  },
+  "copyMetricsHint": {
+    "message": "复制为当前视频收集的所有数据和指标"
+  },
+  "createPreset": {
+    "message": "创建预设"
+  },
+  "cs2VideoReview": {
+    "message": "CS2 视频审查"
+  },
+  "debug": {
+    "message": "调试"
+  },
+  "deletePreset": {
+    "message": "删除预设"
+  },
+  "devMetricsTitle": {
+    "message": "开发者诊断数据"
+  },
+  "disabled": {
+    "message": "已禁用"
+  },
+  "downloadVideoHistory": {
+    "message": "下载数据库"
+  },
+  "downloadVideoHistoryHint": {
+    "message": "将本地判定历史数据库下载为 JSON 文件"
+  },
+  "editPreset": {
+    "message": "编辑预设"
+  },
+  "emptyClientSnapshot": {
+    "message": "客户端快照中没有可用数据"
+  },
+  "enabled": {
+    "message": "已启用"
+  },
+  "errConflictingTranslation": {
+    "message": "源文本存在冲突的翻译映射：{p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errHistoryFileNotUtf8": {
+    "message": "历史记录文件必须使用 UTF-8 编码。"
+  },
+  "errHistoryFileReadAborted": {
+    "message": "历史记录文件的读取已中止。"
+  },
+  "errHistoryFileReadFailed": {
+    "message": "无法读取历史记录文件。"
+  },
+  "errHistoryFileTooLarge": {
+    "message": "历史记录文件超过 10 MiB 的大小上限。"
+  },
+  "errHistoryInvalidStoredValue": {
+    "message": "VACNET 历史记录被更新为无效值。"
+  },
+  "errHistoryLookupFailed": {
+    "message": "查询历史记录失败：{error}",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "errMissingBrowserTranslation": {
+    "message": "浏览器缺少该条翻译：{p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errNoActiveClip": {
+    "message": "当前没有可提交判定的 Valve 视频片段。"
+  },
+  "errorNextClipLoad": {
+    "message": "无法加载下一个片段：{error}",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorNextClipMissing": {
+    "message": "服务器响应中没有下一个片段"
+  },
+  "errorPlayerOrFormUnavailable": {
+    "message": "播放器或表单不可用"
+  },
+  "errorServerResponse": {
+    "message": "服务器返回了 {status}",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errPreferencesInvalidPatch": {
+    "message": "VACNET 偏好设置的更新内容无效。"
+  },
+  "errPreferencesInvalidStoredValue": {
+    "message": "VACNET 偏好设置被更新为无效值。"
+  },
+  "errReviewVideoMetadataLoadFailed": {
+    "message": "无法加载 VACNET 审查视频的元数据。"
+  },
+  "errReviewVideoMetadataTimeout": {
+    "message": "加载 VACNET 审查视频的元数据超时。"
+  },
+  "errReviewVideoSeekFailed": {
+    "message": "VACNET 审查视频跳转失败。"
+  },
+  "errUnhandledDeduplicationStatus": {
+    "message": "未处理的片段去重状态：{p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledHistoryMutation": {
+    "message": "未处理的历史记录变更：{p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledIsolatedEvent": {
+    "message": "未处理的隔离环境事件：{p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledMainWorldEvent": {
+    "message": "未处理的主环境事件：{p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledPlayerCommand": {
+    "message": "未处理的播放器指令：{p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUseTranslationOutsideProvider": {
+    "message": "useTranslation 必须在 TranslationProvider 内使用。"
+  },
+  "errValveCurrentFormRemoved": {
+    "message": "当前的 Valve 判定表单在页面切换前已被移除。"
+  },
+  "errValveDisallowedActionUrl": {
+    "message": "Valve 响应中的判定表单包含不允许的提交 URL：“{p1}”",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveDisallowedVideoUrl": {
+    "message": "Valve 页面包含不允许的视频源 URL：“{p1}”",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveFormNoAction": {
+    "message": "Valve 判定表单缺少提交 URL。"
+  },
+  "errValveFormNoTaskField": {
+    "message": "Valve 判定表单缺少任务字段。"
+  },
+  "errValveFormNotFound": {
+    "message": "找不到 Valve 判定表单。"
+  },
+  "errValveFormTaskFieldCount": {
+    "message": "Valve 判定表单必须包含且仅包含一个任务字段。"
+  },
+  "errValveHttpStatus": {
+    "message": "Valve 返回了 HTTP {p1}。",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveInvalidFormField": {
+    "message": "Valve 表单字段无效：{p1}（类型：{p2}，长度：{p3}）",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "errValveInvalidTaskField": {
+    "message": "Valve 判定表单中的任务字段无效（类型：{p1}，长度：{p2}）。",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "errValveNextFormMissing": {
+    "message": "Valve 响应中没有下一个判定表单。"
+  },
+  "errValveNextFormNoAction": {
+    "message": "Valve 响应中的判定表单缺少提交 URL。"
+  },
+  "errValveNextFormNoActionUrl": {
+    "message": "下一个 Valve 判定表单缺少提交 URL。"
+  },
+  "errValveNextPageNoForm": {
+    "message": "下一个 Valve 页面没有判定表单。"
+  },
+  "errValveNextUnexpectedActionUrl": {
+    "message": "下一个 Valve 判定表单的提交 URL 异常：“{p1}”",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveNextUnsupportedMethod": {
+    "message": "下一个 Valve 判定表单使用了不受支持的提交方法：{p1}。",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveNoClipCounter": {
+    "message": "当前的 Valve 页面缺少片段计数器。"
+  },
+  "errValveNoClipCounterTransition": {
+    "message": "当前的 Valve 页面缺少切换页面所需的片段计数器。"
+  },
+  "errValveNoTaskId": {
+    "message": "Valve 页面缺少判定任务 ID。"
+  },
+  "errValveNoTiming": {
+    "message": "Valve 页面缺少有效的片段时间信息。"
+  },
+  "errValveNoVideoContainer": {
+    "message": "Valve 页面缺少视频容器。"
+  },
+  "errValveNoVideoSource": {
+    "message": "Valve 页面缺少视频源。"
+  },
+  "errValveUnexpectedEndpoint": {
+    "message": "Valve 判定接口地址异常：“{p1}”",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveUnexpectedPageUrl": {
+    "message": "Valve 响应中的页面 URL 异常：“{p1}”",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveUnexpectedResponseUrl": {
+    "message": "Valve 返回了异常的响应 URL。"
+  },
+  "errValveUnsupportedContentType": {
+    "message": "Valve 返回了不受支持的内容类型：{p1}。",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveUnsupportedMethod": {
+    "message": "Valve 判定表单使用了不受支持的提交方法：{p1}。",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveVideoElementSeekFailed": {
+    "message": "Valve 视频跳转到下一个片段时失败。"
+  },
+  "errValveVideoJsMetadataTimeout": {
+    "message": "Valve 的 Video.js 播放器加载元数据超时。"
+  },
+  "errValveVideoJsSourceLoadFailed": {
+    "message": "Valve 的 Video.js 播放器无法加载下一个视频源。"
+  },
+  "errVerdictAcceptedHistoryFailed": {
+    "message": "服务器已接受判定，但保存本地历史记录失败：{error}",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "errVideoJsEarlyConfig": {
+    "message": "请在 VACNET 初始化后再配置 Video.js。"
+  },
+  "errVideoJsNotFound": {
+    "message": "找不到 Valve 的 Video.js 播放器。"
+  },
+  "errVideoJsUnavailable": {
+    "message": "Valve 的 Video.js 播放器不可用。"
+  },
+  "errVideoOperationTimeout": {
+    "message": "{operation}超时。",
+    "placeholders": {
+      "operation": {
+        "content": "$1"
+      }
+    }
+  },
+  "eventTime": {
+    "message": "事件时间"
+  },
+  "extensionDescription": {
+    "message": "为 VACNet 门户提供播放器控制、判定预设和本地片段记录。"
+  },
+  "extensionName": {
+    "message": "VacNet++"
+  },
+  "frameDuration": {
+    "message": "单帧时长"
+  },
+  "hideNickname": {
+    "message": "隐藏昵称"
+  },
+  "hideNicknameHint": {
+    "message": "隐藏顶部栏中的昵称"
+  },
+  "historyLogTitle": {
+    "message": "片段记录"
+  },
+  "historyMatch": {
+    "message": "对局"
+  },
+  "historyMatchSummary": {
+    "message": "对局 {match} · {date}",
+    "placeholders": {
+      "date": {
+        "content": "$2"
+      },
+      "match": {
+        "content": "$1"
+      }
+    }
+  },
+  "historyTasks": {
+    "message": "个任务"
+  },
+  "hotkeyHelp": {
+    "message": "1–9：判定预设 · R：回到片段开头 · Z：缩放 · E：跳到事件 · Space：暂停 · Enter：提交 · Backspace：跳过 · 方向键：逐帧切换 · [ / ]：调整播放速度"
+  },
+  "hotkeyTitle": {
+    "message": "快捷键"
+  },
+  "inviteReviewers": {
+    "message": "邀请"
+  },
+  "keepControlsVisible": {
+    "message": "固定播放器控件"
+  },
+  "keepControlsVisibleHint": {
+    "message": "始终显示视频播放器的控制栏"
+  },
+  "labelAimAssist": {
+    "message": "辅助瞄准"
+  },
+  "labelAutoBhop": {
+    "message": "自动连跳"
+  },
+  "labelBot": {
+    "message": "机器人玩家"
+  },
+  "labelWallHack": {
+    "message": "透视外挂"
+  },
+  "language": {
+    "message": "语言"
+  },
+  "legacy": {
+    "message": "旧版"
+  },
+  "logout": {
+    "message": "退出登录"
+  },
+  "matchDate": {
+    "message": "片段日期"
+  },
+  "noClipHistory": {
+    "message": "暂无片段记录"
+  },
+  "noInvites": {
+    "message": "你没有可用的邀请名额。继续标注片段可以获得更多名额。"
+  },
+  "nicknameReplacement": {
+    "message": "审查员 "
+  },
+  "none": {
+    "message": "无"
+  },
+  "notAvailable": {
+    "message": "暂无数据"
+  },
+  "notFound": {
+    "message": "未找到"
+  },
+  "openVideo": {
+    "message": "打开视频"
+  },
+  "playerId": {
+    "message": "玩家 ID"
+  },
+  "playerSettings": {
+    "message": "设置"
+  },
+  "plyrRuntime": {
+    "message": "Plyr 运行环境"
+  },
+  "presetColor": {
+    "message": "强调色"
+  },
+  "presetColorBlue": {
+    "message": "蓝色"
+  },
+  "presetColorCyan": {
+    "message": "青色"
+  },
+  "presetColorGold": {
+    "message": "金色"
+  },
+  "presetColorGreen": {
+    "message": "绿色"
+  },
+  "presetColorOrange": {
+    "message": "橙色"
+  },
+  "presetColorPink": {
+    "message": "粉色"
+  },
+  "presetColorPurple": {
+    "message": "紫色"
+  },
+  "presetColorRed": {
+    "message": "红色"
+  },
+  "presetColorSlate": {
+    "message": "蓝灰色"
+  },
+  "presetName": {
+    "message": "名称"
+  },
+  "presetNameDuplicate": {
+    "message": "预设名称不能重复"
+  },
+  "presetPanelHint": {
+    "message": "打开判定预设"
+  },
+  "presetPanelTitle": {
+    "message": "预设"
+  },
+  "previousVerdicts": {
+    "message": "以往判定"
+  },
+  "processedAt": {
+    "message": "处理时间"
+  },
+  "questionAimAssist": {
+    "message": "被审查玩家是否使用了辅助瞄准，使准星瞬间锁定对手，或在对手进入准星时立即开火？"
+  },
+  "questionAutoBhop": {
+    "message": "被审查玩家是否借助辅助工具，在落地瞬间精确触发跳跃以提高移动速度？"
+  },
+  "questionBot": {
+    "message": "被审查玩家的操作是否看起来完全由程序控制？"
+  },
+  "questionWallHack": {
+    "message": "被审查玩家是否使用透视外挂，隔着墙壁、地板、烟雾或其他障碍物看到敌方玩家，或在被闪光弹致盲时仍能看到敌方玩家？"
+  },
+  "recentClips": {
+    "message": "近期视频"
+  },
+  "resetVerdicts": {
+    "message": "重置"
+  },
+  "reviewInstructions": {
+    "message": "审查说明"
+  },
+  "savedClips": {
+    "message": "已审查片段"
+  },
+  "savedInLocalHistory": {
+    "message": "已保存到本地历史记录"
+  },
+  "savePreset": {
+    "message": "保存"
+  },
+  "shareClip": {
+    "message": "分享片段"
+  },
+  "sourceApp": {
+    "message": "App"
+  },
+  "sourceBtnBack": {
+    "message": "Back"
+  },
+  "sourceBtnConfirm": {
+    "message": "Confirm"
+  },
+  "sourceBtnProceed": {
+    "message": "Proceed"
+  },
+  "sourceBtnReportBadClip": {
+    "message": "Report Bad Clip"
+  },
+  "sourceBtnSendFeedback": {
+    "message": "Send Feedback"
+  },
+  "sourceBtnUncertain": {
+    "message": "Uncertain"
+  },
+  "sourceClipDetails": {
+    "message": "Clip Details"
+  },
+  "sourceClipSelectionNotice": {
+    "message": "Clip selection is not a representative sample of gameplay."
+  },
+  "sourceClipsLabeled": {
+    "message": "Clips Labeled:"
+  },
+  "sourceCs2VideoReview": {
+    "message": "CS2 Video Review"
+  },
+  "sourceDevMetricsTitle": {
+    "message": "Developer Metrics"
+  },
+  "sourceInviteReviewers": {
+    "message": "Invite Reviewers"
+  },
+  "sourceInviteReviewersRu": {
+    "message": "Пригласить участников"
+  },
+  "sourceLabelAimAssist": {
+    "message": "Aim Assist"
+  },
+  "sourceLabelAutoBhop": {
+    "message": "Auto BHop"
+  },
+  "sourceLabelBot": {
+    "message": "Bot Player"
+  },
+  "sourceLabelWallHack": {
+    "message": "Wall Hack"
+  },
+  "sourceLogout": {
+    "message": "Logout"
+  },
+  "sourceNoInvites": {
+    "message": "You have no invites available. Earn more by continuing to label clips."
+  },
+  "sourceNone": {
+    "message": "none"
+  },
+  "sourceQuestionAimAssist": {
+    "message": "Is the Suspect using Aim Assist to snap to opponents or instantly firing when an opponent enters the Suspect's crosshair?"
+  },
+  "sourceQuestionAutoBhop": {
+    "message": "Is the Suspect using assistance to time their jump inputs at the exact moment they land to increase movement speed?"
+  },
+  "sourceQuestionBot": {
+    "message": "Does the Suspect look fully automated?"
+  },
+  "sourceQuestionWallHack": {
+    "message": "Is the Suspect using Wall Hacks to see enemy players through walls, floors, smokes, while flashed, or other obstacles?"
+  },
+  "sourceStatusPleaseWait": {
+    "message": "Please Wait..."
+  },
+  "sourceStatusSubmitting": {
+    "message": "Submitting..."
+  },
+  "sourceTaskId": {
+    "message": "Task ID"
+  },
+  "sourceUncertainNotice": {
+    "message": "It is fine (and expected) that you will often select \"Uncertain.\" Please be certain if you make any other selection."
+  },
+  "sourceVerdictTrainingNotice": {
+    "message": "The player you are watching will not be directly affected by your verdict. Rather, labels may be used to train future VACNet models."
+  },
+  "sourceWatchClipInstructions": {
+    "message": "Please watch the clip with audio and answer the question(s) presented."
+  },
+  "sourceXrayActive": {
+    "message": "X-Ray is active."
+  },
+  "statusLoadingNextClip": {
+    "message": "正在加载下一个片段…"
+  },
+  "statusPleaseWait": {
+    "message": "请稍候…"
+  },
+  "statusSubmitting": {
+    "message": "正在提交…"
+  },
+  "stretchVideo": {
+    "message": "拉伸视频"
+  },
+  "taskId": {
+    "message": "任务 ID"
+  },
+  "technicalData": {
+    "message": "技术数据"
+  },
+  "timeRangeSeconds": {
+    "message": "{start}-{end} 秒",
+    "placeholders": {
+      "end": {
+        "content": "$2"
+      },
+      "start": {
+        "content": "$1"
+      }
+    }
+  },
+  "timeSeconds": {
+    "message": "{time} 秒",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
+  },
+  "totalClipsViewed": {
+    "message": "已观看总数"
+  },
+  "triggerCountdown": {
+    "message": "距离 VacNet 触发还有 [time] 秒…"
+  },
+  "triggerFlash": {
+    "message": "⚠️ VacNet 触发"
+  },
+  "triggerMarkerLabel": {
+    "message": "VacNet 触发"
+  },
+  "uncertainNotice": {
+    "message": "经常选择“不确定”是正常且符合预期的。只有在有把握时才选择其他答案。"
+  },
+  "unknownDate": {
+    "message": "未知（旧版）"
+  },
+  "uploadVideoHistory": {
+    "message": "上传数据库"
+  },
+  "uploadVideoHistoryHint": {
+    "message": "从 JSON 文件上传本地判定历史数据库"
+  },
+  "verdict": {
+    "message": "判定"
+  },
+  "verdictTitle": {
+    "message": "请审查对局片段，判断被审查玩家是否使用了第三方软件、脚本或自动化工具。"
+  },
+  "verdictTrainingNotice": {
+    "message": "你的判定不会直接影响视频中的玩家。标注结果可用于训练未来的 VACNet 模型。"
+  },
+  "version": {
+    "message": "版本"
+  },
+  "videoId": {
+    "message": "视频 ID"
+  },
+  "videoJsCaptions": {
+    "message": "无障碍字幕"
+  },
+  "videoJsClose": {
+    "message": "关闭"
+  },
+  "videoJsDone": {
+    "message": "完成"
+  },
+  "videoJsExitFullscreen": {
+    "message": "退出全屏"
+  },
+  "videoJsFullscreen": {
+    "message": "全屏"
+  },
+  "videoJsMute": {
+    "message": "静音"
+  },
+  "videoJsPause": {
+    "message": "暂停"
+  },
+  "videoJsPlay": {
+    "message": "播放"
+  },
+  "videoJsPlaybackRate": {
+    "message": "播放速度"
+  },
+  "videoJsProgressBar": {
+    "message": "播放进度条"
+  },
+  "videoJsReset": {
+    "message": "重置"
+  },
+  "videoJsSubtitles": {
+    "message": "字幕"
+  },
+  "videoJsUnmute": {
+    "message": "取消静音"
+  },
+  "videoJsVideoPlayer": {
+    "message": "视频播放器"
+  },
+  "videoJsVolumeLevel": {
+    "message": "音量"
+  },
+  "watchClipInstructions": {
+    "message": "请打开声音观看片段，并回答下列问题。"
+  },
+  "webmUrl": {
+    "message": "WebM URL"
+  },
+  "xrayActive": {
+    "message": "X 光视角已启用。"
+  },
+  "metricsReviewType": {
+    "message": "审查类型"
+  },
+  "metricsReviewTypeNative": {
+    "message": "单项判定"
+  },
+  "metricsReviewTypeLegacy": {
+    "message": "四项分类判定"
+  },
+  "metricsClipFormat": {
+    "message": "片段格式"
+  },
+  "metricsFullMatch": {
+    "message": "完整对局"
+  },
+  "metricsMarkedMoment": {
+    "message": "标记时刻"
+  },
+  "metricsReviewTitle": {
+    "message": "审查状态"
+  },
+  "metricsReviewPhase": {
+    "message": "阶段"
+  },
+  "metricsAwaitingChoice": {
+    "message": "正在选择答案"
+  },
+  "metricsAwaitingConfirmation": {
+    "message": "等待确认"
+  },
+  "metricsReadyToConfirm": {
+    "message": "可以确认"
+  },
+  "metricsSelectedVerdict": {
+    "message": "已选答案"
+  },
+  "metricsNoVerdict": {
+    "message": "未选择"
+  },
+  "metricsPositiveAvailable": {
+    "message": "“作弊”选项"
+  },
+  "metricsSkipAvailable": {
+    "message": "“不确定”选项"
+  },
+  "metricsNegativeAvailable": {
+    "message": "“未发现作弊”选项"
+  },
+  "metricsConfirmAvailable": {
+    "message": "确认按钮"
+  },
+  "metricsAvailable": {
+    "message": "可用"
+  },
+  "metricsUnavailable": {
+    "message": "不可用"
+  },
+  "metricsSubmitting": {
+    "message": "判定提交"
+  },
+  "metricsNotSubmitting": {
+    "message": "未在提交"
+  },
+  "nativeReviewInstructions": {
+    "message": "请从头开始观看。一旦确认存在作弊，请立即选择“作弊”，系统会记录判定时刻。观看完毕后可选择“不确定”或“未发现作弊”。请选择确认或取消当前判定。"
+  },
+  "nativeReviewNotice": {
+    "message": "VacNet++：请使用网站的判定按钮。打开下一个任务时，历史记录会保存所选判定及判定 Tick。"
+  },
+  "nativeHotkeyHelp": {
+    "message": "Space / K：播放或暂停 · ← / →：逐帧切换 · J / L：在已观看的范围内跳转 · R：从头播放 · Z：缩放 · [ / ]：调整播放速度 · 1–9：判定预设 · Enter：确认当前判定（可用时） · Backspace：选择“不确定”（可用时） · M：静音"
+  },
+  "nativePlayerRuntime": {
+    "message": "网站播放器（Video.js）"
+  },
+  "labelCheating": {
+    "message": "作弊"
+  },
+  "verdictTick": {
+    "message": "判定 Tick"
+  },
+  "verdictDecisionTime": {
+    "message": "判定时刻"
+  },
+  "cheatingYes": {
+    "message": "作弊"
+  },
+  "cheatingNo": {
+    "message": "未发现作弊"
+  },
+  "nativeWatchHint": {
+    "message": "观看到结尾后，即可选择“不确定”或“未发现作弊”。"
+  },
+  "nativeConfirmHint": {
+    "message": "请确认当前判定，或取消后继续审查。"
+  },
+  "nativeStartMatch": {
+    "message": "按下播放键开始观看对局"
+  },
+  "sourceNativeStartMatch": {
+    "message": "Press play to start the match"
+  },
+  "nativeFullMatch": {
+    "message": "这段视频汇集了被审查玩家在整场对局中的精彩片段。该玩家是否作弊尚待判断。"
+  },
+  "sourceNativeFullMatch": {
+    "message": "This video is a full match of highlights from a Subject who may or may not be cheating."
+  },
+  "nativeChooseEarly": {
+    "message": "一旦看到足以排除合理怀疑的作弊证据，请立即选择“作弊”并提交。"
+  },
+  "sourceNativeChooseEarly": {
+    "message": "Select and submit \"Mark Cheating\" as soon as you have seen enough evidence that you believe the Subject is cheating beyond a reasonable doubt."
+  },
+  "nativeDecisionMoment": {
+    "message": "系统会记录你选择“作弊”的时刻，供未来的 VACNet 模型训练使用。请留意选择的时机。"
+  },
+  "sourceNativeDecisionMoment": {
+    "message": "The point at which you select \"Mark Cheating\" is important and recorded for future VACNet model training."
+  },
+  "nativeChooseEnd": {
+    "message": "如果看完全部精彩片段仍没有足够的证据认定被审查玩家作弊，请选择“未发现作弊”。如果无法判断，请选择“不确定”。"
+  },
+  "sourceNativeChooseEnd": {
+    "message": "Select \"No Cheating Seen\" if you reach the end of the highlights and there is not enough evidence to confidently claim the Subject is cheating. If you can't tell either way, select \"Uncertain\"."
+  },
+  "nativeTraining": {
+    "message": "每一项判定对训练未来的 VACNet 模型都同样有用。"
+  },
+  "sourceNativeTraining": {
+    "message": "Every verdict is equally useful for training future VACNet models."
+  },
+  "verdictHeading": {
+    "message": "你的判定"
+  },
+  "historySearchLabel": {
+    "message": "搜索任务 ID 或视频 ID"
+  },
+  "historySearchPlaceholder": {
+    "message": "任务 ID 或视频 ID"
+  },
+  "historyVerdictFilter": {
+    "message": "判定"
+  },
+  "historyAllVerdicts": {
+    "message": "所有判定"
+  },
+  "historyPositiveVerdict": {
+    "message": "发现违规"
+  },
+  "historyNegativeVerdict": {
+    "message": "未发现违规"
+  },
+  "historySkipVerdict": {
+    "message": "不确定"
+  },
+  "historyBadClipVerdict": {
+    "message": "异常片段"
+  },
+  "historyRepeatFilter": {
+    "message": "重复片段"
+  },
+  "historyAllRepeats": {
+    "message": "所有片段"
+  },
+  "historyExactRepeats": {
+    "message": "仅完全重复的片段"
+  },
+  "historyDateFrom": {
+    "message": "开始日期"
+  },
+  "historyDateTo": {
+    "message": "结束日期"
+  },
+  "historyResetFilters": {
+    "message": "重置筛选条件"
+  },
+  "historyFilterResultCount": {
+    "message": "找到 {count} 个片段，共 {total} 个"
+  },
+  "historyNoFilterResults": {
+    "message": "没有符合筛选条件的片段。"
+  },
+  "historyInvalidDateRange": {
+    "message": "请输入有效的日期范围。开始日期不能晚于结束日期。"
+  },
+  "statisticsTitle": {
+    "message": "统计"
+  },
+  "statisticsSession": {
+    "message": "本次会话"
+  },
+  "statisticsWatchedTime": {
+    "message": "观看时长"
+  },
+  "statisticsSessionNote": {
+    "message": "从打开此页面起统计实际播放时长，暂停、跳转及缓冲时间不计入。"
+  },
+  "statisticsToday": {
+    "message": "今天 · 本地历史记录"
+  },
+  "statisticsSavedToday": {
+    "message": "今天已保存"
+  },
+  "statisticsNativeCount": {
+    "message": "作弊判定"
+  },
+  "statisticsLegacyCount": {
+    "message": "分类判定"
+  },
+  "statisticsBadClips": {
+    "message": "异常片段"
+  },
+  "statisticsRepeats": {
+    "message": "完全重复的片段"
+  },
+  "statisticsHistoryNote": {
+    "message": "按本地保存日期统计，最多 {limit} 条记录。单项审查结果会在打开下一个任务时显示。"
+  },
+  "statisticsNativeAnswers": {
+    "message": "今日作弊判定分布"
+  },
+  "statisticsLegacyAnswers": {
+    "message": "今日分类判定分布"
+  },
+  "statisticsAnswersNote": {
+    "message": "异常片段不计入判定分布。"
+  },
+  "statisticsHours": {
+    "message": "{value} 小时"
+  },
+  "statisticsMinutes": {
+    "message": "{value} 分钟"
+  },
+  "statisticsSeconds": {
+    "message": "{value} 秒"
+  },
+  "statisticsCategory": {
+    "message": "类别"
+  },
+  "pluginsTitle": {
+    "message": "插件"
+  },
+  "pluginsHint": {
+    "message": "插件是你自行粘贴到此处的简短 JavaScript 代码。插件在独立沙箱中运行，可响应审查事件。API 说明见代码仓库中的 docs/PLUGINS.md。"
+  },
+  "pluginsEmpty": {
+    "message": "暂无插件。你可以自行创建插件或插入示例。"
+  },
+  "pluginsSandboxUnavailable": {
+    "message": "此浏览器无法使用插件沙箱。Chrome、Edge 和其他 Chromium 浏览器支持插件。"
+  },
+  "pluginNew": {
+    "message": "新建插件"
+  },
+  "pluginExample": {
+    "message": "插入示例"
+  },
+  "pluginIdLabel": {
+    "message": "标识符（字母、数字和连字符）"
+  },
+  "pluginNameLabel": {
+    "message": "名称"
+  },
+  "pluginVersionLabel": {
+    "message": "版本"
+  },
+  "pluginCodeLabel": {
+    "message": "插件代码（JavaScript）"
+  },
+  "pluginSave": {
+    "message": "保存并应用"
+  },
+  "pluginCancel": {
+    "message": "取消"
+  },
+  "pluginEdit": {
+    "message": "编辑"
+  },
+  "pluginDelete": {
+    "message": "删除"
+  },
+  "pluginDeleteConfirm": {
+    "message": "确定删除此插件？"
+  },
+  "pluginToggleLabel": {
+    "message": "启用或禁用插件 {name}"
+  },
+  "pluginStatusRunning": {
+    "message": "运行中"
+  },
+  "pluginStatusError": {
+    "message": "错误"
+  },
+  "pluginCardLabel": {
+    "message": "插件输出"
+  },
+  "pluginLimitReached": {
+    "message": "已达到插件数量上限（{limit} 个）。请删除不再使用的插件。"
+  },
+  "pluginSaveFailed": {
+    "message": "无法保存插件：{error}"
+  },
+  "pluginSettingsTitle": {
+    "message": "插件设置"
+  },
+  "pluginImportLabel": {
+    "message": "导入文件"
+  },
+  "pluginImportHint": {
+    "message": "选择一个 .js 文件。代码会在编辑器中打开，文件名将用作标识符。"
+  },
+  "pluginImportTooLarge": {
+    "message": "文件过大（最大 256 KB）"
+  },
+  "pluginImportReadFailed": {
+    "message": "无法读取文件"
+  },
+  "playerNormalSpeed": {
+    "message": "正常"
+  },
+  "playerQuality": {
+    "message": "画质"
+  },
+  "playerMenuBack": {
+    "message": "返回上一级菜单"
+  },
+  "playerSeek": {
+    "message": "跳转"
+  },
+  "playerSeekPosition": {
+    "message": "{currentTime} / {duration}"
+  },
+  "pluginDemoTimer": {
+    "message": "审查计时器"
+  },
+  "pluginDemoTimerCurrent": {
+    "message": "当前"
+  },
+  "pluginDemoTimerAverage": {
+    "message": "平均"
+  },
+  "pluginImportedName": {
+    "message": "导入的插件"
+  },
+  "pluginImportEmpty": {
+    "message": "文件为空或不含代码"
+  }
+}

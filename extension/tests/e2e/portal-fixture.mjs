@@ -1,14 +1,14 @@
 // A synthetic site adapter, not a copy of the extension's review controller.
 // Only the HTTP portal is replaced: extension scripts, media, runtime messages,
 // storage, isolated/MAIN worlds and Plyr all run unchanged in Chromium.
-export const portalHtml = (task = 'browser-task-1') => `<!doctype html>
+export const portalHtml = (task = 'browser-task-1', clipEnd = 1.2) => `<!doctype html>
 <html lang="ru"><meta charset="utf-8"><link rel="icon" href="data:,"><title>Synthetic VACNET review</title>
 <style>body{margin:20px;background:#17202b;color:white;font-family:Arial}.review-layout{display:flex;gap:24px}.video-column{width:640px}.verdict-column{width:450px}video{width:640px;height:360px}.footer-buttons{display:flex;gap:20px;margin-top:24px}
 /* Portal videoreview.css: a pending answer locks the native play control. */
 #video.vjs-play-locked .vjs-play-control{opacity:.38;pointer-events:none}</style>
 <div class="review-layout"><div class="video-column"><div class="videocontainer">
 <div id="video"><video id="video_html5_api" muted loop playsinline preload="auto"
- data-start-time="0" data-end-time="1.2" data-event-time="-1"
+ data-start-time="0" data-end-time="${clipEnd}" data-event-time="-1"
  src="https://replay-video.valve.net/synthetic/csow_0123456789abcdef.webm"></video></div>
 </div></div><div class="verdict-column"><div class="verdicts-container">
 <div id="verdictbuttons_cheating">

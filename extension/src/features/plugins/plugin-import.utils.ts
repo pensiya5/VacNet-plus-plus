@@ -1,4 +1,5 @@
 import { PLUGIN_ID_MAX_LENGTH } from '../../entities/plugin.entity';
+import { getMessage } from '../../shared/services/i18n.service';
 
 /** Filename → valid plugin id ("My Cool Plugin.js" → "my-cool-plugin"). */
 export const pluginIdFromFilename = (filename: string): string => {
@@ -15,7 +16,7 @@ export const pluginIdFromFilename = (filename: string): string => {
 /** Filename → human plugin name ("my-cool-plugin.js" → "my cool plugin"). */
 export const pluginNameFromFilename = (filename: string): string => {
   const base = filename.replace(/\.[a-z0-9]+$/iu, '').replace(/[-_]+/gu, ' ').trim();
-  return base.length >= 1 ? base.slice(0, 64) : 'Импортированный плагин';
+  return base.length >= 1 ? base.slice(0, 64) : getMessage('pluginImportedName');
 };
 
 /** First id not taken by an existing plugin ("x" taken → "x-2"). */

@@ -17,6 +17,7 @@ for (const browser of ['chrome', 'firefox']) {
 
     assert.equal(manifest.manifest_version, 3);
     assert.equal(manifest.name, 'VacNet++');
+    assert.equal(manifest.description, '__MSG_extensionDescription__');
     assert.equal(manifest.version, pkg.version);
     assert.equal(manifest.default_locale, 'en');
     assert.deepEqual(manifest.permissions, ['storage']);
@@ -72,13 +73,12 @@ for (const browser of ['chrome', 'firefox']) {
       assert.ok(existsSync(join(output, asset)), `Missing packaged asset: ${asset}`);
     }
 
-    const english = readJson(join(output, '_locales', 'en', 'messages.json'));
-    const russian = readJson(join(output, '_locales', 'ru', 'messages.json'));
-    assert.deepEqual(Object.keys(english).sort(), Object.keys(russian).sort());
     const keySource = readFileSync(join(root, 'src/shared/utils/generated-message-keys.utils.ts'), 'utf8');
     const requiredKeys = [...keySource.matchAll(/^\s+"([^"]+)"/gm)].map((match) => match[1]);
     assert.ok(requiredKeys.length > 0);
-    for (const [locale, catalog] of Object.entries({ en: english, ru: russian })) {
+    for (const locale of ['de', 'en', 'es', 'pt_BR', 'ru', 'zh_CN']) {
+      const catalog = readJson(join(output, '_locales', locale, 'messages.json'));
+      assert.deepEqual(Object.keys(catalog).sort(), requiredKeys, `${locale}: mismatched packaged keys`);
       for (const key of requiredKeys) {
         assert.ok(catalog[key]?.message?.trim(), `${locale}: missing translation ${key}`);
       }

@@ -1,4 +1,4 @@
-import { getMessage } from '../../../shared/services/i18n.service';
+import { getMessage, type MessageKey } from '../../../shared/services/i18n.service';
 import type { ClipData, ClipRange, PlayerMetrics } from '../../../entities/clip.entity';
 import type { Preferences } from '../../../entities/preferences.entity';
 import type { MessageCatalog } from '../../../shared/services/i18n.service';
@@ -149,16 +149,31 @@ export class PlyrAdapter implements ReviewPlayerPort {
   private requireVideo(): HTMLVideoElement {
     const t = this.options.catalog();
     const markerLabel = t?.triggerMarkerLabel ?? '';
+    const label = (key: MessageKey) => t?.[key] ?? getMessage(key);
+    const volume = label('videoJsVolumeLevel');
     const labels = {
-      play: t?.videoJsPlay ?? getMessage('videoJsPlay'),
-      pause: t?.videoJsPause ?? getMessage('videoJsPause'),
-      restart: t?.videoJsReset ?? getMessage('videoJsReset'),
-      volume: t?.videoJsVolumeLevel ?? getMessage('videoJsVolumeLevel'),
-      settings: t?.playerSettings ?? getMessage('playerSettings'),
-      enterFullscreen: t?.videoJsFullscreen ?? getMessage('videoJsFullscreen'),
-      exitFullscreen: t?.videoJsExitFullscreen ?? getMessage('videoJsExitFullscreen'),
-      share: t?.shareClip ?? getMessage('shareClip'),
-      copied: t?.clipLinkCopied ?? getMessage('clipLinkCopied'),
+      volume,
+      share: label('shareClip'),
+      copied: label('clipLinkCopied'),
+      i18n: {
+        volume,
+        play: label('videoJsPlay'),
+        pause: label('videoJsPause'),
+        restart: label('videoJsReset'),
+        mute: label('videoJsMute'),
+        unmute: label('videoJsUnmute'),
+        settings: label('playerSettings'),
+        enterFullscreen: label('videoJsFullscreen'),
+        exitFullscreen: label('videoJsExitFullscreen'),
+        speed: label('videoJsPlaybackRate'),
+        normal: label('playerNormalSpeed'),
+        quality: label('playerQuality'),
+        captions: label('videoJsCaptions'),
+        disabled: label('disabled'),
+        menuBack: label('playerMenuBack'),
+        seek: label('playerSeek'),
+        seekLabel: label('playerSeekPosition'),
+      },
     };
     const video = this.instance.ensureMounted(this.preferences, this.clip, markerLabel, labels, (element) => this.addVideoListeners(element));
     return video;

@@ -109,10 +109,11 @@ const readApp = (root: Document): string => {
   const rows = Array.from(
     root.querySelectorAll<HTMLTableRowElement>('#detailsModalContent .detailstable tr, .detailstable tr'),
   );
+  const localizedApp = getMessage('app').toLowerCase();
   for (const row of rows) {
     const key = row.cells[0]?.textContent.trim().toLowerCase() ?? '';
     const value = row.cells[1]?.textContent.trim() ?? '';
-    if (/^(?:app|application|приложение)$/iu.test(key) && value) return value;
+    if ((key === localizedApp || /^(?:app|application|приложение)$/iu.test(key)) && value) return value;
   }
   return rows[1]?.cells[1]?.textContent.trim() || '730';
 };

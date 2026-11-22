@@ -4,13 +4,12 @@
  * it runs unchanged inside the sandbox through `new Function('vacnet', …)`.
  *
  * The same source ships as a copy-paste file at docs/examples/review-timer.js;
- * tests/demo-plugin-file.test.mjs asserts both copies stay identical.
+ * tests/demo-example-file.test.ts verifies the Russian example matches.
  */
 export const DEMO_PLUGIN_ID = 'review-timer';
-export const DEMO_PLUGIN_NAME = 'Таймер проверки';
 export const DEMO_PLUGIN_VERSION = '1.1.0';
 
-export const DEMO_PLUGIN_CODE = [
+export const createDemoPluginCode = (title: string, currentLabel: string, averageLabel: string): string => [
   '// Таймер проверки (см. docs/PLUGINS.md).',
   '// Время на текущем клипе и среднее время по всем сохранённым вердиктам.',
   'let clipStartedAt = null;',
@@ -30,8 +29,8 @@ export const DEMO_PLUGIN_CODE = [
   '  const count = savedCount + sessionCount;',
   '  const avg = count > 0 ? total / count : 0;',
   '  vacnet.ui.setCard({',
-  "    title: 'Таймер проверки',",
-  "    text: 'Текущий: ' + fmt(currentSeconds) + ' · Среднее: ' + fmt(avg) + ' (' + count + ')',",
+  `    title: ${JSON.stringify(title)},`,
+  `    text: ${JSON.stringify(currentLabel + ': ')} + fmt(currentSeconds) + ${JSON.stringify(' · ' + averageLabel + ': ')} + fmt(avg) + ' (' + count + ')',`,
   '  });',
   '}',
   '',

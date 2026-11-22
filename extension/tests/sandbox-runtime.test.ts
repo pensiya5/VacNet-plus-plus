@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { PluginSandboxRuntime, type VacnetPluginApi } from '../src/features/plugins/sandbox-runtime.service';
-import { DEMO_PLUGIN_CODE } from '../src/features/plugins/demo-plugin';
+import { createDemoPluginCode } from '../src/features/plugins/demo-plugin';
 import type { HostWireMessage, SandboxWireMessage } from '../src/features/plugins/plugin-wire.port';
 
 interface Harness {
@@ -238,7 +238,8 @@ describe('PluginSandboxRuntime', () => {
     };
     const handlers: ((payload: unknown) => void)[] = [];
     // Execute the demo code exactly like the sandbox does.
-    const cleanup = new Function('vacnet', DEMO_PLUGIN_CODE)(fakeApi) as (() => void) | undefined;
+    const code = createDemoPluginCode('Таймер проверки', 'Текущий', 'Среднее');
+    const cleanup = new Function('vacnet', code)(fakeApi) as (() => void) | undefined;
     expect(typeof cleanup).toBe('function');
     const onClipLoaded = handlers[0]!;
     const onVerdictSubmitted = handlers[1]!;

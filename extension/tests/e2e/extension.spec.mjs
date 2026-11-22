@@ -12,6 +12,39 @@ async function captureDashboard(page, dialog, testInfo, name) {
   await page.setViewportSize({ width: 1440, height: 1100 });
 }
 
+for (const [browserLocale, pageLanguage, history, confirm, speed] of [
+  ['en-GB', 'en', 'Clip Journal', 'Confirm', 'Playback Rate'],
+  ['de-DE', 'de', 'Clip-Journal', 'Bestätigen', 'Wiedergabegeschwindigkeit'],
+  ['es-MX', 'es', 'Historial de clips', 'Confirmar', 'Velocidad de reproducción'],
+  ['pt-BR', 'pt-BR', 'Registro de clipes', 'Confirmar', 'Velocidade de reprodução'],
+  ['ru-RU', 'ru', 'Журнал клипов', 'Подтвердить', 'Скорость воспроизведения'],
+  ['zh-CN', 'zh-CN', '片段记录', '确认', '播放速度'],
+]) {
+  test.describe(`review UI with browser locale ${browserLocale}`, () => {
+    test.use({ browserLocale });
+
+    test('localizes the dashboard, portal text and document language', async ({ extension }) => {
+      await openPortal(extension);
+      const { page } = extension;
+      await expect(page.locator('html')).toHaveAttribute('lang', pageLanguage);
+      const settings = page.locator('button[data-plyr="settings"][aria-controls]');
+      await settings.click();
+      await expect(page.getByRole('menuitem', { name: speed })).toBeVisible();
+      await settings.click();
+      await page.getByRole('link', { name: history, exact: true }).click();
+      await expect(page.getByRole('dialog', { name: history })).toBeVisible();
+
+      await page.evaluate(() => {
+        const text = document.createElement('span');
+        text.id = 'synthetic-portal-text';
+        text.textContent = 'Confirm';
+        document.body.append(text);
+      });
+      await expect(page.locator('#synthetic-portal-text')).toHaveText(confirm);
+    });
+  });
+}
+
 test('built extension checks releases through native worker fetch and caches the result', async ({ extension }) => {
   const first = await extension.send('checkForUpdates', { force: true });
   const installedVersion = await extension.worker.evaluate(() => chrome.runtime.getManifest().version);
@@ -33,7 +66,9 @@ test('built extension checks releases through native worker fetch and caches the
     'https://github.com/pensiya5/vacnet-plus-plus/releases/tag/v99.0.0');
 });
 
-test('selected native verdict allows real video playback to resume with Space and the player button', async ({ extension }) => {
+const playbackTest = test.extend({ recordingMs: 4500 });
+
+playbackTest('selected native verdict allows real video playback to resume with Space and the player button', async ({ extension }) => {
   await openPortal(extension);
   const { page } = extension;
   const video = page.locator('#video_html5_api');
@@ -44,10 +79,15 @@ test('selected native verdict allows real video playback to resume with Space an
   // Native radio inputs are disabled during confirmation. The replacement UI
   // must keep player commands working without cancelling the selected verdict.
   await page.locator('body').click({ position: { x: 5, y: 5 } });
-  const before = await video.evaluate(element => element.currentTime);
+  // The short fixture loops, so its media timestamp can wrap during the poll.
+  const presentedFrames = () => video.evaluate(element => {
+    const quality = element.getVideoPlaybackQuality();
+    return quality.totalVideoFrames - quality.droppedVideoFrames;
+  });
+  const before = await presentedFrames();
   await page.keyboard.press('Space');
   await expect.poll(() => video.evaluate(element => element.paused)).toBe(false);
-  await expect.poll(() => video.evaluate(element => element.currentTime)).toBeGreaterThan(before + 0.15);
+  await expect.poll(presentedFrames).toBeGreaterThan(before + 2);
   await expect(page.locator('#vacnet-cheating-positive')).toBeChecked();
   await page.keyboard.press('Space');
   await expect.poll(() => video.evaluate(element => element.paused)).toBe(true);
@@ -314,12 +354,12 @@ test('plugin import fills the editor from a picked .js file and installs it', as
 test.describe('Public network smoke', () => {
   test.skip(process.env.VACNET_E2E_LIVE_UPDATES !== '1', 'Opt in with VACNET_E2E_LIVE_UPDATES=1; depends on public GitHub availability.');
   test('[live] public GitHub release check uses the installed worker and native fetch', async ({ extension }) => {
-  const result = await extension.send('checkForUpdates', { force: true });
-  expect(result.error, 'Public GitHub API must return a stable release (404/rate limits are a live smoke failure)').toBe(false);
-  expect(result.currentVersion).toBe('4.5.0');
-  expect(result.latestVersion).toMatch(/^\d+(?:\.\d+){0,3}$/u);
-  expect(result.checkedAt).toBeGreaterThan(0);
-  expect(result.releaseUrl).toMatch(/^https:\/\/github\.com\/pensiya5\/vacnet-plus-plus\/releases\/tag\//u);
-  expect(await extension.send('checkForUpdates', { force: false })).toEqual(result);
+    const result = await extension.send('checkForUpdates', { force: true });
+    expect(result.error, 'Public GitHub API must return a stable release (404/rate limits are a live smoke failure)').toBe(false);
+    expect(result.currentVersion).toBe(extension.manifest.version);
+    expect(result.latestVersion).toMatch(/^\d+(?:\.\d+){0,3}$/u);
+    expect(result.checkedAt).toBeGreaterThan(0);
+    expect(result.releaseUrl).toMatch(/^https:\/\/github\.com\/pensiya5\/vacnet-plus-plus\/releases\/tag\//u);
+    expect(await extension.send('checkForUpdates', { force: false })).toEqual(result);
   });
 });

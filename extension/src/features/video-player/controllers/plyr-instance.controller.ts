@@ -8,7 +8,12 @@ import { ShareButtonController } from './share-button.controller';
 import { PreciseProgressController } from './precise-progress.controller';
 
 export type ReviewPlayerMode = 'plyr' | 'native-fallback';
-interface PlayerControlLabels { play: string; pause: string; restart: string; volume: string; settings: string; enterFullscreen: string; exitFullscreen: string; share: string; copied: string; }
+interface PlayerControlLabels {
+  volume: string;
+  share: string;
+  copied: string;
+  i18n: Record<string, string>;
+}
 export const getReviewPlayerMode = (): ReviewPlayerMode => { try { return sessionStorage.getItem('vacnet:player-mode') === 'native-fallback' ? 'native-fallback' : 'plyr'; } catch { return 'plyr'; } };
 
 // These internals are verified against the pinned Plyr 3.8.4 implementation.
@@ -39,7 +44,7 @@ export class PlyrInstanceController {
     this.ensureSprite();
     try {
       const native = this.host.element.dataset.vacnetNativePlayer === 'true';
-      const config: ConstructorParameters<typeof Plyr>[1] = { autoplay: false, clickToPlay: true, controls: ['play-large', 'play', 'progress', 'current-time', 'duration', 'mute', 'settings', 'fullscreen'], i18n: { play: labels.play, pause: labels.pause, restart: labels.restart, volume: labels.volume, mute: labels.volume, unmute: labels.volume, settings: labels.settings, enterFullscreen: labels.enterFullscreen, exitFullscreen: labels.exitFullscreen }, keyboard: { focused: false, global: false }, invertTime: false, loadSprite: false, storage: { enabled: false }, tooltips: { controls: true, seek: true } };
+      const config: ConstructorParameters<typeof Plyr>[1] = { autoplay: false, clickToPlay: true, controls: ['play-large', 'play', 'progress', 'current-time', 'duration', 'mute', 'settings', 'fullscreen'], i18n: labels.i18n, keyboard: { focused: false, global: false }, invertTime: false, loadSprite: false, storage: { enabled: false }, tooltips: { controls: true, seek: true } };
       if (clip && clip.eventTime >= 0) config.markers = { enabled: true, points: [{ time: clip.eventTime, label: markerLabel }] };
       if (native) {
         this.nativeShell = document.createElement('video');

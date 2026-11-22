@@ -15,7 +15,7 @@ import {
 } from '../plugins.store';
 import type { PluginSettingDefinition } from '../plugin-wire.port';
 import { pluginIdFromFilename, pluginNameFromFilename, uniquePluginId } from '../plugin-import.utils';
-import { DEMO_PLUGIN_CODE, DEMO_PLUGIN_ID, DEMO_PLUGIN_NAME, DEMO_PLUGIN_VERSION } from '../demo-plugin';
+import { createDemoPluginCode, DEMO_PLUGIN_ID, DEMO_PLUGIN_VERSION } from '../demo-plugin';
 import styles from './PluginManager.module.css';
 
 interface EditorState {
@@ -175,11 +175,12 @@ export const PluginManager = ({ onError }: { onError: (error: unknown) => void }
 
   const openDemo = (): void => {
     setEditorError(null);
+    const name = t('pluginDemoTimer');
     setEditor({
       id: DEMO_PLUGIN_ID,
-      name: DEMO_PLUGIN_NAME,
+      name,
       version: DEMO_PLUGIN_VERSION,
-      code: DEMO_PLUGIN_CODE,
+      code: createDemoPluginCode(name, t('pluginDemoTimerCurrent'), t('pluginDemoTimerAverage')),
       isNew: true,
     });
   };

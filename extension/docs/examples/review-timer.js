@@ -17,8 +17,8 @@ function draw(currentSeconds) {
   const count = savedCount + sessionCount;
   const avg = count > 0 ? total / count : 0;
   vacnet.ui.setCard({
-    title: 'Таймер проверки',
-    text: 'Текущий: ' + fmt(currentSeconds) + ' · Среднее: ' + fmt(avg) + ' (' + count + ')',
+    title: "Таймер проверки",
+    text: "Текущий: " + fmt(currentSeconds) + " · Среднее: " + fmt(avg) + ' (' + count + ')',
   });
 }
 

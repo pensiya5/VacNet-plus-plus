@@ -1,0 +1,1281 @@
+{
+  "updatesTitle": {
+    "message": "Actualizaciones"
+  },
+  "updateInstalled": {
+    "message": "Versión instalada {version}"
+  },
+  "updateAvailable": {
+    "message": "La versión {version} está disponible"
+  },
+  "updateChecking": {
+    "message": "Buscando actualizaciones…"
+  },
+  "updateCurrent": {
+    "message": "Tienes instalada la última versión"
+  },
+  "updateCheckFailed": {
+    "message": "No se pudieron buscar actualizaciones. Vuelve a intentarlo más tarde."
+  },
+  "updateCheckNow": {
+    "message": "Buscar ahora"
+  },
+  "updateOpenRelease": {
+    "message": "Ver la versión"
+  },
+  "app": {
+    "message": "Aplicación"
+  },
+  "themeToggleTitle": {
+    "message": "Cambiar tema"
+  },
+  "themeToggleHint": {
+    "message": "Alternar entre el tema claro y el oscuro"
+  },
+  "autoApplyRepeatVerdicts": {
+    "message": "Veredicto automático"
+  },
+  "autoApplyRepeatVerdictsHint": {
+    "message": "Aplicar automáticamente el último veredicto si el vídeo se repite"
+  },
+  "autoSubmitPreset": {
+    "message": "Enviar de inmediato"
+  },
+  "badClip": {
+    "message": "Clip defectuoso"
+  },
+  "btnBack": {
+    "message": "Atrás"
+  },
+  "btnConfirm": {
+    "message": "Confirmar"
+  },
+  "btnNo": {
+    "message": "No"
+  },
+  "btnProceed": {
+    "message": "Continuar"
+  },
+  "btnReportBadClip": {
+    "message": "Informar de un clip defectuoso"
+  },
+  "btnResetConfirm": {
+    "message": "Restablecer y eliminar"
+  },
+  "btnSendFeedback": {
+    "message": "Enviar comentarios"
+  },
+  "btnSkip": {
+    "message": "Omitir clip"
+  },
+  "btnSubmit": {
+    "message": "Enviar veredicto"
+  },
+  "btnUncertain": {
+    "message": "No está claro"
+  },
+  "btnYes": {
+    "message": "Sí"
+  },
+  "cancel": {
+    "message": "Cancelar"
+  },
+  "clearVideoHistory": {
+    "message": "Borrar historial"
+  },
+  "clearVideoHistoryHint": {
+    "message": "Eliminar de forma permanente todo el historial de clips"
+  },
+  "clipCountAtSubmission": {
+    "message": "Recuento al enviar"
+  },
+  "clipDataTitle": {
+    "message": "Datos del clip"
+  },
+  "clipDetails": {
+    "message": "Detalles del clip"
+  },
+  "clipIdentityStatus": {
+    "message": "Estado de la identificación"
+  },
+  "clipKey": {
+    "message": "Clave compuesta del clip"
+  },
+  "clipLinkCopied": {
+    "message": "¡Copiado!"
+  },
+  "clipLogSummary": {
+    "message": "Resumen del historial"
+  },
+  "clipNumber": {
+    "message": "Clip"
+  },
+  "clipRange": {
+    "message": "Intervalo del clip"
+  },
+  "clipRepeats": {
+    "message": "Repeticiones"
+  },
+  "clipSelectionNotice": {
+    "message": "Los clips seleccionados no constituyen una muestra representativa de la partida."
+  },
+  "clipsLabeled": {
+    "message": "Clips clasificados:"
+  },
+  "clipStatusExactDuplicate": {
+    "message": "Duplicado exacto de un clip evaluado"
+  },
+  "clipStatusNewClip": {
+    "message": "Misma partida, clip nuevo"
+  },
+  "clipStatusNewMatch": {
+    "message": "Partida nueva"
+  },
+  "clipStatusNewVideo": {
+    "message": "Vídeo nuevo, clip nuevo"
+  },
+  "clipStatusSameVideoDifferentClip": {
+    "message": "Mismo vídeo, clip distinto"
+  },
+  "clipStatusShiftedDuplicate": {
+    "message": "Se encontró un duplicado con un intervalo desplazado"
+  },
+  "clipSummaryChecking": {
+    "message": "Comprobando"
+  },
+  "clipSummaryMoment": {
+    "message": "Clip"
+  },
+  "clipSummaryNew": {
+    "message": "Nuevo"
+  },
+  "clipSummaryRange": {
+    "message": "Intervalo"
+  },
+  "clipSummaryRepeat": {
+    "message": "Repetición"
+  },
+  "clipSummaryVideo": {
+    "message": "Vídeo"
+  },
+  "closeClipDetails": {
+    "message": "Cerrar detalles del clip"
+  },
+  "closeDashboard": {
+    "message": "Cerrar panel"
+  },
+  "closePresetPanel": {
+    "message": "Cerrar preajustes de veredictos"
+  },
+  "confirmClearHistory": {
+    "message": "¿Seguro que quieres eliminar permanentemente todo el historial de clips? Esta acción no se puede deshacer."
+  },
+  "confirmResetPresetsMessage": {
+    "message": "¿Seguro que quieres restablecer todos los veredictos y eliminar los preajustes guardados? Esta acción no se puede deshacer."
+  },
+  "confirmResetPresetsTitle": {
+    "message": "¿Restablecer veredictos y preajustes?"
+  },
+  "copyMetrics": {
+    "message": "Copiar métricas"
+  },
+  "copyMetricsHint": {
+    "message": "Copiar los datos y las métricas recopilados para el vídeo actual"
+  },
+  "createPreset": {
+    "message": "Crear preajuste"
+  },
+  "cs2VideoReview": {
+    "message": "Revisión de vídeo de CS2"
+  },
+  "debug": {
+    "message": "Depuración"
+  },
+  "deletePreset": {
+    "message": "Eliminar preajuste"
+  },
+  "devMetricsTitle": {
+    "message": "Métricas de desarrollo"
+  },
+  "disabled": {
+    "message": "desactivado"
+  },
+  "downloadVideoHistory": {
+    "message": "Descargar base de datos"
+  },
+  "downloadVideoHistoryHint": {
+    "message": "Descargar la base de datos local del historial de veredictos en formato JSON"
+  },
+  "editPreset": {
+    "message": "Editar preajuste"
+  },
+  "emptyClientSnapshot": {
+    "message": "No hay datos disponibles en el estado del cliente"
+  },
+  "enabled": {
+    "message": "activado"
+  },
+  "errConflictingTranslation": {
+    "message": "Hay traducciones incompatibles para el texto original: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errHistoryFileNotUtf8": {
+    "message": "El archivo del historial debe contener texto UTF-8."
+  },
+  "errHistoryFileReadAborted": {
+    "message": "Se canceló la lectura del archivo del historial."
+  },
+  "errHistoryFileReadFailed": {
+    "message": "No se pudo leer el archivo del historial."
+  },
+  "errHistoryFileTooLarge": {
+    "message": "El archivo del historial supera el límite de 10 MiB."
+  },
+  "errHistoryInvalidStoredValue": {
+    "message": "El historial de VACNET cambió a un valor no válido."
+  },
+  "errHistoryLookupFailed": {
+    "message": "No se pudo consultar el historial: {error}",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "errMissingBrowserTranslation": {
+    "message": "Falta una traducción del navegador: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errNoActiveClip": {
+    "message": "No hay un clip activo de Valve para enviar el veredicto."
+  },
+  "errorNextClipLoad": {
+    "message": "No se pudo cargar el siguiente clip: {error}",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorNextClipMissing": {
+    "message": "La respuesta del servidor no contiene el siguiente clip"
+  },
+  "errorPlayerOrFormUnavailable": {
+    "message": "El reproductor o el formulario no está disponible"
+  },
+  "errorServerResponse": {
+    "message": "El servidor devolvió {status}",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errPreferencesInvalidPatch": {
+    "message": "La actualización de las preferencias de VACNET no es válida."
+  },
+  "errPreferencesInvalidStoredValue": {
+    "message": "Las preferencias de VACNET cambiaron a un valor no válido."
+  },
+  "errReviewVideoMetadataLoadFailed": {
+    "message": "No se pudieron cargar los metadatos del vídeo de revisión de VACNET."
+  },
+  "errReviewVideoMetadataTimeout": {
+    "message": "Se agotó el tiempo de espera al cargar los metadatos del vídeo de revisión de VACNET."
+  },
+  "errReviewVideoSeekFailed": {
+    "message": "No se pudo cambiar la posición del vídeo de revisión de VACNET."
+  },
+  "errUnhandledDeduplicationStatus": {
+    "message": "Estado de deduplicación del clip sin gestionar: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledHistoryMutation": {
+    "message": "Cambio en el historial sin gestionar: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledIsolatedEvent": {
+    "message": "Evento del contexto aislado sin gestionar: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledMainWorldEvent": {
+    "message": "Evento del contexto de la página sin gestionar: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledPlayerCommand": {
+    "message": "Comando del reproductor sin gestionar: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUseTranslationOutsideProvider": {
+    "message": "useTranslation debe usarse dentro de TranslationProvider."
+  },
+  "errValveCurrentFormRemoved": {
+    "message": "Se eliminó el formulario de veredicto de Valve antes del cambio de página."
+  },
+  "errValveDisallowedActionUrl": {
+    "message": "La respuesta de Valve contiene una URL de envío de veredicto no permitida: «{p1}»",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveDisallowedVideoUrl": {
+    "message": "La página de Valve contiene una URL de vídeo no permitida: «{p1}»",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveFormNoAction": {
+    "message": "El formulario de veredicto de Valve no tiene URL de envío."
+  },
+  "errValveFormNoTaskField": {
+    "message": "El formulario de veredicto de Valve no contiene un campo de tarea."
+  },
+  "errValveFormNotFound": {
+    "message": "No se encontró el formulario de veredicto de Valve."
+  },
+  "errValveFormTaskFieldCount": {
+    "message": "El formulario de veredicto de Valve debe contener un único campo de tarea."
+  },
+  "errValveHttpStatus": {
+    "message": "Valve devolvió el estado HTTP {p1}.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveInvalidFormField": {
+    "message": "Campo no válido en el formulario de Valve: {p1} (tipo: {p2}, longitud: {p3})",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "errValveInvalidTaskField": {
+    "message": "El formulario de veredicto de Valve contiene un campo de tarea no válido (tipo: {p1}, longitud: {p2}).",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "errValveNextFormMissing": {
+    "message": "La respuesta de Valve no contiene el siguiente formulario de veredicto."
+  },
+  "errValveNextFormNoAction": {
+    "message": "La respuesta de Valve contiene un formulario de veredicto sin URL de envío."
+  },
+  "errValveNextFormNoActionUrl": {
+    "message": "El siguiente formulario de veredicto de Valve no tiene URL de envío."
+  },
+  "errValveNextPageNoForm": {
+    "message": "La siguiente página de Valve no contiene un formulario de veredicto."
+  },
+  "errValveNextUnexpectedActionUrl": {
+    "message": "El siguiente formulario de veredicto de Valve tiene una URL de envío inesperada: «{p1}»",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveNextUnsupportedMethod": {
+    "message": "Método no compatible para el siguiente formulario de veredicto de Valve: {p1}.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveNoClipCounter": {
+    "message": "La página actual de Valve no contiene el contador de clips."
+  },
+  "errValveNoClipCounterTransition": {
+    "message": "La página actual de Valve no contiene el contador de clips necesario para pasar al siguiente."
+  },
+  "errValveNoTaskId": {
+    "message": "La página de Valve no contiene un ID de tarea de veredicto."
+  },
+  "errValveNoTiming": {
+    "message": "La página de Valve no contiene tiempos válidos para el clip."
+  },
+  "errValveNoVideoContainer": {
+    "message": "La página de Valve no contiene un contenedor de vídeo."
+  },
+  "errValveNoVideoSource": {
+    "message": "La página de Valve no contiene una fuente de vídeo."
+  },
+  "errValveUnexpectedEndpoint": {
+    "message": "Punto de conexión de veredictos de Valve inesperado: «{p1}»",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveUnexpectedPageUrl": {
+    "message": "La respuesta de Valve contiene una URL de página inesperada: «{p1}»",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveUnexpectedResponseUrl": {
+    "message": "Valve devolvió una URL de respuesta inesperada."
+  },
+  "errValveUnsupportedContentType": {
+    "message": "Valve devolvió un tipo de contenido no compatible: {p1}.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveUnsupportedMethod": {
+    "message": "Método no compatible para el formulario de veredicto de Valve: {p1}.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveVideoElementSeekFailed": {
+    "message": "El elemento de vídeo de Valve falló al ir al siguiente clip."
+  },
+  "errValveVideoJsMetadataTimeout": {
+    "message": "Se agotó el tiempo de espera al cargar los metadatos en Video.js de Valve."
+  },
+  "errValveVideoJsSourceLoadFailed": {
+    "message": "Video.js de Valve no pudo cargar la siguiente fuente."
+  },
+  "errVerdictAcceptedHistoryFailed": {
+    "message": "Se aceptó el veredicto, pero no se pudo actualizar el historial local: {error}",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "errVideoJsEarlyConfig": {
+    "message": "Video.js solo se puede configurar después de iniciar VACNET."
+  },
+  "errVideoJsNotFound": {
+    "message": "No se encontró el reproductor Video.js de Valve."
+  },
+  "errVideoJsUnavailable": {
+    "message": "El reproductor Video.js de Valve no está disponible."
+  },
+  "errVideoOperationTimeout": {
+    "message": "{operation}: se agotó el tiempo de espera.",
+    "placeholders": {
+      "operation": {
+        "content": "$1"
+      }
+    }
+  },
+  "eventTime": {
+    "message": "Momento del evento"
+  },
+  "extensionDescription": {
+    "message": "Controles de reproducción, preajustes de veredictos e historial local de clips para el portal VACNet."
+  },
+  "extensionName": {
+    "message": "VacNet++"
+  },
+  "frameDuration": {
+    "message": "Duración del fotograma"
+  },
+  "hideNickname": {
+    "message": "Ocultar apodo"
+  },
+  "hideNicknameHint": {
+    "message": "Ocultar tu apodo en la barra superior"
+  },
+  "historyLogTitle": {
+    "message": "Historial de clips"
+  },
+  "historyMatch": {
+    "message": "Partida"
+  },
+  "historyMatchSummary": {
+    "message": "Partida {match} - {date}",
+    "placeholders": {
+      "date": {
+        "content": "$2"
+      },
+      "match": {
+        "content": "$1"
+      }
+    }
+  },
+  "historyTasks": {
+    "message": "tareas"
+  },
+  "hotkeyHelp": {
+    "message": "1–9: preajustes de veredictos · R: inicio del clip · Z: zoom · E: evento · Espacio: pausa · Intro: enviar · Retroceso: omitir · Flechas: avanzar o retroceder un fotograma · [ / ]: velocidad"
+  },
+  "hotkeyTitle": {
+    "message": "Atajos de teclado"
+  },
+  "inviteReviewers": {
+    "message": "Invitar"
+  },
+  "keepControlsVisible": {
+    "message": "Fijar los controles del reproductor"
+  },
+  "keepControlsVisibleHint": {
+    "message": "Mantener siempre visible la barra de controles del reproductor"
+  },
+  "labelAimAssist": {
+    "message": "Asistencia de puntería"
+  },
+  "labelAutoBhop": {
+    "message": "Bunny hop automático"
+  },
+  "labelBot": {
+    "message": "Jugador bot"
+  },
+  "labelWallHack": {
+    "message": "Visión a través de paredes"
+  },
+  "language": {
+    "message": "Idioma"
+  },
+  "legacy": {
+    "message": "Antiguo"
+  },
+  "logout": {
+    "message": "Cerrar sesión"
+  },
+  "matchDate": {
+    "message": "Fecha del clip"
+  },
+  "noClipHistory": {
+    "message": "No hay clips en el historial"
+  },
+  "noInvites": {
+    "message": "No tienes invitaciones disponibles. Sigue clasificando clips para conseguir más."
+  },
+  "nicknameReplacement": {
+    "message": "Revisor "
+  },
+  "none": {
+    "message": "ninguno"
+  },
+  "notAvailable": {
+    "message": "N/D"
+  },
+  "notFound": {
+    "message": "no encontrado"
+  },
+  "openVideo": {
+    "message": "Abrir vídeo"
+  },
+  "playerId": {
+    "message": "ID del reproductor"
+  },
+  "playerSettings": {
+    "message": "Ajustes"
+  },
+  "plyrRuntime": {
+    "message": "Entorno de ejecución de Plyr"
+  },
+  "presetColor": {
+    "message": "Color de acento"
+  },
+  "presetColorBlue": {
+    "message": "Azul"
+  },
+  "presetColorCyan": {
+    "message": "Cian"
+  },
+  "presetColorGold": {
+    "message": "Dorado"
+  },
+  "presetColorGreen": {
+    "message": "Verde"
+  },
+  "presetColorOrange": {
+    "message": "Naranja"
+  },
+  "presetColorPink": {
+    "message": "Rosa"
+  },
+  "presetColorPurple": {
+    "message": "Morado"
+  },
+  "presetColorRed": {
+    "message": "Rojo"
+  },
+  "presetColorSlate": {
+    "message": "Gris pizarra"
+  },
+  "presetName": {
+    "message": "Nombre"
+  },
+  "presetNameDuplicate": {
+    "message": "Cada preajuste debe tener un nombre distinto"
+  },
+  "presetPanelHint": {
+    "message": "Abrir preajustes de veredictos"
+  },
+  "presetPanelTitle": {
+    "message": "Preajustes"
+  },
+  "previousVerdicts": {
+    "message": "Veredictos anteriores"
+  },
+  "processedAt": {
+    "message": "Procesado"
+  },
+  "questionAimAssist": {
+    "message": "¿El sospechoso usa asistencia de puntería para apuntar de golpe a los rivales o disparar en cuanto entran en su mira?"
+  },
+  "questionAutoBhop": {
+    "message": "¿El sospechoso usa algún tipo de ayuda para saltar justo al tocar el suelo y ganar velocidad?"
+  },
+  "questionBot": {
+    "message": "¿Parece que el sospechoso juega de forma totalmente automatizada?"
+  },
+  "questionWallHack": {
+    "message": "¿El sospechoso usa trampas para ver a los rivales a través de paredes, suelos, humo u otros obstáculos, o cuando está cegado?"
+  },
+  "recentClips": {
+    "message": "Vídeos recientes"
+  },
+  "resetVerdicts": {
+    "message": "Restablecer"
+  },
+  "reviewInstructions": {
+    "message": "Instrucciones de revisión"
+  },
+  "savedClips": {
+    "message": "Clips evaluados"
+  },
+  "savedInLocalHistory": {
+    "message": "Guardado en el historial local"
+  },
+  "savePreset": {
+    "message": "Guardar"
+  },
+  "shareClip": {
+    "message": "Compartir clip"
+  },
+  "sourceApp": {
+    "message": "App"
+  },
+  "sourceBtnBack": {
+    "message": "Back"
+  },
+  "sourceBtnConfirm": {
+    "message": "Confirm"
+  },
+  "sourceBtnProceed": {
+    "message": "Proceed"
+  },
+  "sourceBtnReportBadClip": {
+    "message": "Report Bad Clip"
+  },
+  "sourceBtnSendFeedback": {
+    "message": "Send Feedback"
+  },
+  "sourceBtnUncertain": {
+    "message": "Uncertain"
+  },
+  "sourceClipDetails": {
+    "message": "Clip Details"
+  },
+  "sourceClipSelectionNotice": {
+    "message": "Clip selection is not a representative sample of gameplay."
+  },
+  "sourceClipsLabeled": {
+    "message": "Clips Labeled:"
+  },
+  "sourceCs2VideoReview": {
+    "message": "CS2 Video Review"
+  },
+  "sourceDevMetricsTitle": {
+    "message": "Developer Metrics"
+  },
+  "sourceInviteReviewers": {
+    "message": "Invite Reviewers"
+  },
+  "sourceInviteReviewersRu": {
+    "message": "Пригласить участников"
+  },
+  "sourceLabelAimAssist": {
+    "message": "Aim Assist"
+  },
+  "sourceLabelAutoBhop": {
+    "message": "Auto BHop"
+  },
+  "sourceLabelBot": {
+    "message": "Bot Player"
+  },
+  "sourceLabelWallHack": {
+    "message": "Wall Hack"
+  },
+  "sourceLogout": {
+    "message": "Logout"
+  },
+  "sourceNoInvites": {
+    "message": "You have no invites available. Earn more by continuing to label clips."
+  },
+  "sourceNone": {
+    "message": "none"
+  },
+  "sourceQuestionAimAssist": {
+    "message": "Is the Suspect using Aim Assist to snap to opponents or instantly firing when an opponent enters the Suspect's crosshair?"
+  },
+  "sourceQuestionAutoBhop": {
+    "message": "Is the Suspect using assistance to time their jump inputs at the exact moment they land to increase movement speed?"
+  },
+  "sourceQuestionBot": {
+    "message": "Does the Suspect look fully automated?"
+  },
+  "sourceQuestionWallHack": {
+    "message": "Is the Suspect using Wall Hacks to see enemy players through walls, floors, smokes, while flashed, or other obstacles?"
+  },
+  "sourceStatusPleaseWait": {
+    "message": "Please Wait..."
+  },
+  "sourceStatusSubmitting": {
+    "message": "Submitting..."
+  },
+  "sourceTaskId": {
+    "message": "Task ID"
+  },
+  "sourceUncertainNotice": {
+    "message": "It is fine (and expected) that you will often select \"Uncertain.\" Please be certain if you make any other selection."
+  },
+  "sourceVerdictTrainingNotice": {
+    "message": "The player you are watching will not be directly affected by your verdict. Rather, labels may be used to train future VACNet models."
+  },
+  "sourceWatchClipInstructions": {
+    "message": "Please watch the clip with audio and answer the question(s) presented."
+  },
+  "sourceXrayActive": {
+    "message": "X-Ray is active."
+  },
+  "statusLoadingNextClip": {
+    "message": "Cargando el siguiente clip…"
+  },
+  "statusPleaseWait": {
+    "message": "Espera…"
+  },
+  "statusSubmitting": {
+    "message": "Enviando…"
+  },
+  "stretchVideo": {
+    "message": "Estirar vídeo"
+  },
+  "taskId": {
+    "message": "ID de tarea"
+  },
+  "technicalData": {
+    "message": "Datos técnicos"
+  },
+  "timeRangeSeconds": {
+    "message": "{start}-{end} s",
+    "placeholders": {
+      "end": {
+        "content": "$2"
+      },
+      "start": {
+        "content": "$1"
+      }
+    }
+  },
+  "timeSeconds": {
+    "message": "{time} s",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
+  },
+  "totalClipsViewed": {
+    "message": "Total de clips vistos"
+  },
+  "triggerCountdown": {
+    "message": "Evento de VacNet en [time]…"
+  },
+  "triggerFlash": {
+    "message": "⚠️ Evento de VacNet"
+  },
+  "triggerMarkerLabel": {
+    "message": "Evento de VacNet"
+  },
+  "uncertainNotice": {
+    "message": "Es normal que elijas «No está claro» a menudo. Si eliges otra opción, asegúrate de tu decisión."
+  },
+  "unknownDate": {
+    "message": "Desconocida (versión antigua)"
+  },
+  "uploadVideoHistory": {
+    "message": "Cargar base de datos"
+  },
+  "uploadVideoHistoryHint": {
+    "message": "Cargar una base de datos local del historial de veredictos desde un archivo JSON"
+  },
+  "verdict": {
+    "message": "Veredicto"
+  },
+  "verdictTitle": {
+    "message": "Revisa el clip de la partida y determina si el sospechoso usa software de terceros, scripts o automatización."
+  },
+  "verdictTrainingNotice": {
+    "message": "El veredicto no afectará directamente al jugador que estás observando. Los resultados pueden usarse para entrenar futuros modelos de VACNet."
+  },
+  "version": {
+    "message": "Versión"
+  },
+  "videoId": {
+    "message": "ID del vídeo"
+  },
+  "videoJsCaptions": {
+    "message": "Subtítulos accesibles"
+  },
+  "videoJsClose": {
+    "message": "Cerrar"
+  },
+  "videoJsDone": {
+    "message": "Listo"
+  },
+  "videoJsExitFullscreen": {
+    "message": "Salir de pantalla completa"
+  },
+  "videoJsFullscreen": {
+    "message": "Pantalla completa"
+  },
+  "videoJsMute": {
+    "message": "Silenciar"
+  },
+  "videoJsPause": {
+    "message": "Pausar"
+  },
+  "videoJsPlay": {
+    "message": "Reproducir"
+  },
+  "videoJsPlaybackRate": {
+    "message": "Velocidad de reproducción"
+  },
+  "videoJsProgressBar": {
+    "message": "Barra de progreso"
+  },
+  "videoJsReset": {
+    "message": "Restablecer"
+  },
+  "videoJsSubtitles": {
+    "message": "Subtítulos"
+  },
+  "videoJsUnmute": {
+    "message": "Activar sonido"
+  },
+  "videoJsVideoPlayer": {
+    "message": "Reproductor de vídeo"
+  },
+  "videoJsVolumeLevel": {
+    "message": "Nivel de volumen"
+  },
+  "watchClipInstructions": {
+    "message": "Mira el clip con audio y responde a las preguntas."
+  },
+  "webmUrl": {
+    "message": "URL de WebM"
+  },
+  "xrayActive": {
+    "message": "La visión de rayos X está activada."
+  },
+  "metricsReviewType": {
+    "message": "Tipo de revisión"
+  },
+  "metricsReviewTypeNative": {
+    "message": "Veredicto único"
+  },
+  "metricsReviewTypeLegacy": {
+    "message": "Cuatro categorías"
+  },
+  "metricsClipFormat": {
+    "message": "Formato del clip"
+  },
+  "metricsFullMatch": {
+    "message": "Partida completa"
+  },
+  "metricsMarkedMoment": {
+    "message": "Momento marcado"
+  },
+  "metricsReviewTitle": {
+    "message": "Estado de la revisión"
+  },
+  "metricsReviewPhase": {
+    "message": "Fase"
+  },
+  "metricsAwaitingChoice": {
+    "message": "Eligiendo una respuesta"
+  },
+  "metricsAwaitingConfirmation": {
+    "message": "En espera de confirmación"
+  },
+  "metricsReadyToConfirm": {
+    "message": "Listo para confirmar"
+  },
+  "metricsSelectedVerdict": {
+    "message": "Respuesta seleccionada"
+  },
+  "metricsNoVerdict": {
+    "message": "Sin seleccionar"
+  },
+  "metricsPositiveAvailable": {
+    "message": "Opción «Usa trampas»"
+  },
+  "metricsSkipAvailable": {
+    "message": "Opción «No está claro»"
+  },
+  "metricsNegativeAvailable": {
+    "message": "Opción «No usa trampas»"
+  },
+  "metricsConfirmAvailable": {
+    "message": "Botón de confirmación"
+  },
+  "metricsAvailable": {
+    "message": "Disponible"
+  },
+  "metricsUnavailable": {
+    "message": "No disponible"
+  },
+  "metricsSubmitting": {
+    "message": "Envío del veredicto"
+  },
+  "metricsNotSubmitting": {
+    "message": "Sin envío en curso"
+  },
+  "nativeReviewInstructions": {
+    "message": "Mira el vídeo desde el inicio. Selecciona «Usa trampas» en cuanto tengas la certeza: se registra el momento de la decisión. «No está claro» y «No usa trampas» están disponibles tras ver el vídeo. Confirma o cancela tu decisión."
+  },
+  "nativeReviewNotice": {
+    "message": "VacNet++: usa los botones de veredicto del portal. Cuando se abra la siguiente tarea, el historial guardará el veredicto y el tick en el que tomaste la decisión."
+  },
+  "nativeHotkeyHelp": {
+    "message": "Espacio / K — reproducir o pausar · ← / → — avanzar o retroceder un fotograma · J / L — desplazarse por la parte ya vista · R — volver al inicio · Z — zoom · [ / ] — velocidad · 1–9 — preajustes · Intro — confirmar cuando se habilite · Retroceso — «No está claro» cuando esté disponible · M — silenciar"
+  },
+  "nativePlayerRuntime": {
+    "message": "Reproductor del portal (Video.js)"
+  },
+  "labelCheating": {
+    "message": "Uso de trampas"
+  },
+  "verdictTick": {
+    "message": "Tick de la decisión"
+  },
+  "verdictDecisionTime": {
+    "message": "Momento de la decisión"
+  },
+  "cheatingYes": {
+    "message": "Usa trampas"
+  },
+  "cheatingNo": {
+    "message": "No usa trampas"
+  },
+  "nativeWatchHint": {
+    "message": "Mira el vídeo hasta el final para elegir «No está claro» o «No usa trampas»."
+  },
+  "nativeConfirmHint": {
+    "message": "Confirma la decisión o cancélala para seguir revisando."
+  },
+  "nativeStartMatch": {
+    "message": "Pulsa reproducir para iniciar la partida"
+  },
+  "sourceNativeStartMatch": {
+    "message": "Press play to start the match"
+  },
+  "nativeFullMatch": {
+    "message": "Este vídeo reúne las jugadas destacadas de una partida completa de un jugador que podría estar usando trampas."
+  },
+  "sourceNativeFullMatch": {
+    "message": "This video is a full match of highlights from a Subject who may or may not be cheating."
+  },
+  "nativeChooseEarly": {
+    "message": "Selecciona y envía «Usa trampas» en cuanto veas pruebas suficientes para estar seguro de que el jugador está haciendo trampas."
+  },
+  "sourceNativeChooseEarly": {
+    "message": "Select and submit \"Mark Cheating\" as soon as you have seen enough evidence that you believe the Subject is cheating beyond a reasonable doubt."
+  },
+  "nativeDecisionMoment": {
+    "message": "El momento en que seleccionas «Usa trampas» se registra para entrenar futuros modelos de VACNet."
+  },
+  "sourceNativeDecisionMoment": {
+    "message": "The point at which you select \"Mark Cheating\" is important and recorded for future VACNet model training."
+  },
+  "nativeChooseEnd": {
+    "message": "Al final de las jugadas destacadas, selecciona «No usa trampas» si no hay pruebas suficientes de que el jugador esté haciendo trampas. Si tienes dudas, selecciona «No está claro»."
+  },
+  "sourceNativeChooseEnd": {
+    "message": "Select \"No Cheating Seen\" if you reach the end of the highlights and there is not enough evidence to confidently claim the Subject is cheating. If you can't tell either way, select \"Uncertain\"."
+  },
+  "nativeTraining": {
+    "message": "Todos los veredictos son igual de útiles para entrenar futuros modelos de VACNet."
+  },
+  "sourceNativeTraining": {
+    "message": "Every verdict is equally useful for training future VACNet models."
+  },
+  "verdictHeading": {
+    "message": "Tu veredicto"
+  },
+  "historySearchLabel": {
+    "message": "Buscar por ID de tarea o vídeo"
+  },
+  "historySearchPlaceholder": {
+    "message": "ID de tarea o vídeo"
+  },
+  "historyVerdictFilter": {
+    "message": "Veredicto"
+  },
+  "historyAllVerdicts": {
+    "message": "Todos los veredictos"
+  },
+  "historyPositiveVerdict": {
+    "message": "Infracción detectada"
+  },
+  "historyNegativeVerdict": {
+    "message": "Sin infracción"
+  },
+  "historySkipVerdict": {
+    "message": "No está claro"
+  },
+  "historyBadClipVerdict": {
+    "message": "Clip defectuoso"
+  },
+  "historyRepeatFilter": {
+    "message": "Repeticiones"
+  },
+  "historyAllRepeats": {
+    "message": "Todos los clips"
+  },
+  "historyExactRepeats": {
+    "message": "Solo repeticiones exactas"
+  },
+  "historyDateFrom": {
+    "message": "Fecha de inicio"
+  },
+  "historyDateTo": {
+    "message": "Fecha de fin"
+  },
+  "historyResetFilters": {
+    "message": "Restablecer filtros"
+  },
+  "historyFilterResultCount": {
+    "message": "Clips encontrados: {count} de {total}"
+  },
+  "historyNoFilterResults": {
+    "message": "Ningún clip coincide con estos filtros."
+  },
+  "historyInvalidDateRange": {
+    "message": "Introduce un intervalo válido: la fecha de inicio debe ser anterior o igual a la fecha de fin."
+  },
+  "statisticsTitle": {
+    "message": "Estadísticas"
+  },
+  "statisticsSession": {
+    "message": "Sesión actual"
+  },
+  "statisticsWatchedTime": {
+    "message": "Tiempo de visualización"
+  },
+  "statisticsSessionNote": {
+    "message": "Desde que abriste esta página. Solo cuenta la reproducción y se excluyen las pausas, los saltos y el tiempo de carga."
+  },
+  "statisticsToday": {
+    "message": "Hoy · historial local"
+  },
+  "statisticsSavedToday": {
+    "message": "Guardados hoy"
+  },
+  "statisticsNativeCount": {
+    "message": "Revisiones de trampas"
+  },
+  "statisticsLegacyCount": {
+    "message": "Revisiones por categorías"
+  },
+  "statisticsBadClips": {
+    "message": "Clips defectuosos"
+  },
+  "statisticsRepeats": {
+    "message": "Repeticiones exactas"
+  },
+  "statisticsHistoryNote": {
+    "message": "Según la fecha de guardado local, hasta {limit} registros. Los resultados de la revisión del portal aparecen con la siguiente tarea."
+  },
+  "statisticsNativeAnswers": {
+    "message": "Respuestas sobre trampas hoy"
+  },
+  "statisticsLegacyAnswers": {
+    "message": "Respuestas por categoría hoy"
+  },
+  "statisticsAnswersNote": {
+    "message": "Los clips defectuosos se excluyen de la distribución de respuestas."
+  },
+  "statisticsHours": {
+    "message": "{value} h"
+  },
+  "statisticsMinutes": {
+    "message": "{value} min"
+  },
+  "statisticsSeconds": {
+    "message": "{value} s"
+  },
+  "statisticsCategory": {
+    "message": "Categoría"
+  },
+  "pluginsTitle": {
+    "message": "Complementos"
+  },
+  "pluginsHint": {
+    "message": "Los complementos son pequeños fragmentos de JavaScript que puedes pegar. Se ejecutan en un entorno aislado y reaccionan a los eventos de revisión. La documentación de la API está en docs/PLUGINS.md del repositorio."
+  },
+  "pluginsEmpty": {
+    "message": "Aún no hay complementos. Crea uno o inserta el ejemplo."
+  },
+  "pluginsSandboxUnavailable": {
+    "message": "El entorno aislado de complementos no está disponible en este navegador. Los complementos funcionan en Chrome, Edge y otros navegadores basados en Chromium."
+  },
+  "pluginNew": {
+    "message": "Nuevo complemento"
+  },
+  "pluginExample": {
+    "message": "Insertar ejemplo"
+  },
+  "pluginIdLabel": {
+    "message": "Identificador (letras, dígitos y guiones)"
+  },
+  "pluginNameLabel": {
+    "message": "Nombre"
+  },
+  "pluginVersionLabel": {
+    "message": "Versión"
+  },
+  "pluginCodeLabel": {
+    "message": "Código del complemento (JavaScript)"
+  },
+  "pluginSave": {
+    "message": "Guardar y aplicar"
+  },
+  "pluginCancel": {
+    "message": "Cancelar"
+  },
+  "pluginEdit": {
+    "message": "Editar"
+  },
+  "pluginDelete": {
+    "message": "Eliminar"
+  },
+  "pluginDeleteConfirm": {
+    "message": "¿Seguro que quieres eliminarlo?"
+  },
+  "pluginToggleLabel": {
+    "message": "Activar o desactivar el complemento {name}"
+  },
+  "pluginStatusRunning": {
+    "message": "En ejecución"
+  },
+  "pluginStatusError": {
+    "message": "Error"
+  },
+  "pluginCardLabel": {
+    "message": "Salida del complemento"
+  },
+  "pluginLimitReached": {
+    "message": "Se alcanzó el límite de complementos ({limit}). Elimina alguno que ya no necesites."
+  },
+  "pluginSaveFailed": {
+    "message": "No se pudo guardar el complemento: {error}"
+  },
+  "pluginSettingsTitle": {
+    "message": "Ajustes del complemento"
+  },
+  "pluginImportLabel": {
+    "message": "Importar archivo"
+  },
+  "pluginImportHint": {
+    "message": "Selecciona un archivo .js. El código se abrirá en el editor y el identificador se tomará del nombre del archivo."
+  },
+  "pluginImportTooLarge": {
+    "message": "El archivo es demasiado grande (máximo 256 KB)"
+  },
+  "pluginImportReadFailed": {
+    "message": "No se pudo leer el archivo"
+  },
+  "playerNormalSpeed": {
+    "message": "Normal"
+  },
+  "playerQuality": {
+    "message": "Calidad"
+  },
+  "playerMenuBack": {
+    "message": "Volver al menú anterior"
+  },
+  "playerSeek": {
+    "message": "Buscar posición"
+  },
+  "playerSeekPosition": {
+    "message": "{currentTime} de {duration}"
+  },
+  "pluginDemoTimer": {
+    "message": "Temporizador de revisión"
+  },
+  "pluginDemoTimerCurrent": {
+    "message": "Actual"
+  },
+  "pluginDemoTimerAverage": {
+    "message": "Media"
+  },
+  "pluginImportedName": {
+    "message": "Complemento importado"
+  },
+  "pluginImportEmpty": {
+    "message": "El archivo está vacío o no contiene código"
+  }
+}

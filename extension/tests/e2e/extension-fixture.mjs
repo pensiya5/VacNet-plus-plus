@@ -54,9 +54,9 @@ async function workerNetwork(context, worker, liveUpdates) {
   return { requests, close: () => cdp.detach() };
 }
 
-async function createVideo(context) {
+async function createVideo(context, recordingMs) {
   const recorderPage = await context.newPage();
-  const bytes = await recorderPage.evaluate(async () => {
+  const bytes = await recorderPage.evaluate(async (recordingMs) => {
     const canvas = document.createElement('canvas');
     canvas.width = 160; canvas.height = 90;
     const drawing = canvas.getContext('2d');
@@ -72,17 +72,19 @@ async function createVideo(context) {
       drawing.fillStyle = 'white'; drawing.fillText(String(frame), 20, 40);
     }, 50);
     recorder.start();
-    await new Promise(resolveWait => setTimeout(resolveWait, 1300));
+    await new Promise(resolveWait => setTimeout(resolveWait, recordingMs));
     recorder.stop(); await stopped; clearInterval(draw);
     stream.getTracks().forEach(track => track.stop());
     return [...new Uint8Array(await new Blob(chunks).arrayBuffer())];
-  });
+  }, recordingMs);
   await recorderPage.close();
   return Buffer.from(bytes);
 }
 
 export const test = base.extend({
-  extension: async ({}, use, testInfo) => {
+  browserLocale: ['ru-RU', { option: true }],
+  recordingMs: [1300, { option: true }],
+  extension: async ({ browserLocale, recordingMs }, use, testInfo) => {
     const manifest = JSON.parse(await readFile(join(extensionPath, 'manifest.json'), 'utf8'));
     const profile = await mkdtemp(join(tmpdir(), 'vacnet-browser-test-'));
     let context;
@@ -94,7 +96,7 @@ export const test = base.extend({
       context = await chromium.launchPersistentContext(profile, {
         ...(chromeExecutable ? { executablePath: chromeExecutable, ignoreDefaultArgs: ['--disable-extensions'] } : { channel: 'chromium' }),
         headless: process.env.VACNET_E2E_HEADED !== '1',
-        locale: 'ru-RU', viewport: { width: 1440, height: 1100 },
+        locale: browserLocale, viewport: { width: 1440, height: 1100 },
         args: [...(chromeExecutable ? ['--enable-unsafe-extension-debugging']
           : [`--disable-extensions-except=${extensionPath}`, `--load-extension=${extensionPath}`]),
           '--autoplay-policy=no-user-gesture-required'],
@@ -107,12 +109,12 @@ export const test = base.extend({
       const worker = context.serviceWorkers()[0] ?? await context.waitForEvent('serviceworker');
       const liveUpdates = process.env.VACNET_E2E_LIVE_UPDATES === '1' && testInfo.title.includes('[live]');
       network = await workerNetwork(context, worker, liveUpdates);
-      const media = await createVideo(context);
+      const media = await createVideo(context, recordingMs);
       await context.route('**/*', async route => {
         const url = route.request().url();
         if (url.startsWith('https://www.counter-strike.net/vacnet/clips')) {
           const task = new URL(url).searchParams.get('synthetic') === '2' ? 'browser-task-2' : 'browser-task-1';
-          await route.fulfill({ contentType: 'text/html', body: portalHtml(task) });
+          await route.fulfill({ contentType: 'text/html', body: portalHtml(task, (recordingMs - 100) / 1000) });
         } else if (url.startsWith('https://replay-video.valve.net/synthetic/')) {
           await route.fulfill({ contentType: 'video/webm', body: media });
         } else if (liveUpdates && url === latestApi && route.request().method() === 'GET') {

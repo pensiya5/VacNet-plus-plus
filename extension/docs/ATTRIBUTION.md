@@ -6,7 +6,7 @@
 
 **Modified project / Модификация:** VacNet++ by [pensiya5](https://github.com/pensiya5/vacnet-plus-plus)
 
-**Modification period / Период изменений:** September–October 2026 / сентябрь–октябрь 2026 г.
+**Modification period / Период изменений:** September–November 2026 / сентябрь–ноябрь 2026 г.
 
 VacNet++ is an unofficial, modified version of VACNET Toolkit Extension. Changes include the interface, video controls, verdict workflows, history, statistics and update checking. See the public commit history for details.
 
@@ -16,6 +16,6 @@ The original author does not maintain or endorse this modified version and is no
 
 Автор оригинального проекта не сопровождает и не поддерживает эту модификацию и не отвечает за внесённые изменения. Проект не связан с Valve Corporation.
 
-**License / Лицензия:** [GNU GPL v3.0](https://github.com/pensiya5/vacnet-plus-plus/blob/v4.5.1/LICENSE). Copyright notices and third-party license obligations must be preserved.
+**License / Лицензия:** [GNU GPL v3.0](https://github.com/pensiya5/vacnet-plus-plus/blob/v4.7.0/LICENSE). Copyright notices and third-party license obligations must be preserved.
 
-This notice accompanies the Chrome and Firefox release packages. The corresponding source code is available from the `v4.5.1` source archives on the GitHub Releases page.
+This notice accompanies the Chrome and Firefox release packages. The corresponding source code is available from the `v4.7.0` source archives on the GitHub Releases page.

@@ -520,7 +520,7 @@
     "message": "Время события"
   },
   "extensionDescription": {
-    "message": "Мощное расширение для VacNet сайта, с удобным интерфейсом, разблокированными функциями, и удобными твиками."
+    "message": "Управление плеером, пресеты вердиктов и локальный журнал клипов для портала VACNet."
   },
   "extensionName": {
     "message": "VacNet++"
@@ -1247,6 +1247,33 @@
   },
   "pluginImportReadFailed": {
     "message": "Не удалось прочитать файл"
+  },
+  "playerNormalSpeed": {
+    "message": "Обычная"
+  },
+  "playerQuality": {
+    "message": "Качество"
+  },
+  "playerMenuBack": {
+    "message": "Вернуться в предыдущее меню"
+  },
+  "playerSeek": {
+    "message": "Позиция воспроизведения"
+  },
+  "playerSeekPosition": {
+    "message": "{currentTime} из {duration}"
+  },
+  "pluginDemoTimer": {
+    "message": "Таймер проверки"
+  },
+  "pluginDemoTimerCurrent": {
+    "message": "Текущий"
+  },
+  "pluginDemoTimerAverage": {
+    "message": "Среднее"
+  },
+  "pluginImportedName": {
+    "message": "Импортированный плагин"
   },
   "pluginImportEmpty": {
     "message": "Файл пустой или без кода"

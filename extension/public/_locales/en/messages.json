@@ -520,7 +520,7 @@
     "message": "Event time"
   },
   "extensionDescription": {
-    "message": "Powerful extension for the VacNet site, featuring a user-friendly interface, unlocked functions, and handy tweaks."
+    "message": "Player controls, verdict presets and local clip history for the VACNet portal."
   },
   "extensionName": {
     "message": "VacNet++"
@@ -1247,6 +1247,33 @@
   },
   "pluginImportReadFailed": {
     "message": "Could not read the file"
+  },
+  "playerNormalSpeed": {
+    "message": "Normal"
+  },
+  "playerQuality": {
+    "message": "Quality"
+  },
+  "playerMenuBack": {
+    "message": "Go back to previous menu"
+  },
+  "playerSeek": {
+    "message": "Seek"
+  },
+  "playerSeekPosition": {
+    "message": "{currentTime} of {duration}"
+  },
+  "pluginDemoTimer": {
+    "message": "Review timer"
+  },
+  "pluginDemoTimerCurrent": {
+    "message": "Current"
+  },
+  "pluginDemoTimerAverage": {
+    "message": "Average"
+  },
+  "pluginImportedName": {
+    "message": "Imported plugin"
   },
   "pluginImportEmpty": {
     "message": "The file is empty or has no code"

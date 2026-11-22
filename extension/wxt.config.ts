@@ -5,7 +5,7 @@ export default defineConfig({
   imports: false,
   manifest: ({ browser }) => ({
     name: 'VacNet++',
-    description: 'Player controls, verdict presets and local clip history for the VACNet portal.',
+    description: '__MSG_extensionDescription__',
     default_locale: 'en',
     permissions: ['storage'],
     host_permissions: ['https://replay-video.valve.net/*', 'https://api.github.com/*'],

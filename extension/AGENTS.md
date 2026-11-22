@@ -16,7 +16,7 @@ The repository root contains the public `README.md` and repository metadata. **T
 - `src/features/` — feature-specific logic and UI.
 - `src/entities/` — domain models and validation schemas.
 - `src/shared/` — shared components, messaging, services, and utilities.
-- `public/_locales/` — English and Russian message catalogs.
+- `public/_locales/` — message catalogs for all supported languages.
 - `tests/` — Vitest, Node tests, fixtures, and Playwright browser tests.
 - `docs/DEVELOPMENT.md` — development and release-build instructions.
 
@@ -47,7 +47,7 @@ Do not manually edit generated outputs such as `.wxt/`, `.output/`, or generated
 2. Preserve Chrome/Chromium and Firefox behavior, including Manifest V3 permissions and the browser-specific configuration.
 3. Keep review and verdict submission behavior compatible with the host portal. Never bypass the portal's confirmation or availability checks.
 4. For bug fixes and new behavior, add or update focused tests; use synthetic page fixtures.
-5. If translation keys change, update **both** `public/_locales/en/messages.json` and `public/_locales/ru/messages.json`, then run `npm run generate:i18n`.
+5. If translation keys change, update every catalog under `public/_locales/`, then run `npm run generate:i18n`.
 6. Run relevant checks and report which ones passed or could not be run. Do not claim a passing build without verification.
 7. Keep commits concise and descriptive; avoid unrelated formatting or file churn.
 

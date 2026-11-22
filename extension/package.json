@@ -1,6 +1,6 @@
 {
   "name": "vacnet-plus-plus",
-  "version": "4.6.0",
+  "version": "4.7.0",
   "private": true,
   "type": "module",
   "license": "GPL-3.0-only",
@@ -28,7 +28,7 @@
     "@webext-core/messaging": "4.0.0",
     "plyr": "3.8.5",
     "preact": "10.29.8",
-    "zod": "4.6.5"
+    "zod": "4.6.7"
   },
   "devDependencies": {
     "@playwright/test": "1.64.1",

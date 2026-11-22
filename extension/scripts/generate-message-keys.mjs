@@ -1,12 +1,16 @@
 import assert from 'node:assert/strict';
-import { readFile, writeFile } from 'node:fs/promises';
+import { readdir, readFile, writeFile } from 'node:fs/promises';
 
 const file = (path) => new URL(`../${path}`, import.meta.url);
-const [english, russian] = await Promise.all(['en', 'ru'].map(async (locale) =>
-  JSON.parse(await readFile(file(`public/_locales/${locale}/messages.json`), 'utf8'))));
-const keys = Object.keys(english).sort();
-assert.deepEqual(keys, Object.keys(russian).sort(), 'English and Russian translation keys must match');
-for (const [locale, catalog] of Object.entries({ en: english, ru: russian })) {
+const directories = await readdir(file('public/_locales/'), { withFileTypes: true });
+const locales = directories.filter((entry) => entry.isDirectory()).map((entry) => entry.name);
+const catalogs = Object.fromEntries(await Promise.all(locales.map(async (locale) => {
+  const catalog = JSON.parse(await readFile(file(`public/_locales/${locale}/messages.json`), 'utf8'));
+  return [locale, catalog];
+})));
+const keys = Object.keys(catalogs.en).sort();
+for (const [locale, catalog] of Object.entries(catalogs)) {
+  assert.deepEqual(Object.keys(catalog).sort(), keys, `${locale}: translation keys must match English`);
   for (const key of keys) {
     assert.ok(catalog[key].message?.trim(), `${locale}: empty translation ${key}`);
   }
